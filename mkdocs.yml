@@ -1,0 +1,12 @@
+site_name: Richard Shan - Fab Academy
+nav:
+  - Home: index.md
+  - About: about.md
+  # - Fab Academy:
+  #   - Pre-Fab:
+  #     - Storage Box: fab/cardboardBox.md
+  #     - Tiny Arcade: arcade.md
+  #     - Flashing Glasses: glasses.md
+  # - Macro Project: macroProj.md
+theme: readthedocs
+highlightjs: true

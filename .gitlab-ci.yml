@@ -1,11 +1,24 @@
-image: busybox
+image: python:3.8-buster
+
+before_script:
+  - pip install -r requirements.txt
+
+test:
+  stage: test
+  script:
+  - mkdocs build --strict --verbose --site-dir test
+  artifacts:
+    paths:
+    - test
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
 
 pages:
   stage: deploy
   script:
-    - echo "The site will be deployed to $CI_PAGES_URL"
+  - mkdocs build --strict --verbose
   artifacts:
     paths:
-      - public
+    - public
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
