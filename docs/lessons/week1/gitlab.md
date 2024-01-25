@@ -1,8 +1,6 @@
 # GitLab and MKDocs Setup
 
-While setting up GitLab, I followed <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week1/gitlab/">**Adam Stone's**</a> documentation. 
-
-## Linking Git and MKDocs
+## Git and MKDocs
 
 Due to having prior coding experience, I already had GitHub and MKDocs set up on my computer, which I used for documenting PreFab. As such, the biggest difficulty I encountered was configuring the .gitlab-ci.yml file to properly integrate with MKDocs.
 
@@ -54,3 +52,7 @@ I was unable to solve the error for about a half hour because I didn't know how 
 <center>
 <img src="../../../pics/week1/jobs.jpg" alt="Jobs Menu Page" width="450"/>
 </center>
+
+## References
+
+I used <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week1/gitlab/">**Adam Stone's**</a> and <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a> documentation to help me set up GitLab. 
