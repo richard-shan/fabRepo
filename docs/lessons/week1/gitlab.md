@@ -35,9 +35,10 @@ pages:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 </code></pre>
 <br>
-Unfortunately, I did not have the requirements.txt and thus I would run into an error when pushing my code to GitLab:
 
-<pre><code>ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+Unfortunately, I initially download my .gitlab-ci.yml file from the <a href="https://gitlab.com/pages/mkdocs">**MKDocs Gitlab repo**</a> instead of the Fab Student Template, which meant that I was using an outdated and incompatible file. Additionally, I did not download the requirements.txt file and thus I would recieve the following error when I pushed to Git:
+
+<pre><code class="language-none">ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
 [notice] A new release of pip is available: 23.0.1 -> 23.3.2
 [notice] To update, run: pip install --upgrade pip
 real	0m2.853s
@@ -48,4 +49,8 @@ Cleaning up project directory and file based variables
 ERROR: Job failed: exit code 1
 </code></pre>
 
-I didn't realize that this was the error until about half an hour of debugging, as this error message was only found in the Jobs list in GitLab, which was difficult to navigate to. After I found it, however, I used the Jobs error messages as an output console and was able to easily debug any future issues. After 
+I was unable to solve the error for about a half hour because I didn't know how to find the error message and I was simply modifying code snippets which I thought were problematic. However, when I checked my email, I recieved a notification that my job failed and clicked the link which brought me to the Jobs page on GitLab. The Jobs page itself was a difficult location to navigate to, and only there could I see the actual console error message output. After I was able to see the error, debugging was easy.
+
+<center>
+<img src="../../../pics/week1/jobs.jpg" alt="Jobs Menu Page" width="450"/>
+</center>
