@@ -1,10 +1,8 @@
-# GitLab and MKDocs Setup
+# GitLab and MKDocs 
 
-## Git and MKDocs
+## Git and MKDocs Integration
 
-Due to having prior coding experience, I already had GitHub and MKDocs set up on my computer, which I used for documenting PreFab. As such, the biggest difficulty I encountered was configuring the .gitlab-ci.yml file to properly integrate with MKDocs.
-
-At first, I was using an outdated file which I copied into my .gitlab-ci.yml file, which looked like this:
+The biggest difficulty I encountered was configuring the .gitlab-ci.yml file to properly integrate with MKDocs. At first, I was using an outdated file which I copied into my .gitlab-ci.yml file, which looked like this:
 <pre><code class="language-yml">	
 @Override
 	image: python:3.8-buster
@@ -47,7 +45,7 @@ Cleaning up project directory and file based variables
 ERROR: Job failed: exit code 1
 </code></pre>
 <br>
-I was unable to solve the error for about a half hour because I didn't know how to find the error message and I was simply modifying code snippets which I thought were problematic. However, when I checked my email, I recieved a notification that my job failed and clicked the link which brought me to the Jobs page on GitLab. The Jobs page itself was a difficult location to navigate to, and only there could I see the actual console error message output. After I was able to see the error, debugging was easy.
+I was unable to solve the error for about a half hour because I didn't know how to find the error message and I was stuck modifying code snippets which I thought were problematic. However, when I checked my email, I recieved a notification that my job failed and clicked the link which brought me to the Jobs page on GitLab. The Jobs page itself was a difficult location to navigate to, and only there could I see the actual console error message output. However, after I was able to see the error, debugging was easy.
 
 <center>
 <img src="../../../pics/week1/jobs.jpg" alt="Jobs Menu Page" width="450"/>
@@ -87,6 +85,19 @@ pages:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 </code></pre>
+
+After updating my gitlab-ci file, the mkdocs.yml file was recognized and my site changed to MKDocs away from the old .html files. The commits and pushes all succeeded and I was able to start working on the site with MKDocs.
+
+<center>
+<img src="../../../pics/week1/passed.jpg" alt="Successful git push" width="450"/>
+</center>
+<br>
+
+## MKDocs File Directory
+
+<center>
+<img src="../../../pics/week1/mkdocs file structure.jpg" alt="MKDocs File Directory" width="450"/>
+</center>
 
 ## References
 

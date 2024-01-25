@@ -4,7 +4,7 @@ nav:
   - About: about.md
   - Documentation:
     - "Week 1: Principles and Practices, Project Management":
-      - GitLab & MKDocs Setup: lessons/week1/gitlab.md
+      - GitLab & MKDocs: lessons/week1/gitlab.md
 
 theme: readthedocs
 highlightjs: true
