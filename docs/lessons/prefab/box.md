@@ -25,7 +25,7 @@ I then ran the file through the laser cutter and took out the cardboard.
 This is the box after the cut. I folded in all the parts of the box to ensure that they assembled nicely, and scored some areas with an exacto knife.
 <br>
 
-<img src="../../../pics/prefab/box/cutbox.jpg" alt="Cut Box" width="335"/>
+<img src="../../../pics/prefab/box/cutBox.jpg" alt="Cut Box" width="335"/>
 
 <br>
 
