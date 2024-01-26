@@ -1,7 +1,7 @@
 # Tiny Arcade
 <!-- [<img src="pics/box/boxDesign.png" alt="abc" width="200"/>](arcade.md) -->
 
-Today, I fully built and assembled the Tiny Arcade kit. The kit consisted of a bunch of small plastic parts which would be assembled together to create a small arcade machine. The acrylic was cut pretty roughly, however, so picking the pieces apart took some time. The largest problem, by far, was that the build had structural integrity issues through much of the assembly process due to only being held together by a single screw and would fall apart whenever it was turned. I solved this problem through having someone else assist me in holding the arcade as I pushed the pieces together. After all the pieces were in, the arcade was a lot more stable.
+Today, I fully built and assembled the <a href="https://tinycircuits.com/products/tinyarcade">**Tiny Arcade Kit**</a>. The kit consisted of a bunch of small plastic parts which would be assembled together to create a small arcade machine. The acrylic was cut pretty roughly, however, so picking the pieces apart took some time. The largest problem, by far, was that the build had structural integrity issues through much of the assembly process due to only being held together by a single screw and would fall apart whenever it was turned. I solved this problem through having someone else assist me in holding the arcade as I pushed the pieces together. After all the pieces were in, the arcade was a lot more stable.
 
 ## Materials
 The kit that we assembled can be found on the manufacturer's website <a href="https://tinycircuits.com/products/tinyarcade">**here**</a>. The kit included:
