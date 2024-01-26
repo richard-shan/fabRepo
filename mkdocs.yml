@@ -7,6 +7,7 @@ nav:
       - Pen Turning: lessons/prefab/pen.md
       - LED Glasses: lessons/prefab/glasses.md
       - TinyArcade: lessons/prefab/arcade.md
+      - 3 Leaf Gyroscope Spinner: lessons/prefab/spinner.md
       - Cardboard Storage Box: lessons/prefab/box.md
     - "Week 1: Principles and Practices, Project Management":
       - GitLab & MKDocs: lessons/week1/gitlab.md
