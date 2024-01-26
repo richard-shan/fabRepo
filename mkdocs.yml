@@ -5,6 +5,7 @@ nav:
   - Documentation:
     - "Pre-Fab":
       - Pen Turning: lessons/prefab/pen.md
+      - LED Glasses: lessons/prefab/glasses.md
       - TinyArcade: lessons/prefab/arcade.md
       - Cardboard Storage Box: lessons/prefab/box.md
     - "Week 1: Principles and Practices, Project Management":
