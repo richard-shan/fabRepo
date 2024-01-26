@@ -9,6 +9,7 @@ nav:
       - TinyArcade: lessons/prefab/arcade.md
       - 3 Leaf Gyroscope Spinner: lessons/prefab/spinner.md
       - Cardboard Storage Box: lessons/prefab/box.md
+      - RP2040: lessons/prefab/rp2040.md
     - "Week 1: Principles and Practices, Project Management":
       - GitLab & MKDocs: lessons/week1/gitlab.md
 
