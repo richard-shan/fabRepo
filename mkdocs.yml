@@ -3,6 +3,8 @@ nav:
   - Home: index.md
   - About: about.md
   - Documentation:
+    - "Pre-Fab":
+      - TinyArcade: lessons/prefab/arcade.md
     - "Week 1: Principles and Practices, Project Management":
       - GitLab & MKDocs: lessons/week1/gitlab.md
 
