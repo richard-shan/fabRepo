@@ -43,7 +43,7 @@ To view the key if you ever lose it, you can run "<span style="color:blue">cat ~
 
 I navigated to the file directory that I was going to use, then cloned my repository from GitLabs.
 
-<pre><code class="language-none">PS C:\fab> git clone git@gitlab.fabcloud.org:academany/fabacademy/2024/labs/charlotte/students/richard-shan.git
+<pre><code class="language-none">PS C:\fab> <span style="color:blue">git clone git@gitlab.fabcloud.org:academany/fabacademy/2024/labs/charlotte/students/richard-shan.git</span>
 Cloning into 'richard-shan'...
 remote: Enumerating objects: 176, done.
 remote: Counting objects: 100% (100/100), done.
@@ -62,14 +62,14 @@ Cloning from Github created a new folder which I subsequently navigated into.
 </center>
 <br>
 
-Having installed MkDocs via pip, I ran "<span style="color:blue">mkdocs new richard-shan</span>" in the top-level fab folder to initialize a new MkDocs project in my git directory. I then ran "<span style="color:blue">mkdocs serve</span>" to locally host my website for testing and viewing.
+Having installed MkDocs via pip, I ran "<span style="color:blue">mkdocs new richard-shan</span>" in the top-level fab folder to initialize a new MkDocs project in my git directory. I then navigated to the project folder and ran "<span style="color:blue">mkdocs serve</span>" to locally host my website for testing and viewing.
 
-<pre><code class="language-none">PS C:\fab> mkdocs new richard-shan
+<pre><code class="language-none">PS C:\fab> <span style="color:blue">mkdocs new richard-shan</span>
 INFO    -  Creating project directory: richard-shan
 INFO    -  Writing config file: richard-shan\mkdocs.yml
 INFO    -  Writing initial docs: richard-shan\docs\index.md
-PS C:\fab> cd .\richard-shan\
-PS C:\fab\richard-shan> mkdocs serve
+PS C:\fab> <span style="color:blue">cd .\richard-shan\</span>
+PS C:\fab\richard-shan> <span style="color:blue">mkdocs serve</span>
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.25 seconds
@@ -114,7 +114,7 @@ pages:
 
 Unfortunately, I initially download my gitlab-ci.yml file from the <a href="https://gitlab.com/pages/mkdocs">**MkDocs Gitlab repo**</a>, which meant that I was using an outdated file. Additionally, I did not download the requirements.txt file and thus I would recieve the following error when I pushed to Git:
 
-<pre><code class="language-none">ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+<pre><code class="language-none"><span style="color:darkred">ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'</span>
 [notice] A new release of pip is available: 23.0.1 -> 23.3.2
 [notice] To update, run: pip install --upgrade pip
 real	0m2.853s
@@ -122,7 +122,7 @@ user	0m2.665s
 sys	0m0.168s
 Cleaning up project directory and file based variables
 00:01
-ERROR: Job failed: exit code 1
+<span style="color:darkred">ERROR: Job failed: exit code 1</span>
 </code></pre>
 <br>
 I was unable to solve the error for about a half hour because I didn't know how to find the error message and I was stuck modifying code snippets which I thought were problematic. However, when I checked my email, I recieved a notification that my job failed and clicked the link which brought me to the Jobs page on GitLab. The Jobs page itself was a difficult location to navigate to, and only there could I see the actual console error message output. However, after I was able to see the error, debugging was easy.
@@ -183,6 +183,42 @@ I decided not to use the Fab Student Template for setting up the week folders as
 
 <br>
 
+## Git Push File Size Limit
+
+I had documented my PreFab work via MkDocs, and I now wanted to add it to my Fab site. However, I wasn't aware of the file size limit when documenting for PreFab and thus had many large files. I went through and used online video/image compressors to compress the files into a smaller size. Even after compressing and when only trying to push a few megabytes of data, I would sometimes still run into the following error:
+
+<pre><code class="language-none">PS C:\fab\richard-shan> <span style="color:blue">git push</span>
+Enumerating objects: 66, done.
+Counting objects: 100% (66/66), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (57/57), done.
+<span style="color:red">remote: fatal:</span> pack exceeds maximum allowed size 
+fatal: sha1 file '<stdout>' write error: Broken pipe
+error: remote unpack failed: unpack-objects abnormal exit
+To gitlab.fabcloud.org:academany/fabacademy/2024/labs/charlotte/students/richard-shan.git
+ <span style="color:red">! [remote rejected] </span>main -> main (unpacker error)
+<span style="color:red">error: failed to push some refs to 'gitlab.fabcloud.org:academany/fabacademy/2024/labs/charlotte/students/richard-shan.git'</span>
+</code></span></pre>
+
+After doing some research online, I realized that this error was because my previous commit was still being cached in my .git folder, and was contributing to the 10MB file size limit. To stop caching this, I ran the git reset command.
+
+<pre><code class="language-none">PS C:\fab\richard-shan> <span style="color:blue">git reset --soft HEAD~1</span></code></pre>
+
+After running the reset command, I was then able to push without any errors.
+
+<pre><code class="language-none">PS C:\fab\richard-shan> <span style="color:blue">git add --all</span>
+PS C:\fab\richard-shan> <span style="color:blue">git commit -m "Prefab documentation"</span>
+[main 847ff3e] Prefab documentation 
+ 20 files changed, 123 insertions(+), 1 deletion(-) [...]
+PS C:\fab\richard-shan> <span style="color:blue">git push</span>
+Enumerating objects: 37, done.
+Counting objects: 100% (37/37), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (29/29), 9.65 MiB | 1.68 MiB/s, done. [...]
+PS C:\fab\richard-shan>
+</code></pre>
+
 ## References
 
-Huge thank you to <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Stuart Christhilf**</a> for teaching me MkDocs during our Data Structures class last semester! <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a> and <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week1/gitlab/">**Adam Stone's**</a> documentations were also valuable resources for setting up GitLab. 
+Huge thank you to <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Stuart Christhilf**</a> for teaching me MkDocs during our Data Structures class last semester! <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a> and <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/">**Adam Stone's**</a> documentations were also valuable resources for setting up GitLab. 

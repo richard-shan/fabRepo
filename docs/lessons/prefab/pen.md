@@ -114,7 +114,7 @@ However, I didn't realize that when importing the file to print, part of the tex
 <img src="../../../pics/prefab/penEngraving/penEngraving_3.JPG" alt="Engraving design issue" width="335"/>
 
 <br><br>
-Because I didn't realize this until after taking the pen out of the laser cutter and seeing the botched print, I was stuck with a pen that was emblazoned with "ichard Shan", but as I didn't want to be stuck with an ugly pen I decided to use an exacto-knife to manually engrave the "R" at the start.
+Because I didn't realize this until after taking the pen out of the laser cutter and seeing the botched print, I had a pen that was emblazoned with "ichard Shan". But as I didn't want to be stuck with a misspelled pen I decided to use an exacto-knife to manually engrave the "R" at the start.
 
 <img src="../../../pics/prefab/penEngraving/penEngraving_4.JPG" alt="Engraving design issue" width="335"/>
 
