@@ -1,5 +1,44 @@
 # GitLab and MKDocs 
 
+## Environment Setup
+
+Due to prior coding experience, I already had both <a href="https://git-scm.com/downloads">**Git**</a> and <a href="https://www.python.org/downloads/">**Python**</a> installed on my computer and I was ready to clone my GitLab repository.
+
+However, when I was helping some of my friends, I noticed a few common errors:
+
+- <span style="color:darkred">The term 'python' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
+    - Add the Python installation directory (where Python is located on your local system) to your System Environment Variables. 
+        - To access the System Environment Variables menu, open the Run menu (Windows + R) and type in "sysdm.cpl", or go to the "View Advanced System Settings" menu. Then, click Advanced on the top navigation bar and click Environment Variables. Add the Python installation location to the PATH variable (user or system) by clicking Path -> Edit -> New.
+- <span style="color:darkred">The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
+    - Run the "<span style="color:blue">python -m ensurepip</span>"
+ command. This will download pip automatically if you do not already have it.
+    - Use the pip3 command instead of pip (e.g. "<span style="color:blue">pip3 install mkdocs</span>" instead of "<span style="color:blue">pip install mkdocs</span>"). 
+- <span style="color:darkred">The term 'mkdocs' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
+    - Add the python Scripts folder to your System Environment Variables. After running "<span style="color:blue">pip install mkdocs</span>", the mkdocs.exe file should have been added to your Scripts folder. The scripts folder can be found in the same place Python is located. For example, I installed Python under "C:\myPython", so my MKDocs was at "C:\myPython\Scripts\mkdocs.exe" and I would add "C:\myPython\Scripts" to my PATH system environment variable. The steps to edit System Environment Variables are above.
+- <span style="color:darkred">fatal: not a git repository (or any of the parent directories): .git</span>
+    - You could be in the wrong directory, in which case run "<span style="color:blue">cd your-git-repo-path</span>" and re-run the command. For example, I would run "<span style="color:blue">cd C:\fab\richard-shan</span>".
+    - If the repository doesn't exist or you haven't created it yet, run "<span style="color:blue">git clone git-repo-url</span>".
+
+## SSH Key Setup
+
+To generate my SSH key, I followed the following steps. I used Windows Powershell as my terminal of choice, though others such as CMD and Git Bash would have achieved the same function.
+
+- Open a terminal instance
+- Run <span style="color:blue">git config -–global user.email “26shanr@charlottelatin.org”</span>.
+- Run <span style="color:blue">ssh-keygen -t rsa -C “26shanr@charlottelatin.org”</span>.
+- Specify a file to save the key into (click Return/Enter for none)
+- Specify a password (click Return/Enter for none)
+- Copy the generated key for storage. The key starts with SHA256 and ends with the closing quotation mark after your email address.
+
+
+I then added the SSH key to my GitLabs account to allow pushing.
+<br><center>
+<img src="../../../pics/week1/SSHkey.jpg" alt="Adding SSH Key to GitLabs" width="700"/>
+</center>
+<br> <br>
+
+To view the key if you ever lose it, you can run "<span style="color:blue">cat ~/.ssh/id_rsa.pub</span>"
+
 ## Git and MKDocs Integration
 
 The biggest difficulty I encountered was configuring the .gitlab-ci.yml file to properly integrate with MKDocs. At first, I was using an outdated file which I copied into my .gitlab-ci.yml file, which looked like this:
@@ -95,10 +134,14 @@ After updating my gitlab-ci file, the mkdocs.yml file was recognized and my site
 
 ## MKDocs File Directory
 
+I decided not to use the Fab Student Template for setting up the week folders as I wanted to build my own directory system for documentation. The following image shows the file hierarchy that I built, starting from the root directory of the site at the top. Each page of this website is stored in a markdown (.md) file, which are stored under their respective week folders under the general lessons folder. Every image/video on this website is stored under its respective week folder under the pics folder. MKDocs's default starting directory is the docs folder, and as such, all of my documentation is stored in its subfolders.
+
 <center>
 <img src="../../../pics/week1/mkdocs file structure.jpg" alt="MKDocs File Directory" width="450"/>
 </center>
 
+<br>
+
 ## References
 
-I used <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a> and <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week1/gitlab/">**Adam Stone's**</a> documentation to help me set up GitLab. 
+Thank you to <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Stuart Christhilf**</a> for teaching me MKDocs during our Data Structures class! <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a> and <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week1/gitlab/">**Adam Stone's**</a> documentations were also valuable resources for setting up GitLab. 
