@@ -15,7 +15,7 @@ The materials I used for assembling the cardboard box were all sourced from the 
 <center>
 
 First, I downloaded the provided CDR file for the box design from Google Drive.
-<img src="../../../pics/prefab/box/boxDesign.PNG" alt="Box Design File" width="335"/>
+<img src="../../../pics/prefab/box/boxDesign.png" alt="Box Design File" width="335"/>
 
 I then ran the file through the laser cutter and took out the cardboard.
 <video muted width="500px" height="300px" controls="controls"><source src="../../../pics/prefab/box/box.mp4" type="video/mp4" /></video>
