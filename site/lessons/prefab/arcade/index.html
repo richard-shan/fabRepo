@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>TinyArcade - Richard Shan - Fab Academy</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "TinyArcade";
+        var mkdocs_page_input_path = "lessons\\prefab\\arcade.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Richard Shan - Fab Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pre-Fab</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../pen/">Pen Turning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../glasses/">LED Glasses</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">TinyArcade</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#materials">Materials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assembly">Assembly</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-games">Adding Games</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spinner/">3 Leaf Gyroscope Spinner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../box/">Cardboard Storage Box</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rp2040/">RP2040</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Week 1: Principles and Practices, Project Management</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../week1/gitlab/">GitLab & MKDocs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Richard Shan - Fab Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Documentation</li>
+          <li class="breadcrumb-item">Pre-Fab</li>
+      <li class="breadcrumb-item active">TinyArcade</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tiny-arcade">Tiny Arcade</h1>
+<!-- [<img src="pics/box/boxDesign.png" alt="abc" width="200"/>](arcade.md) -->
+
+<p>Today, I fully built and assembled the <a href="https://tinycircuits.com/products/tinyarcade"><strong>Tiny Arcade Kit</strong></a>. The kit consisted of a bunch of small plastic parts which would be assembled together to create a small arcade machine. The acrylic was cut pretty roughly, however, so picking the pieces apart took some time. The largest problem, by far, was that the build had structural integrity issues through much of the assembly process due to only being held together by a single screw and would fall apart whenever it was turned. I solved this problem through having someone else assist me in holding the arcade as I pushed the pieces together. After all the pieces were in, the arcade was a lot more stable.</p>
+<h2 id="materials">Materials</h2>
+<p>The kit that we assembled can be found on the manufacturer's website <a href="https://tinycircuits.com/products/tinyarcade"><strong>here</strong></a>. The kit included:</p>
+<ul>
+<li>32-bit ARM processor</li>
+<li>OLED screen</li>
+<li>MicroSD card compatibility for game and video storage</li>
+<li>Joystick with two working pushbuttons</li>
+<li>Built-in speaker with volume control</li>
+<li>Rechargeable lithium battery</li>
+<li>USB port for charging and loading</li>
+<li>Acrylic casing</li>
+<li>Decorative stickers</li>
+<li>5-pin Wireling connector for adding different dimensions to games
+<br></li>
+</ul>
+<h2 id="assembly">Assembly</h2>
+<p>I assembled the tiny arcade following the instructions within the manual provided in the kit. There were no major complications other than having some issues tearing off the wrapping for the acrylic due to having short nails and some difficulty in pushing the acrylic pieces together.
+<center>
+I first added the joystick and input buttons onto the board. </p>
+<p><img src="../../../pics/prefab/arcade/arcade_1.JPG" alt="arcade_1" width="335"/></p>
+<p><br> <br></p>
+<p>I then attached the speaker.</p>
+<p><img src="../../../pics/prefab/arcade/arcade_2.JPG" alt="arcade_2" width="335"/></p>
+<p><br> </p>
+<p>I tore off the wrapping paper from all the acrylic walling. Here are all the acrylic pieces laid out before assembly:</p>
+<p><img src="../../../pics/prefab/arcade/arcade_3.JPG" alt="arcade_3" width="335"/></p>
+<p><br> <br>
+Next, I assembled the first side of the arcade, along with attaching the battery and the screw.</p>
+<p><img src="../../../pics/prefab/arcade/arcade_4.JPG" alt="arcade_4" width="335"/></p>
+<p><br> <br>
+I then put the second side of the arcade machine in, allowing me to fully screw both sides together.</p>
+<p><img src="../../../pics/prefab/arcade/arcade_5.JPG" alt="arcade_5" width="335"/></p>
+<p><br> <br>
+This is what the arcade looks like after assembling the rest of the acrylic pieces:</p>
+<p><img src="../../../pics/prefab/arcade/arcade_6.JPG" alt="arcade_6" width="335"/></p>
+<p><br><br>
+Final step: <strong>stickers!</strong></p>
+<p><img src="../../../pics/prefab/arcade/arcade_8.JPG" alt="arcade_8" width="335"/></p>
+<p><br></p>
+<p></center></p>
+<h2 id="adding-games">Adding Games</h2>
+<p>The base arcade came loaded with only 3 games on it. However, the arcade is able to support other games through a micro SD card. The instructions for doing so can be found on the TinyCircuits website <a href="https://learn.tinycircuits.com/Help/Load-Games-and-Video-to-SD-Tutorial/">here</a>.</p>
+<p>My regular computer didn't have either an SD card or microSD port so I had to switch to a second computer.
+After that, I downloaded the other games from the <a href="http://files.tinycircuits.com/TinyGamesAll.zip">TinyCircuits website</a>.</p>
+<p><center></p>
+<p><br></p>
+<p>This is what the zip file containing all the games looks like. Within each of these game folders is a bin and a tsv file for that respective game. </p>
+<p><img src="../../../pics/prefab/arcade/arcade_coding_1.PNG" alt="arcade_coding_1" width="335"/></p>
+<p><br>
+I then uploaded the contents of the zip file into the micro SD card, which was the D drive under my file system. After ejecting the micro SD card from the computer port, I put it into the port inside the TinyArcade machine.</p>
+<p><img src="../../../pics/prefab/arcade/arcade_coding_2.PNG" alt="arcade_coding_2" width="335"/></p>
+<p>Instead of displaying a screen upon startup with a message notifying the user that there is no SD card inserted, the Arcade now starts up and allows the user to play all the imported games. The Arcade steps through the games in alphabetical order. <strong>All the added games are now playable!</strong></p>
+<table>
+    <tr>
+        <td><img src="../../../pics/prefab/arcade/arcade_coding_3.PNG" alt="arcade_coding_2" width="300" height="400"/></td>
+        <td><video muted width="300px" height="400px" controls="controls"><source src="../../../pics/prefab/arcade/arcade.MOV" type="video/mp4" /></video>  </td>
+    </tr>
+</table>
+
+<p></center></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../glasses/" class="btn btn-neutral float-left" title="LED Glasses"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../spinner/" class="btn btn-neutral float-right" title="3 Leaf Gyroscope Spinner">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../glasses/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../spinner/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
