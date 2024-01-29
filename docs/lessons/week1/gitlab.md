@@ -8,24 +8,24 @@ However, when I was helping some of my friends, I noticed a few common errors:
 
 - <span style="color:darkred">The term 'python' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
     - Add the Python installation directory (where Python is located on your local system) to your System Environment Variables. 
-        - To access the System Environment Variables menu, open the Run menu (Windows + R) and type in "sysdm.cpl", or go to the "View Advanced System Settings" menu. Then, click Advanced on the top navigation bar and click Environment Variables. Add the Python installation location to the PATH variable (user or system) by clicking Path -> Edit -> New.
+        - To access the System Environment Variables menu, open the Run menu (<span style="color:blue">Windows + R</span>) and type in "<span style="color:blue">sysdm.cpl</span>", or go to the "View Advanced System Settings" menu. Then, click Advanced on the top navigation bar and click Environment Variables. Add the Python installation location to the <span style="color:blue">PATH</span> variable (user or system) by clicking Path -> Edit -> New.
 - <span style="color:darkred">The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
-    - Run the "<span style="color:blue">python -m ensurepip</span>"
+    - Run the ```python -m ensurepip```
  command. This will download pip automatically if you do not already have it.
-    - Use the pip3 command instead of pip (e.g. "<span style="color:blue">pip3 install mkdocs</span>" instead of "<span style="color:blue">pip install mkdocs</span>"). 
+    - Use the <span style="color:blue">pip3</span> command instead of <span style="color:blue">pip</span> (e.g. ```pip3 install mkdocs``` instead of ```pip install mkdocs```).
 - <span style="color:darkred">The term 'mkdocs' is not recognized as the name of a cmdlet, function, script file, or operable program.</span>
-    - Add the python Scripts folder to your System Environment Variables. After running "<span style="color:blue">pip install mkdocs</span>", the mkdocs.exe file should have been added to your Scripts folder. The scripts folder can be found in the same place Python is located. For example, I installed Python under "C:\myPython", so my MkDocs was at "C:\myPython\Scripts\mkdocs.exe" and I would add "C:\myPython\Scripts" to my PATH system environment variable. The steps to edit System Environment Variables are above.
+    - Add the python <span style="color:blue">Scripts</span> folder to your System Environment Variables. After running ```pip install mkdocs```, the mkdocs.exe file should have been added to your Scripts folder. The scripts folder can be found in the same place Python is located. For example, I installed Python under "C:\myPython", so my MkDocs was at "C:\myPython\Scripts\mkdocs.exe" and I would add "C:\myPython\Scripts" to my <span style="color:blue">PATH</span> system environment variable. The steps to edit System Environment Variables are above.
 - <span style="color:darkred">fatal: not a git repository (or any of the parent directories): .git</span>
-    - You could be in the wrong directory, in which case run "<span style="color:blue">cd your-git-repo-path</span>" and re-run the command. For example, I would run "<span style="color:blue">cd C:\fab\richard-shan</span>".
-    - If the repository doesn't exist or you haven't created it yet, run "<span style="color:blue">git clone git-repo-url</span>".
+    - You could be in the wrong directory, in which case run ```cd your-git-repo-path``` and re-run the command. For example, I would run ```cd C:\fab\richard-shan```.
+    - If the repository doesn't exist or you haven't created it yet, run ```git clone git-repo-url```.
 
 ## SSH Key Setup
 
 To generate my SSH key, I followed the following steps. I used Windows Powershell as my terminal of choice, though others such as CMD and Git Bash would have achieved the same function.
 
 - Open a terminal instance
-- Run <span style="color:blue">git config -–global user.email “26shanr@charlottelatin.org”</span>.
-- Run <span style="color:blue">ssh-keygen -t rsa -C “26shanr@charlottelatin.org”</span>.
+- Run ```git config -–global user.email “26shanr@charlottelatin.org”```.
+- Run ```ssh-keygen -t rsa -C “26shanr@charlottelatin.org”```.
 - Specify a file to save the key into (click Return/Enter for none)
 - Specify a password (click Return/Enter for none)
 - Copy the generated key for storage. The key starts with SHA256 and ends with the closing quotation mark after your email address.
@@ -37,7 +37,7 @@ I then added the SSH key to my GitLabs account to allow pushing.
 </center>
 <br> <br>
 
-To view the key if you ever lose it, you can run "<span style="color:blue">cat ~/.ssh/id_rsa.pub</span>".
+To view the key if you ever lose it, you can run ```cat ~/.ssh/id_rsa.pub```.
 
 ## Environment Setup
 
@@ -62,7 +62,7 @@ Cloning from Github created a new folder which I subsequently navigated into.
 </center>
 <br>
 
-Having installed MkDocs via pip, I ran "<span style="color:blue">mkdocs new richard-shan</span>" in the top-level fab folder to initialize a new MkDocs project in my git directory. I then navigated to the project folder and ran "<span style="color:blue">mkdocs serve</span>" to locally host my website for testing and viewing.
+Having installed MkDocs via pip, I ran ```mkdocs new richard-shan``` in the top-level fab folder to initialize a new MkDocs project in my git directory. I then navigated to the project folder and ran ```mkdocs serve``` to locally host my website for testing and viewing.
 
 <pre><code class="language-none">PS C:\fab> <span style="color:blue">mkdocs new richard-shan</span>
 INFO    -  Creating project directory: richard-shan
