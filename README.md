@@ -1,20 +1,8 @@
-# Your name - Fab Academy documentation
+# Richard Shan - Fab Academy
 
-Visit [fabacademy.org](https://fabacademy.org/) for class and other information.
+Welcome to my GitLab page! My Fab Academy documentation site be found [**here**](https://fabacademy.org/2024/labs/charlotte/students/richard-shan/)! For more information about the GitLabs environment, visit my documentation for [**setting up GitLabs**](https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week1/gitlab/).
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+My file directory organization system is represented in the following diagram. The <span style="color:blue">docs</span> folder contains all my markdown files for documenting, along with all of the media used in the website. There is a high level of abstraction within the <span style="color:blue">docs</span> folder, as that is where all the documentation is stored. Anything outside the folder is a setup or logistics file that does not appear on the actual webpage.
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-
-## GitLab CI
-
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
-
-The current above example expects to put all your HTML files in the `public/` directory.
+<img src="../docs/pics/week1/mkdocs file structure.jpg" alt="MkDocs File Directory" width="450"/>
 
