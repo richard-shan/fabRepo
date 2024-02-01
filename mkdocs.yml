@@ -12,6 +12,7 @@ nav:
       - RP2040: lessons/prefab/rp2040.md
     - "Week 1: Principles and Practices, Project Management":
       - GitLab & MKDocs: lessons/week1/gitlab.md
+      - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
 
 theme: readthedocs
 highlightjs: true
