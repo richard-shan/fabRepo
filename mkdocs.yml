@@ -13,6 +13,7 @@ nav:
     - "Week 1: Principles and Practices, Project Management":
       - GitLab & MKDocs: lessons/week1/gitlab.md
       - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
+      - Reflection: lessons/week1/reflection.md
 
 theme: readthedocs
 highlightjs: true
