@@ -14,6 +14,9 @@ nav:
       - GitLab & MKDocs: lessons/week1/gitlab.md
       - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
       - Reflection: lessons/week1/reflection.md
+    - "Week 2: Computer-Aided Design":
+      - Exploring 3D CAD Programs: lessons/week2/cad.md
+      - Gravity Sketch: lessons/week2/gravitysketch.md
 
 theme: readthedocs
 highlightjs: true
