@@ -1,8 +1,8 @@
-# 2D Modelling
+# 2D Modeling
 
 ## Gimp
 
-I tried out Gimp for 2D modelling. Gimp is a primarily raster-based program, but represents path structures in vector format. To test out Gimp, I decided to edit a picture of a parakeet!
+I tried out Gimp for 2D modeling. Gimp is a primarily raster-based program, but represents path structures in vector format. To test out Gimp, I decided to edit a picture of a parakeet!
 
 I first downloaded an image of a few parakeets from the internet.
 

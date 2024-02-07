@@ -1,6 +1,6 @@
 # Exploring 3D CAD Programs
 
-For this week's assignment, I designed and modelled the frame for the box in my final project. I used 3 different CAD softwares to get a feel for each of them and decide which one I liked best. For each of the CAD programs that I explored, I modelled the same part as to highlight the key differences between them.
+For this week's assignment, I designed and modeled the frame for the box in my final project. I used 3 different CAD softwares to get a feel for each of them and decide which one I liked best. For each of the CAD programs that I explored, I modeled the same part as to highlight the key differences between them.
 
 ## Autodesk Fusion
 
@@ -40,7 +40,7 @@ Finally, I used the pattern feature to repeat the sketch and extrusion across th
 
 ## FreeCAD
 
-The steps that I used to design my box in FreeCAD were essentially the same as the process used in Fusion. With the exception that a few tools were renamed and slightly modified in FreeCAD, it serves a similar purpose to Fusion360. However, FreeCAD's GUI is not very user friendly and overall is difficult to use. To start designing in the first place, I had to navigate through a series of hoops before I could start my modelling. Additionally, FreeCAD's tools are not very organized and are just thrown together in a toolbar at the top. FreeCAD's view cube also does not allow for free rotation and only supports preset viewing angles. During the design process, FreeCAD continuously generated error messages, ranging from being unable to load a previous save of my file to telling me that my wires were unconnected, in a design that didn't have any wires or circuitry. To me, FreeCAD overall gave off the appearance of being an outdated software that while being functional, was far more difficult to use. Although I was able to design my part in FreeCAD, I do not think that I will continue using FreeCAD.
+The steps that I used to design my box in FreeCAD were essentially the same as the process used in Fusion. With the exception that a few tools were renamed and slightly modified in FreeCAD, it serves a similar purpose to Fusion360. However, FreeCAD's GUI is not very user friendly and overall is difficult to use. To start designing in the first place, I had to navigate through a series of hoops before I could start my modeling. Additionally, FreeCAD's tools are not very organized and are just thrown together in a toolbar at the top. FreeCAD's view cube also does not allow for free rotation and only supports preset viewing angles. During the design process, FreeCAD continuously generated error messages, ranging from being unable to load a previous save of my file to telling me that my wires were unconnected, in a design that didn't have any wires or circuitry. To me, FreeCAD overall gave off the appearance of being an outdated software that while being functional, was far more difficult to use. Although I was able to design my part in FreeCAD, I do not think that I will continue using FreeCAD.
 
 <center>
 <img src="../../../pics/week2/freecadDesign.jpg" alt="FreeCAD model of the box" width="500"/>
@@ -56,7 +56,7 @@ The process for designing my box in OnShape was also similar to that of designin
 
 ## Conclusion
 
-Out of the three modelling softwares I chose to experiment with, I would only really choose to work with Fusion or OnShape. FreeCAD's convoluted UI and litany of errors made it near unusable for me. As much as Fusion and OnShape have operate similarly, my previous experience working with Fusion as opposed to being brand new to OnShape made the choice obvious. Additionally, the web-based nature of OnShape made it difficult to modify and save files on a local directory, something I believe will be important in later weeks. 
+Out of the three modeling softwares I chose to experiment with, I would only really choose to work with Fusion or OnShape. FreeCAD's convoluted UI and litany of errors made it near unusable for me. As much as Fusion and OnShape have operate similarly, my previous experience working with Fusion as opposed to being brand new to OnShape made the choice obvious. Additionally, the web-based nature of OnShape made it difficult to modify and save files on a local directory, something I believe will be important in later weeks. 
 
 ## File Download
 
