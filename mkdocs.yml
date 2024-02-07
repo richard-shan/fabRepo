@@ -16,6 +16,7 @@ nav:
       - Reflection: lessons/week1/reflection.md
     - "Week 2: Computer-Aided Design":
       - Exploring 3D CAD Programs: lessons/week2/cad.md
+      - 2D Modelling: lessons/week2/2DModelling.md
       - Gravity Sketch: lessons/week2/gravitysketch.md
 
 theme: readthedocs
