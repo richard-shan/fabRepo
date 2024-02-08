@@ -2,7 +2,14 @@
 
 ## Workflow
 
-As a supplement to CAD week, our Fab Lab provided us with the unique opportunity to try out Gravity Sketch, a program that allows for drawing and 3D modeling while in virtual reality (VR). We used the Oculus Quest 2 VR headsets for this. Unfortunately, I wasn't able to find a way to take screenshots while inside the headset, and thus cannot provide a picture of me testing out the designing space. However, I was able to create and print a file from the VR headset using the following steps:
+As a supplement to CAD week, our Fab Lab provided us with the unique opportunity to try out Gravity Sketch, a program that allows for drawing and 3D modeling while in virtual reality (VR). We used the Oculus Quest 2 VR headsets for this. 
+
+<center>
+<img src="../../../pics/week2/VRHeadset.jpg" alt="VR Headset" width="300"/>
+</center>
+
+<br>
+Unfortunately, I wasn't able to find a way to take screenshots while inside the headset, and thus cannot provide a picture of me testing out the designing space. However, I was able to create and print a file from the VR headset using the following steps:
 
 1.	Launch Gravity Sketch from the Library menu.
 2.	Click "File Manager".
@@ -15,6 +22,12 @@ As a supplement to CAD week, our Fab Lab provided us with the unique opportunity
 9.	Open landing pad on your computer & download the exported file.
 10.	You can then open the file from your computer. I exported the file from Gravity Sketch as an OBJ file, and was able to open it in PrusaSlicer where I printed the test design.
 
+
+Here is the design as viewed in LandingPad:
+
+<center>
+<img src="../../../pics/week2/cube.jpg" alt="Cube isometric view" width="300"/>
+</center>
 
 This 3D print is a small proof-of-concept cube that I designed entirely in VR and took through the entire printing process, only taking 2 minutes to print.
 <center>
