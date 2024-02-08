@@ -60,4 +60,4 @@ Out of the three modeling softwares I chose to experiment with, I would only rea
 
 ## File Download
 
-My file designs can be downloaded [**here**](../week2.zip).
+My file designs can be downloaded [**here**](../../../files/week2/week2.zip).
