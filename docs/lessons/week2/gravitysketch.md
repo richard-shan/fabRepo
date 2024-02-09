@@ -5,7 +5,12 @@
 As a supplement to CAD week, our Fab Lab provided us with the unique opportunity to try out Gravity Sketch, a program that allows for drawing and 3D modeling while in virtual reality (VR). We used the Oculus Quest 2 VR headsets for this. 
 
 <center>
-<img src="../../../pics/week2/VRHeadset.jpg" alt="VR Headset" width="300"/>
+<table>
+    <tr>
+        <td><img src="../../../pics/week2/VRHeadset.jpg" width="400"/></td>
+        <td><img src="../../../pics/week2/inHeadset.jpg" width="250"/></td>
+    </tr>
+</table>
 </center>
 
 <br>

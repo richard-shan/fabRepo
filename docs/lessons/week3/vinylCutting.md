@@ -37,7 +37,7 @@ Using Gimp's Fuzzy Select tool, I was able to separate portions of the logo by c
     </tr>
 </table>
 <br>
-However, the white part of the logo didn't show up in the image, even though it was transparent. I knew that in order to trace the outline of each part of the sticker in Silhouette Studio, the white portion would need to be visible. I then realized that the white portion did not necessarily need to be white in color - as long as the software could differentiate between two colors and trace the edges of each color, it would work. Thus, I changed the color of the white portions to be black, and simply cut out the design on white vinyl.
+However, the white part of the logo didn't show up in the image since the background was also white. I knew that in order to trace the outline of each part of the sticker in Silhouette Studio, the white portion would need to be visible. I then realized that the white portion did not necessarily need to be white in color - as long as the software could differentiate between two colors and trace the edges of each color, it would work. Thus, I changed the color of the white portions to be black, and simply cut out the design on white vinyl.
 
 <table>
     <tr>
@@ -60,3 +60,21 @@ I then imported each image into Silhouette Studio and traced it. The tracing (re
     </tr>
 </table>
 <br>
+
+After cutting each design out on its respectively colored vinyl, I arranged all the stickers together on a piece of transfer tape.
+
+<center>
+<img src="../../../pics/week3/transferTape.jpg" alt="Sticker on transfer tape" width="350"/>
+</center>
+
+I then peeled off the backs of the sticker and stuck it to the wall with the transfer tape still on.
+
+<center>
+<img src="../../../pics/week3/onWall.jpg" alt="Transfer tape on wall" width="350"/>
+</center>
+
+Finally, I took off the transfer tape and allowed the sticker to stay on the wall. Here's the final design!
+
+<center>
+<img src="../../../pics/week3/finalSticker.jpg" alt="Completed sticker on the wall" width="350"/>
+</center>

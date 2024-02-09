@@ -22,6 +22,7 @@ nav:
       - File Downloads: lessons/week2/downloads.md
     - "Week 3: Computer-Controlled Cutting":
       - Vinyl Cutting: lessons/week3/vinylCutting.md
+      - Group Project: lessons/week3/groupProject.md
 
 theme: readthedocs
 highlightjs: true
