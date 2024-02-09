@@ -1,6 +1,6 @@
 # 2D Modeling
 
-## Gimp
+## Gimp - Raster
 
 I tried out Gimp for 2D modeling. Gimp is a primarily raster-based program, but represents path structures in vector format. To test out Gimp, I decided to edit a picture of a parakeet!
 
@@ -34,6 +34,43 @@ After inserting the rainforest image into the background layer, I created the fo
 <img src="../../../pics/week2/parakeetsRainforest.jpg" alt="Final image with parakeets inside a rainforest" width="400"/>
 </center>
 
-## Conclusion
+### Conclusion
 
 Gimp appears to be a very powerful editing tool, especially considering that it is completely free. Although I do not have much experience in graphic design (evidently), Gimp was intuitively designed and easy to use. The GUI itself is a little overwhelming, and navigating and using tools correctly is a little complex, but it is pretty easy to get used to. I will definitely use Gimp in the future for designing and editing images.
+
+## Cuttle - Vector
+
+Cuttle is a vector-based design tool that can be used for both 3D and 2D design, although it isn't necessarily built for 3D. For my test run of Cuttle, I used <a href="https://www.youtube.com/watch?v=6RagVv6sxKU">**this tutorial**</a>. 
+
+I first designed a pentagon by using the Polygon tool.
+
+<center>
+<img src="../../../pics/week2/cuttlePentagon.jpg" alt="Pentagon" width="400"/>
+</center>
+
+I then created a rectangle which I duplicated on all 5 edges of the pentagon using the Rotational Repeat tool.
+
+<center>
+<img src="../../../pics/week2/withTabs.jpg" alt="Rectangles repeated" width="400"/>
+</center>
+
+I then created a group with the Rotational Repeat attribute. This means that anything I design under this group would automatically be repeated across the pentagon. I then added a bezier curve and some circles.
+
+<center>
+<table>
+    <tr>
+        <td><img src="../../../pics/week2/bezierCurve.jpg" alt="Bezier curve repeated" width="400"/></td>
+        <td><img src="../../../pics/week2/groupCircles.jpg" alt="Circle repeated" width="400"/></td>
+    </tr>
+</table>
+</center>
+
+After doing some additional modifications, this was my final design:
+
+<center>
+<img src="../../../pics/week2/design.jpg" alt="Final Design" width="400"/>
+</center>
+
+### Conclusion
+
+I think Cuttle was a pretty intuitive software to use. However, some of the tools operated in unexpected ways and there was often a convoluted process needed to make something work the way it should. Additionally, Cuttle only allows a maximum of 5 designs without upgrading to a paid account. Overall, Cuttle was pretty fun to work with but I have mixed feelings about using it in the future.

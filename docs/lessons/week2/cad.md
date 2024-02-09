@@ -57,7 +57,3 @@ The process for designing my box in OnShape was also similar to that of designin
 ## Conclusion
 
 Out of the three modeling softwares I chose to experiment with, I would only really choose to work with Fusion or OnShape. FreeCAD's convoluted UI and litany of errors made it near unusable for me. As much as Fusion and OnShape have operate similarly, my previous experience working with Fusion as opposed to being brand new to OnShape made the choice obvious. Additionally, the web-based nature of OnShape made it difficult to modify and save files on a local directory, something I believe will be important in later weeks. 
-
-## File Download
-
-My file designs can be downloaded [**here**](../../../files/week2/week2.zip).
