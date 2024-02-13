@@ -4,7 +4,6 @@ This week, we were challenged to laser cut a series of objects that could be use
 
 ## Designing
 
-#### Hexagon
 <table>
     <tr>
         <td><b>Parameter Name</b></td>
@@ -32,6 +31,7 @@ This week, we were challenged to laser cut a series of objects that could be use
     </tr>
 </table>
 
+#### Hexagon
 To start designing the hexagonal component, I created a polygon with six sides using the circumscribed polygon tool.
 
 <center>
@@ -100,5 +100,7 @@ I then mirrored the tab across the centerline of the connector.
 <center>
 <img src="../../../pics/week3/mirroredTab.jpg" alt="Connector with both tabs" width="500"/>
 </center>
+
+<br>
 
 ## Assembly
