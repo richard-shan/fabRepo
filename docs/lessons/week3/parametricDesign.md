@@ -104,3 +104,23 @@ I then mirrored the tab across the centerline of the connector.
 <br>
 
 ## Assembly
+
+I first exported the Fusion360 file as a DXF and opened it in CorelDraw. In CorelDraw, I duplicated my designs until I had 8 hexagons, 6 squares, and 24 connectors and sent it to Epilog Engraver. Unfortunately, I miscalculated and was 12 connectors short, so I had to cut another 12 connectors afterwards.
+
+<table>
+    <tr>
+        <td><img src="../../../pics/week3/corel.jpg" width="450"/></td>
+        <td><img src="../../../pics/week3/epilog.jpg" width="450"/></td>
+    </tr>
+</table>
+
+I then sent the design to the laser cutter and cut the cardboard.
+<center>
+<video muted width="500" height="300" controls><source src="../../../pics/week3/cuttingTimeLapse.mp4" type="video/mp4" /></video>
+</center>
+
+After pushing the pieces together, here is the final tetradecahedron.
+
+<center>
+<img src="../../../pics/week3/final.jpg" alt="Assembled tetradecahedron" width="500"/>
+</center>
