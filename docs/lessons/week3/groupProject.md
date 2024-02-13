@@ -8,4 +8,4 @@ The group's full documentation can be found on our <a href="https://fabacademy.o
 
 ## Individual Contribution
 
-For this group project, I was responsible for 
+For this group project, I was responsible for testing the laser cutter's kerf, testing the laser cutter's power/frequency/speed, designing the test cutouts, testing the laser cutter's focus, and overall documentation.

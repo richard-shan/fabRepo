@@ -19,10 +19,12 @@ nav:
       - 2D Modeling: lessons/week2/2DModeling.md
       - Gravity Sketch: lessons/week2/gravitysketch.md
       - Reflection: lessons/week2/reflection.md
-      - File Downloads: lessons/week2/downloads.md
+      - File Downloads: lessons/week2/week2Downloads.md
     - "Week 3: Computer-Controlled Cutting":
+      - Parametric Construction Kit: lessons/week3/parametricDesign.md
       - Vinyl Cutting: lessons/week3/vinylCutting.md
       - Group Project: lessons/week3/groupProject.md
+      - File Downloads: lessons/week3/week3Downloads.md
 
 theme: readthedocs
 highlightjs: true
