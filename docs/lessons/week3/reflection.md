@@ -1,0 +1,3 @@
+# Week 3 Reflection
+
+This week I used the vinyl and laser cutters to cut out a custom sticker and a construction kit. I also worked with a group to characterize the settings and capabilities of our laser cutter. Overall, this week was pretty interesting as it both challenged and built upon my previous experiences using the vinyl and laser cutters. I enjoyed creating designs for the construction kit and planning out how to test our laser cutter.
