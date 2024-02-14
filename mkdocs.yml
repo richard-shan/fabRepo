@@ -26,6 +26,8 @@ nav:
       - Group Project: lessons/week3/groupProject.md
       - Reflection: lessons/week3/reflection.md
       - File Downloads: lessons/week3/week3Downloads.md
+    - "Week 4: Electronics Design":
+      - File Downloads: lessons/week4/week4Downloads.md
 
 theme: readthedocs
 highlightjs: true

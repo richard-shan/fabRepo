@@ -1,4 +1,7 @@
-# Fab Academy - Richard Shan
+# Fab Academy 2024 - Richard Shan
+
+<br>
+<center>Welcome to my Fab Academy Documentation site!</center>
 
 <br>
 <center>

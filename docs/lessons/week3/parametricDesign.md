@@ -1,6 +1,6 @@
 # Parametric Construction Kit
 
-This week, we were challenged to laser cut a series of objects that could be used as a construction kit. I designed the kit in Fusion 360 where I could take advantage of parametric designing, defining and using variables to rapidly modify the model.
+This week, we were challenged to laser cut a series of objects that could be used as a construction kit. I designed the kit in Fusion 360 where I could take advantage of parametric designing, defining and using variables to rapidly modify the model. For this design, I was inspired by <a href="https://fabacademy.org/2020/labs/charlotte/students/elaine-liu/">**Elaine Liu's**</a> creation.
 
 ## Designing
 
