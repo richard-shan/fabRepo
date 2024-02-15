@@ -27,6 +27,7 @@ nav:
       - Reflection: lessons/week3/reflection.md
       - File Downloads: lessons/week3/week3Downloads.md
     - "Week 4: Electronics Design":
+      - Seeed Xiao RP2040: lessons/week4/rp2040.md
       - File Downloads: lessons/week4/week4Downloads.md
 
 theme: readthedocs
