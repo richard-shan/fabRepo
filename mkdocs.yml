@@ -1,4 +1,4 @@
-site_name: Richard Shan - Fab Academy
+site_name: Richard Shan - Fab Academy Documentation
 nav:
   - Home: index.md
   - About: about.md
@@ -27,7 +27,7 @@ nav:
       - Reflection: lessons/week3/reflection.md
       - File Downloads: lessons/week3/week3Downloads.md
     - "Week 4: Electronics Design":
-      - PCB Milling: lessons/week4/rp2040.md
+      - PCB Milling: lessons/week4/milling.md
       - Seeed Xiao RP2040: lessons/week4/rp2040.md
       - File Downloads: lessons/week4/week4Downloads.md
 
