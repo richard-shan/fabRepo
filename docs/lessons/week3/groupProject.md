@@ -1,4 +1,4 @@
-# Group Project
+# Week 3 Group Project
 
 ## Group Assignment
 

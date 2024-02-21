@@ -29,6 +29,8 @@ nav:
     - "Week 4: Electronics Design":
       - PCB Milling: lessons/week4/milling.md
       - Seeed Xiao RP2040: lessons/week4/rp2040.md
+      - Group Project: lessons/week4/groupProject.md
+      - Reflection: lessons/week4/reflection.md
       - File Downloads: lessons/week4/week4Downloads.md
 
 theme: readthedocs

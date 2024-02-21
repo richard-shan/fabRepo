@@ -1,3 +1,3 @@
 # Week 4 Reflection
 
-Overall, this week went pretty smoothly and wasn't very difficult. Although I hadn't used the milling machine much before, an engineering course that I was simultaneously enrolled in had covered milling a few weeks back and I was able to work from there. My board also worked on the first attempt and programming it was simple.
+Overall, this week went pretty smoothly and wasn't very difficult. Although I hadn't used the milling machine much before, an engineering course that I was simultaneously enrolled in had covered milling a few weeks back and I was able to work from there. The milling for my board succeeded on the first attempt, and the soldering process went smoothly. I learned how to use a few new soldering techniques, such as solder paste! The programming of the board was simple. I enjoyed the group project as it challenged me to adapt some of the techniques learned while making the board into testing the capabilities of our machines.
