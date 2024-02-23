@@ -6,22 +6,24 @@ As part of this week's assignment, I was challenged to create a custom circuit b
 
  - Apply double-sided adhesive to your material and the bed. Position and place the material on the bed.
  - Open Bantam Tools Software
- - Under home, select install tool
+ - Under home, select install tool, and select the bit that you are installing
  - Insert your tool into the spindle
      - Use the 2 wrenches by the milling machine and align them respectively to the top of the spindle area and by the middle bit area where their imprints are
      - Have you or a partner hold the bit itself while you unscrew it. This is to prevent the bit from dropping onto the bed and potentially breaking.
      - To loosen the bit, bring the 2 wrenches in towards each other
-     - **If using multiple bits, select them under File Setup. Start with the smallest tool and make your way to the largest.**
+     - **If using multiple bits, select them all under File Setup. Start with the smallest tool and make your way to the largest.**
  - Probe
      - Move the metal prong from the side of the bed to sit on top of it. Make sure that they touch so electricity can conduct.
-     - Click ```Z Only Stick Probing``` 
+     - Click ```Z Only Stick Probing``` and use the Jog menu to move the spindle above your material. 
+     - Once the spindle is positioned above your material, start the probing.
  - Under Material Setup, leave the ```Material Offset Z``` at 0.01mm
- - Change the ```Material Size``` to the dimensions of your material
+ - Change the ```Material Size``` to the dimensions of your material.
  - Import your file under File Setup
  - Choose the bit(s) you will be using
- - You can see the projection of the result on the right side of the screen. Use the ```Plan Offset``` setting to move the placement around.
+ - You can see the projection of the result on the right side of the screen. Use the ```Plan Offset``` x, y, and z setting to move the placement of the design around.
  - Ensure that you have the correct bit selected and inserted into the machine.
  - Run the job from the Summary/Run section. It is recommended to run the engraving job before the cutting job to ensure that your material does not move around.
+ - If you are using multiple bits, the machine will pause during the job and prompt you to change bits.
 
 ## Bantam Setup
 
