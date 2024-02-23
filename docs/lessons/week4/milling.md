@@ -17,11 +17,11 @@ As part of this week's assignment, I was challenged to create a custom circuit b
      - Click ```Z Only Stick Probing``` 
  - Under Material Setup, leave the ```Material Offset Z``` at 0.01mm
  - Change the ```Material Size``` to the dimensions of your material
- - Import your file undr File Setup
+ - Import your file under File Setup
  - Choose the bit(s) you will be using
  - You can see the projection of the result on the right side of the screen. Use the ```Plan Offset``` setting to move the placement around.
  - Ensure that you have the correct bit selected and inserted into the machine.
- - Run the job from the Summary/Run section.
+ - Run the job from the Summary/Run section. It is recommended to run the engraving job before the cutting job to ensure that your material does not move around.
 
 ## Bantam Setup
 
