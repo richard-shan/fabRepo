@@ -32,6 +32,10 @@ nav:
       - Group Project: lessons/week4/groupProject.md
       - Reflection: lessons/week4/reflection.md
       - File Downloads: lessons/week4/week4Downloads.md
+    - "Week 5: 3D Scanning and Printing":
+      - 3D Printing: lessons/week5/3DPrinting.md
+      - 3D Scanning: lessons/week5/3DScanning.md
+      - File Downloads: lessons/week5/week5Downloads.md
 
 theme: readthedocs
 highlightjs: true
