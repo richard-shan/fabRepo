@@ -1,0 +1,3 @@
+# Week 5 Reflection
+
+This week was the easiest week to date. I had significant experience working with 3D printers in our Lab before starting Fab Academy, and was very familiar with the process of designing and printing an object. The group project was very intriguing in that I had never before thought to stretch our printers to their limits. I also enjoyed learning how to scan an object using my phone camera, although I doubt I will actually use this for designing. Overall, I enjoyed the new perspectives on 3D printing that were taught this week.
