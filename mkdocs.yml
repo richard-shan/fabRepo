@@ -38,6 +38,10 @@ nav:
       - Group Project: lessons/week5/groupProject.md
       - Reflection: lessons/week5/reflection.md
       - File Downloads: lessons/week5/week5Downloads.md
+    - "Week 6: Embedded Programming":
+      - Microcontroller Based Control: lessons/week6/microcontrollerBasedControl.md
+      - Group Project: lessons/week6/groupProject.md
+      - File Downloads: lessons/week6/week6Downloads.md
 
 theme: readthedocs
 highlightjs: true
