@@ -1,7 +1,7 @@
 # Fab Academy 2024 - Richard Shan
-
+<head>
 <meta name="google-site-verification" content="kt0njS9WN0qjrBdbY-OjbpkLRGgOEVaErQzTXq8cDRo" />
-
+</head>
 <br>
 <center>Welcome to my Fab Academy Documentation site!</center>
 
