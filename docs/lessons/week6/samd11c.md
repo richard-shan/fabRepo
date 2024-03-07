@@ -130,4 +130,5 @@ The board is now ready for programming!
 
 ## Flashing Firmware 
 
-I first downloaded the <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/samdino.html">**latest Windows version**</a>
+I first downloaded the <a href="https://taradov.com/bin/edbg/61/edbg-windows-r61.exe">**latest Windows version**</a> of EDBG from the binary releases found <a href="https://taradov.com/bin/edbg/">**latest Windows version**</a>.
+
