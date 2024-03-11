@@ -2,7 +2,7 @@
 
 Our local instructor, Mr Dubick, required each student to program either one of the SAMD11C or the ATTINY412 chip with a low level, bare metal program. I decided to use the SAMD11C chip as that was the chip I worked with the most this week and was the most familiar with.
 
-During the many hours of my previous attempt at sending code <i> through </i> the RP2040, I had corresponded with <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres'**</a>. During our conversation, he directed me to a sample piece of code on the Fab Academy website that I could use to test the board.
+During the many hours of my previous attempt at sending code <i> through </i> the RP2040, I had corresponded with <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres**</a>. During our conversation, he directed me to a sample piece of code on the Fab Academy website that I could use to test the board.
 
 <pre><code class="language-cpp">// hello.D11C.blink.ino
 //
