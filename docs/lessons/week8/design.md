@@ -6,6 +6,8 @@ For this week, I was assigned the task to use an EDA tool to design a developmen
 
 To actually design the board, I had two main choices: Eagle or KiCAD. I ended up choosing KiCAD after doing some research online because it seemed that KiCAD was more popular among experts. Additionally, KiCAD is completely free and would allow me to continue designing PCBs, unlike Eagle which required a ongoing license.
 
+### Setup
+
 I first downloaded the installer for KiCAD <a href="https://www.kicad.org/download/windows/">**here**</a>. I then ran the installer to actually download KiCAD.
 
 <center>
@@ -31,6 +33,10 @@ I then repeated this process for the footprint library. To open the footprint li
 I named the footprint library "fab". I am able to use the same footprint library name as my symbol library without running into a duplicate variable name error as the two types of libraries are handled by separate and respective library managers. I then inputted the path to the fab.pretty folder inside my Fab library download. This folder contains a bunch of components and their individual \*.kicad_mod files. I chose "KiCAD" as the library format because I was using a \*.pretty folder which contained all the information for the footprints I was importing.
 
 After importing the libraries, I was ready to start designing.
+
+### Practice Board
+
+Before I designed the board that I would actually use, I went through the entire design process with a simple ATTiny412 LED board.
 
 To add a component in the schematic editor, I used the keyboard shortcut of ```a``` and searching for the name of the symbol. In this image, I am adding the symbol for the ATTiny412 chip by opening the ```Choose Symbol``` UI and searching for the ATTiny.
 
@@ -90,4 +96,53 @@ I then used the ```programs -> open program -> machines -> Othermill-Bantam Tool
 
 <center>
 <img src="../../../pics/week8/bantamRender.jpg" alt="Bantam Render" width="450"/>
+</center>
+
+### Board Design
+
+For the board that I would actually mill, I included a capacitor for the power ground, an LED power indicator, a programmable LED, a button, and some blank connector headers. Since this board design is similar to the practice board I made, I copied that design and made a few edits. Here is the schematic of the board.
+
+<center>
+<img src="../../../pics/week8/schem.jpg" alt="Schematic" width="450"/>
+</center>
+
+I then opened up the board in the PCB editor and created the routes. This was by far the longest process as I spent around an hour working through 3-4 different iterations of the board to create a working and decently compact routing.
+
+<center>
+<img src="../../../pics/week8/smallTracePCB.jpg" alt="PCB Schem 1" width="450"/>
+</center>
+
+I then sent the job to the milling machine and ran it.
+
+<center>
+<img src="../../../pics/week8/milledOldBoard.jpg" alt="PCB 1" width="450"/>
+</center>
+
+However, after I ran the job, I saw that the traces were incredibly thin and the clearance was as well. To fix this, I went back into KiCAD's PCB Editor and changed the trace size from 0.2mm to 0.5mm. Additionally, I changed the trace clearance in Bantam Tools from 0.15mm to 1.5mm.
+
+<center>
+<img src="../../../pics/week8/pcb.jpg" alt="PCB 2" width="450"/>
+</center>
+
+The render in Bantam looked good.
+
+<center>
+<img src="../../../pics/week8/pcbBantamRender.jpg" alt="PCB 2 Render" width="450"/>
+</center>
+
+I then cut the board. Although this job took longer, the traces look a lot better. However, I happened to choose a bad bit and as such, the edge cutout was a little rough but everything overall looks good.
+
+<center>
+<img src="../../../pics/week8/milledBoard.jpg" alt="PCB 2" width="450"/>
+</center>
+
+One of my connector headers had a bridge between two trace pads that I had to manually fix with a razor blade. After I manually separated the traces, the board is ready for soldering.
+
+<center>
+<table>
+    <tr>
+        <td><img src="../../../pics/week8/traceBridge.jpg" width="300"/></td>
+        <td><img src="../../../pics/week8/fixed.jpg" width="300"/></td>
+    </tr>
+</table>
 </center>
