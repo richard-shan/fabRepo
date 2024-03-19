@@ -106,7 +106,7 @@ For the board that I would actually mill, I included a capacitor for the power g
 <img src="../../../pics/week8/schem.jpg" alt="Schematic" width="450"/>
 </center>
 
-I then opened up the board in the PCB editor and created the routes. This was by far the longest process as I spent around an hour working through 3-4 different iterations of the board to create a working and decently compact routing.
+I then opened up the board in the PCB editor and created the routes. This was by far the longest process as I spent around an hour working through 3-4 different iterations of the board to create a working and decently compact routing. Thank you <a href="https://fabacademy.org/2024/labs/charlotte/students/collin-kanofsky/">**Collin Kanofsky**</a> for helping me with the traces.
 
 <center>
 <img src="../../../pics/week8/smallTracePCB.jpg" alt="PCB Schem 1" width="450"/>

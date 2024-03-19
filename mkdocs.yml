@@ -47,7 +47,8 @@ nav:
       - Reflection: lessons/week6/reflection.md
       - File Downloads: lessons/week6/week6Downloads.md
     - "Week 8: Electronics Design":
-      - Custom PCB Design: lessons/week8/design.md
+      - PCB Design & Production: lessons/week8/design.md
+      - PCB Soldering & Programming: lessons/week8/testing.md
 
 
 
