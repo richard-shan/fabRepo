@@ -1,0 +1,3 @@
+# Week 8 Reflection
+
+This week wasn't too bad. I was able to design my board over Spring Break and milled it as soon as I got to the lab. The only major issue I encountered was soldering on the ATTiny chip backwards, which I solved through use of a heat gun. Programming the board was really easy since the code was quite simple. The group project was pretty interesting as it was the first time I used an oscilloscope. I also learned about analog writing to pins where I could manually control power output.

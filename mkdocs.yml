@@ -51,7 +51,9 @@ nav:
       - PCB Production: lessons/week8/production.md
       - PCB Soldering: lessons/week8/soldering.md
       - PCB Programming: lessons/week8/programming.md
-
+      - Group Project: lessons/week8/groupProject.md
+      - Reflection: lessons/week8/reflection.md
+      - File Downloads: lessons/week8/week8Downloads.md
 
 
 theme: readthedocs
