@@ -2,7 +2,7 @@
 
 ## Soldering
 
-After I milled the board, I soldered on all of my components, using my KiCAD design to help guide me.
+After I milled the board, I soldered on all of my components, using my KiCAD design to help guide me. The soldering went pretty smoothly with the exception of the ATTiny412 chip, which I soldered backwards. This was fixed by pulling the chip up from the board with tweezers under a heat gun. I later realized that the small "dot" on the ATTiny chip had a corresponding indication on the schematic.
 
 <center>
 <img src="../../../pics/week8/pcb.jpg" alt="PCB 2" width="450"/>
@@ -40,3 +40,4 @@ I then plugged in both boards to power. The power indication LED turned on!
 <img src="../../../pics/week8/on.jpg" alt="Power indicator LED on" width="450"/>
 </center>
 
+Time to program.
