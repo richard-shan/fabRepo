@@ -56,6 +56,9 @@ nav:
       - File Downloads: lessons/week8/week8Downloads.md
     - "Week 9: Output Devices":
       - Servo Output Device: lessons/week9/servo.md
+      - Group Project: lessons/week9/groupProject.md
+      - Reflection: lessons/week9/reflection.md
+      - File Downloads: lessons/week9/week9Downloads.md
 
 theme: readthedocs
 highlightjs: true

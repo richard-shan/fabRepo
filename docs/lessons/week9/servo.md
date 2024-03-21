@@ -56,7 +56,7 @@ Here is my PCB design after routing the traces.
 I then exported the design as a GBR file and milled it. Here is my milled board with the ATTiny412 soldered on.
 
 <center>
-<img src="../../../pics/week9/blankishboard.jpg" alt="Blank board with ATTiny412 soldered on" width="500"/>
+<img src="../../../pics/week9/blankishBoard.jpg" alt="Blank board with ATTiny412 soldered on" width="500"/>
 </center>
 
 Here is the board after I soldered on the remaining capacitor, resistor, LED, and conn pin headers.
