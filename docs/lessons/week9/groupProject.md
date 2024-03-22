@@ -10,4 +10,4 @@ My full documentation for this project can be found <a href="https://fabacademy.
 
 ## Individual Contribution
 
-I was responsible for 
+I was responsible for designing and producing the PCB for the servo, measuring the voltage and current of the servo, researching how to find power consumption, and calculating the power consumption of the servo, along with documenting our work.
