@@ -99,3 +99,9 @@ Here is the servo turning, this time with no breadboard.
 <center>
 <video width="500" height="300" controls><source src="../../../pics/week9/on.mp4" type="video/mp4" /></video>
 </center>
+
+I then attached a component to the top of the servo gear so that in the video, its movement can be seen more explicitly.
+
+<center>
+<video width="500" height="300" controls><source src="../../../pics/week9/onWithTop.mp4" type="video/mp4" /></video>
+</center>
