@@ -1,4 +1,4 @@
-# Cutting
+# Cutting and Assembly
 
 Now that my file is ready, it's time to cut the board. After setting the board on the Shopbot's bed, I had to setup the software and machine.
 
@@ -101,4 +101,30 @@ After an instructor helped me look in-depth at my file, we discovered that a set
 
 <center>
 <img src="../../../pics/week7/cutout.jpg" alt="Cutout" width="400"/>
+</center>
+
+## Assembly
+
+I first removed the tabs with the tab remover tool.
+
+<center>
+<img src="../../../pics/week7/tabRemover.jpg" alt="Tab remover tool" width="400"/>
+</center>
+
+Here are all of my parts after taking them out of the board.
+
+<center>
+<img src="../../../pics/week7/parts.jpg" alt="Parts" width="350"/>
+</center>
+
+I then assembled all the parts together.
+
+<center>
+<img src="../../../pics/week7/assembled.jpg" alt="Assembled shelf" width="350"/>
+</center>
+
+Here is my shelf with some things on it.
+
+<center>
+<img src="../../../pics/week7/holding.jpg" alt="Shelf holding items" width="250"/>
 </center>
