@@ -46,6 +46,13 @@ nav:
       - Group Project: lessons/week6/groupProject.md
       - Reflection: lessons/week6/reflection.md
       - File Downloads: lessons/week6/week6Downloads.md
+    - "Week 7: Computer-Controlled Machining":
+      - Fusion: lessons/week7/fusion.md
+      - Aspire: lessons/week7/aspire.md
+      - Cutting: lessons/week7/cutting.md
+      - Group Project: lessons/week7/groupProject.md
+      - Reflection: lessons/week7/reflection.md
+      - File Downloads: lessons/week7/week6Downloads.md
     - "Week 8: Electronics Design":
       - PCB Design: lessons/week8/design.md
       - PCB Production: lessons/week8/production.md
