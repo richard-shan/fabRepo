@@ -7,9 +7,18 @@ Now that my file is ready, it's time to cut the board. After setting the board o
 1. Turn on the computer.
 2. Log in to the computer.
 3. Turn on the Shopbot.
-4. Hit the blue Reset button on the controller.
 
+<center>
+<img src="../../../pics/week7/key.jpg" alt="Key" width="350"/>
+</center>
+
+4. Hit the blue Reset button on the controller.
 5. Turn on the air compressor by turning the red switch clockwise (Beware loud noise).
+
+<center>
+<img src="../../../pics/week7/airCompressor.jpg" alt="Air compressor" width="350"/>
+</center>
+
 6. Open Shopbot software on the computer.
     - Confirm software is in Move/Cut mode NOT Preview
 7. Engage the spindle by turning the interlock key clockwise to “Engaged”.
@@ -25,7 +34,7 @@ Now that my file is ready, it's time to cut the board. After setting the board o
     - The spindle will finish and go to 0,24 on the table
     - Put the magnetic dust boot on the spindle.
     - Click OK
-9. Spindle will automatically return to the back of the board.
+9.  Spindle will automatically return to the back of the board.
 
 Before running the test cut, I used the brad gun to attach my wood board to the bed of the machine.
 
@@ -35,6 +44,9 @@ Before running the test cut, I used the brad gun to attach my wood board to the 
 
 The brad gun uses pressurized air and essentially nails the board to the bed to secure the material. After cutting, the brads are easily removable with a mallet or chisel so that you can get the material back off of the machine.
 
+<center>
+<img src="../../../pics/week7/setupBradCompress.jpg" alt="Brad air compressor" width="350"/>
+</center>
 
 ## Air Cut
 
@@ -45,7 +57,7 @@ The brad gun uses pressurized air and essentially nails the board to the bed to 
 
 ## Cutting
 
-Before cutting, ensure that the dust skirt is on, the vacuum is on, the vacuum tubes are open
+Before cutting, ensure that the dust skirt is on, the vacuum is on, and the vacuum tubes are open.
 
 1. Load the file
 2. Click enter and run the file
