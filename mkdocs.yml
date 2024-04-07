@@ -67,5 +67,5 @@ nav:
       - Reflection: lessons/week9/reflection.md
       - File Downloads: lessons/week9/week9Downloads.md
 
-theme: readthedocs
+theme: material
 highlightjs: true

@@ -1,6 +1,6 @@
 # Aspire Designing
 
-I first opened up the DXF file that I exported from Fusion in Aspire. Here is the 2D view of the file after I slightly moved the design away from the edges.
+I first opened up the DXF file that I exported from Fusion in Aspire. Here is the 2D view of the file after I slightly moved the design away from the edges, so that the actual cut would have some leeway on the board edges.
 
 <center>
 <img src="../../../pics/week7/twoDimensionalView.jpg" alt="2D view of design" width="350"/>
