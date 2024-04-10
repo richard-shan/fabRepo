@@ -2,75 +2,74 @@ site_name: Richard Shan - Fab Academy Documentation
 nav:
   - Home: index.md
   - About: about.md
-  - Documentation:
-    - "Pre-Fab":
-      - Pen Turning: lessons/prefab/pen.md
-      - LED Glasses: lessons/prefab/glasses.md
-      - TinyArcade: lessons/prefab/arcade.md
-      - 3 Leaf Gyroscope Spinner: lessons/prefab/spinner.md
-      - Cardboard Storage Box: lessons/prefab/box.md
-      - RP2040: lessons/prefab/rp2040.md
-    - "Week 1: Principles and Practices, Project Management":
-      - GitLab & MKDocs: lessons/week1/gitlab.md
-      - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
-      - Reflection: lessons/week1/reflection.md
-    - "Week 2: Computer-Aided Design":
-      - Exploring 3D CAD Programs: lessons/week2/cad.md
-      - 2D Modeling: lessons/week2/2DModeling.md
-      - Gravity Sketch: lessons/week2/gravitysketch.md
-      - Reflection: lessons/week2/reflection.md
-      - File Downloads: lessons/week2/week2Downloads.md
-    - "Week 3: Computer-Controlled Cutting":
-      - Parametric Construction Kit: lessons/week3/parametricDesign.md
-      - Vinyl Cutting: lessons/week3/vinylCutting.md
-      - Group Project: lessons/week3/groupProject.md
-      - Reflection: lessons/week3/reflection.md
-      - File Downloads: lessons/week3/week3Downloads.md
-    - "Week 4: Electronics Design":
-      - PCB Milling: lessons/week4/milling.md
-      - Seeed Xiao RP2040: lessons/week4/rp2040.md
-      - Group Project: lessons/week4/groupProject.md
-      - Reflection: lessons/week4/reflection.md
-      - File Downloads: lessons/week4/week4Downloads.md
-    - "Week 5: 3D Scanning and Printing":
-      - 3D Printing: lessons/week5/3DPrinting.md
-      - 3D Scanning: lessons/week5/3DScanning.md
-      - Group Project: lessons/week5/groupProject.md
-      - Reflection: lessons/week5/reflection.md
-      - File Downloads: lessons/week5/week5Downloads.md
-    - "Week 6: Embedded Programming":
-      - Microcontroller Based Control: lessons/week6/microcontrollerBasedControl.md
-      - SAMD11C Chip Programming: lessons/week6/samd11c.md
-      - Bare Metal Programming: lessons/week6/bareMetal.md
-      - ATTiny412 Programming: lessons/week6/attiny412.md
-      - Group Project: lessons/week6/groupProject.md
-      - Reflection: lessons/week6/reflection.md
-      - File Downloads: lessons/week6/week6Downloads.md
-    - "Week 7: Computer-Controlled Machining":
-      - Fusion: lessons/week7/fusion.md
-      - Aspire: lessons/week7/aspire.md
-      - Cutting and Assembly: lessons/week7/cutting.md
-      - Group Project: lessons/week7/groupProject.md
-      - Reflection: lessons/week7/reflection.md
-      - File Downloads: lessons/week7/week7Downloads.md
-    - "Week 8: Electronics Design":
-      - PCB Design: lessons/week8/design.md
-      - PCB Production: lessons/week8/production.md
-      - PCB Soldering: lessons/week8/soldering.md
-      - PCB Programming: lessons/week8/programming.md
-      - Group Project: lessons/week8/groupProject.md
-      - Reflection: lessons/week8/reflection.md
-      - File Downloads: lessons/week8/week8Downloads.md
-    - "Week 9: Output Devices":
-      - Servo Output Device: lessons/week9/servo.md
-      - Group Project: lessons/week9/groupProject.md
-      - Reflection: lessons/week9/reflection.md
-      - File Downloads: lessons/week9/week9Downloads.md
-    - "Week 10: Mechanical Design and Machine Design":
-      - Group Project: lessons/week10/groupProject.md
-      - Individual Contribution: lessons/week10/coding.md
-      - Reflection: lessons/week10/reflection.md
-      - File Downloads: lessons/week10/week10Downloads.md
+  - "Pre-Fab":
+    - Pen Turning: lessons/prefab/pen.md
+    - LED Glasses: lessons/prefab/glasses.md
+    - TinyArcade: lessons/prefab/arcade.md
+    - 3 Leaf Gyroscope Spinner: lessons/prefab/spinner.md
+    - Cardboard Storage Box: lessons/prefab/box.md
+    - RP2040: lessons/prefab/rp2040.md
+  - "Week 1: Principles and Practices, Project Management":
+    - GitLab & MKDocs: lessons/week1/gitlab.md
+    - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
+    - Reflection: lessons/week1/reflection.md
+  - "Week 2: Computer-Aided Design":
+    - Exploring 3D CAD Programs: lessons/week2/cad.md
+    - 2D Modeling: lessons/week2/2DModeling.md
+    - Gravity Sketch: lessons/week2/gravitysketch.md
+    - Reflection: lessons/week2/reflection.md
+    - File Downloads: lessons/week2/week2Downloads.md
+  - "Week 3: Computer-Controlled Cutting":
+    - Parametric Construction Kit: lessons/week3/parametricDesign.md
+    - Vinyl Cutting: lessons/week3/vinylCutting.md
+    - Group Project: lessons/week3/groupProject.md
+    - Reflection: lessons/week3/reflection.md
+    - File Downloads: lessons/week3/week3Downloads.md
+  - "Week 4: Electronics Design":
+    - PCB Milling: lessons/week4/milling.md
+    - Seeed Xiao RP2040: lessons/week4/rp2040.md
+    - Group Project: lessons/week4/groupProject.md
+    - Reflection: lessons/week4/reflection.md
+    - File Downloads: lessons/week4/week4Downloads.md
+  - "Week 5: 3D Scanning and Printing":
+    - 3D Printing: lessons/week5/3DPrinting.md
+    - 3D Scanning: lessons/week5/3DScanning.md
+    - Group Project: lessons/week5/groupProject.md
+    - Reflection: lessons/week5/reflection.md
+    - File Downloads: lessons/week5/week5Downloads.md
+  - "Week 6: Embedded Programming":
+    - Microcontroller Based Control: lessons/week6/microcontrollerBasedControl.md
+    - SAMD11C Chip Programming: lessons/week6/samd11c.md
+    - Bare Metal Programming: lessons/week6/bareMetal.md
+    - ATTiny412 Programming: lessons/week6/attiny412.md
+    - Group Project: lessons/week6/groupProject.md
+    - Reflection: lessons/week6/reflection.md
+    - File Downloads: lessons/week6/week6Downloads.md
+  - "Week 7: Computer-Controlled Machining":
+    - Fusion: lessons/week7/fusion.md
+    - Aspire: lessons/week7/aspire.md
+    - Cutting and Assembly: lessons/week7/cutting.md
+    - Group Project: lessons/week7/groupProject.md
+    - Reflection: lessons/week7/reflection.md
+    - File Downloads: lessons/week7/week7Downloads.md
+  - "Week 8: Electronics Design":
+    - PCB Design: lessons/week8/design.md
+    - PCB Production: lessons/week8/production.md
+    - PCB Soldering: lessons/week8/soldering.md
+    - PCB Programming: lessons/week8/programming.md
+    - Group Project: lessons/week8/groupProject.md
+    - Reflection: lessons/week8/reflection.md
+    - File Downloads: lessons/week8/week8Downloads.md
+  - "Week 9: Output Devices":
+    - Servo Output Device: lessons/week9/servo.md
+    - Group Project: lessons/week9/groupProject.md
+    - Reflection: lessons/week9/reflection.md
+    - File Downloads: lessons/week9/week9Downloads.md
+  - "Week 10: Mechanical Design and Machine Design":
+    - Group Project: lessons/week10/groupProject.md
+    - Individual Contribution: lessons/week10/coding.md
+    - Reflection: lessons/week10/reflection.md
+    - File Downloads: lessons/week10/week10Downloads.md
 
 theme: material
 highlightjs: true

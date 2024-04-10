@@ -1,0 +1,3 @@
+# Week 10 Reflection
+
+I actually really enjoyed this week. Splitting up the workload with my group allowed me to specifically focus on creating the program for our machine, which I enjoyed working on and learned how to apply new concepts and techniques such as integrating audio, working with USBs, working on a Raspberry Pi, connecting to WiFi, and serial communication, along with refreshing my knowledge on using APIs.
