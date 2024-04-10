@@ -66,6 +66,11 @@ nav:
       - Group Project: lessons/week9/groupProject.md
       - Reflection: lessons/week9/reflection.md
       - File Downloads: lessons/week9/week9Downloads.md
+    - "Week 10: Mechanical Design and Machine Design":
+      - Group Project: lessons/week10/groupProject.md
+      - Individual Contribution: lessons/week10/coding.md
+      - Reflection: lessons/week10/reflection.md
+      - File Downloads: lessons/week10/week10Downloads.md
 
 theme: material
 highlightjs: true
