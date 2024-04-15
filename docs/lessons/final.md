@@ -57,13 +57,13 @@ I made a list of the tasks I need to complete in the upcoming weeks for my final
  - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
  - ☐ develop Bluetooth communication between ESP32 and RPi
  - ☐ figure out how electromagnets work
- - ☐ find python library for OCR
- - ☐ either find python library for braille conversion or manually create dictionary
  - ☐ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
  - ☐ assemble the project
  - ☑ design a custom case
  - ☑ integrate with WiFi
  - ☑ test serial communication
+ - ☑ find Python OCR library (pytesseract)
+ - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
 
 ### Bill of Materials
 
@@ -74,3 +74,11 @@ I made a list of the tasks I need to complete in the upcoming weeks for my final
 Note: It seems absurd that the electromagnets are so expensive, I will be looking for cheaper alternatives.
 
 ### Schedule for Completion
+
+I created a Gantt chart to map out when I could finish tasks for my final.
+
+<center>
+<img src="../../pics/final/midterm/gantt.jpg" width="700"/>
+</center>
+
+As is shown in the chart, most of my remaining work can be during a week that corresponds with the task at hand. In the cases that don't, I plan to spend extra time completing those tasks during less intensive weeks.
