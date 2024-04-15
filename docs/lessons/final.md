@@ -7,7 +7,7 @@ My idea was to design a text to braille converter, which a blind person could us
 However, I talked to <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Stuart Christhilf**</a> who had thought of a similar mechanism for his initial final project. He originally planned to create a dynamic clock to display the time using blocks of wood that acould be pushed out or pulled back via servos. However, when building his project, he realized that fitting so many servos into such a small space was completely unfeasible and warned me from doing the same. My initial design is shown in the following image:
 
 <center>
-<img src="../../../pics/week1/initialDesign.jpg" alt="Initial design" width="450"/>
+<img src="../../pics/week1/initialDesign.jpg" alt="Initial design" width="450"/>
 </center>
 <br>
 
@@ -16,7 +16,7 @@ I then decided to use electromagnets for my pins, instead of a servo. The pins t
 I also decided to move the camera out of the box. That would allow for more simple wiring and internal organization of the box, and allow the operator to more easily use the device. Moving the camera out means that the user would only need to move a small camera container across the page of text, instead of dragging the entire device. Here is my modified design:
 
 <center>
-<img src="../../../pics/week1/modifiedDesign.jpg" alt="Modified design" width="700"/>
+<img src="../../pics/week1/modifiedDesign.jpg" alt="Modified design" width="700"/>
 </center>
 <br>
 
