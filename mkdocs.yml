@@ -68,10 +68,11 @@ nav:
       - Reflection: lessons/week9/reflection.md
       - File Downloads: lessons/week9/week9Downloads.md
     - "Week 10: Mechanical Design and Machine Design":
-      - Group Project: lessons/week10/groupProject.md
       - Individual Contribution: lessons/week10/coding.md
+      - Group Project: lessons/week10/groupProject.md
       - Reflection: lessons/week10/reflection.md
       - File Downloads: lessons/week10/week10Downloads.md
+    - "Week 11: Input Devices":
 
 theme: material
 highlightjs: true
