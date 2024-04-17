@@ -3,7 +3,7 @@ nav:
   - Home: index.md
   - About: about.md
   - Final Project: lessons/final.md
-  - "Lessons":
+  - "Documentation":
     - "Pre-Fab":
       - Pen Turning: lessons/prefab/pen.md
       - LED Glasses: lessons/prefab/glasses.md
