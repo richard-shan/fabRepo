@@ -73,6 +73,7 @@ nav:
       - Reflection: lessons/week10/reflection.md
       - File Downloads: lessons/week10/week10Downloads.md
     - "Week 11: Input Devices":
+      - Camera Facial Recognition: lessons/week11/cameraFRT.md
       - File Downloads: lessons/week11/week11Downloads.md
 
 theme: material
