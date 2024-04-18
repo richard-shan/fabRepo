@@ -26,7 +26,7 @@ After this, I selected the board under ```Tools -> Board```.
 <img src="../../../pics/week11/boardArduinoIDE.jpg" width="500"/>
 </center>
 
-After I connected to the board, I loaded the following program which would create a locally hosted web server that allows me to control the camera.
+After I connected to the board, I loaded the following program which would create a locally hosted web server that allows me to control the camera. The project template including all libraries and sub-classes can be found after installing and selecting the ESP32 Camera Board under ```File -> Examples -> ESP32 -> Camera -> CameraWebServer```.
 
 <pre><code class="language-cpp">#include "esp_camera.h"
 #include <WiFi.h>
