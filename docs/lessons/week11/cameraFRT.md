@@ -18,7 +18,7 @@ The ESP32 board also comes with built-in WiFi connectivity which allows for remo
 
 ## Programming
 
-I first installed <a href="https://github.com/espressif/arduino-esp32">**Espressif's ESP32 board library**</a>  in Arduino IDE. I also added the board (```https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json```) to Arduino IDE's Additional Boards Manager URLs menu under ```File -> Preferences -> Additional boards managers URLs```. 
+I first installed <a href="https://github.com/espressif/arduino-esp32">**Espressif's ESP32 board library**</a> in Arduino IDE. I also added the board (```https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json```) to Arduino IDE's Additional Boards Manager URLs menu under ```File -> Preferences -> Additional boards managers URLs```. 
 
 After this, I selected the board under ```Tools -> Board```.
 

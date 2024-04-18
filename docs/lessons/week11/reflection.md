@@ -1,0 +1,3 @@
+# Week 11 Reflection
+
+This week was both enjoyable and fun for me while also deepening my understanding of the ESP32 Camera Board that I will be using in my final project. I enjoyed experimenting with the internal programming of the ESP32 Camera's web server and working with facial recognition functions. Although facial recognition is not directly related to my final project, I still learned a lot about the camera and I feel ready to work with OCR. Additionally, FRT itself is very interesting and I will be experimenting with it as a side project as I continue forward.
