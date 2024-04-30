@@ -172,7 +172,6 @@ The logic for recognizing faces comes in a library and I was very hesitant to mo
 <details>
   <summary>
     app_httpd.cpp
-    <span class="icon"> (Click to expand)</span>
   </summary>
   <p><pre><code class="language-cpp">#include "esp_http_server.h"
     #include "esp_timer.h"
