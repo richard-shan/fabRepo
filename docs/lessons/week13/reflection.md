@@ -1,3 +1,3 @@
 # Week 13 Reflection
 
-vero, facile.
+This week was really productive for me, as it allowed me to make significant progress towards my final project. I enjoyed learning about topics such as IPv4/6 and HTTP during this week, along with tinkering with the localhost output capabilities of the ESP32CAM. During this week, I also formed a couple of ideas for improving my final project such as adding a physical snapshot button and potentially replacing the Raspberry Pi with a Pico.
