@@ -171,6 +171,9 @@ if __name__ == "__main__":
                                 on_error=on_error,
                                 on_close=on_close)
     ws.on_open = on_open
-    ws.run_forever()</code></pre>
+    ws.run_forever()
+</code></pre>
     
-    This program initiates a WebSocket connection from the running device to the ESP32CAM board, which is served on the local IP of 10.12.28.193 in my case. It then sends the "capture" message to the ESP which triggers the image capture. Upon receiving the image data back from the ESP32, it will save the file in the relative local root directory.
+This program initiates a WebSocket connection from the running device to the ESP32CAM board, which is served on the local IP of 10.12.28.193 in my case. It then sends the "capture" message to the ESP which triggers the image capture. Upon receiving the image data back from the ESP32, it will save the file in the relative local root directory.
+
+## Aggregate
