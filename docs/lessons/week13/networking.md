@@ -4,4 +4,6 @@ I decided to use this week's assignment to further develop my final project. I t
 
 ## ESP32CAM Board Program
 
-The following program is uploaded onto the ESP32 CAM Board through Arduino IDE. This program requires a lot of libraries and dependencies, which I individually downloaded from Github. The entire project folder including the code and libraries can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/week13Downloads/">**this week's file downloads**</a>.
+The following program is uploaded onto the ESP32 CAM Board through Arduino IDE. This program requires a lot of libraries and dependencies, which I individually downloaded from Github. The entire project folder including the code and libraries can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/week13Downloads/">**this week's file downloads**</a>. 
+
+<pre><code class="language-cpp">
