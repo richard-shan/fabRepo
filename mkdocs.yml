@@ -77,6 +77,10 @@ nav:
       - Group Project: lessons/week11/groupProject.md
       - Reflection: lessons/week11/reflection.md
       - File Downloads: lessons/week11/week11Downloads.md
+    - "Week 13: Networking and Communications":
+      - Camera Image Transmission: lessons/week13/networking.md
+      - Reflection: lessons/week13/reflection.md
+      - File Downloads: lessons/week13/week13Downloads.md
 
 theme: material
 highlightjs: true
