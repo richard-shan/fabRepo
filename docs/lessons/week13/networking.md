@@ -269,4 +269,10 @@ This is what my laptop directory looks like after running the Python program to 
 <img src="../../../pics/week13/laptopDir.jpg" width="750"/>
 </center>
 
+I then opened the image locally to verify that everything worked.
+
+<center>
+<img src="../../../pics/week13/received_image.jpg" width="500"/>
+</center>
+
 Because the entire process takes place wirelessly, there is no wired connection needed between the two devices. The ESP32CAM and Raspberry Pi just need to be powered on and connected to the same WiFi network.
