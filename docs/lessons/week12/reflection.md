@@ -1,3 +1,3 @@
 # Week 12 Reflection
 
-vero non facile.
+This week objectively wasn't too complex, but I didn't have the easiest time with it. The 3D printing was pretty standard and easy, but I had never resin printed before, and the resin printer broke immediately before I was scheduled to print and I had to go through resin tank refills before I could print. Additionally, our lab lacked some bits that I wanted to use for milling the wax, so I had to read up on how different bits and lengths interacted and modify my toolpaths accordingly. Despite some difficulty, this week was pretty enjoyable and I learned a lot of new processes.
