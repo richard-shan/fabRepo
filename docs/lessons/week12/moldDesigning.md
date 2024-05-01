@@ -24,7 +24,21 @@ I then uploaded and printed my file.
 
 ## Wax
 
-In a previous engineering class, I had designed a heart-shaped wax mold as detailed <a href="https://richard-shan.github.io/edm2/lessons/milling/">**here**</a>. However, this was my first time working with milling and I ended up selecting the wrong toolpath and inverting the actual design when I milled it. I also didn't know about the 
+In a previous engineering class, I had designed a heart-shaped wax mold as detailed <a href="https://richard-shan.github.io/edm2/lessons/milling/">**here**</a>. However, this was my first time working with milling and I ended up selecting the wrong toolpath and inverting the actual design when I milled it. I also didn't know about the simulate feature inside of Fusion.
+
+As such, my failed design looked like this:
+
+<center>
+<video width="350" height="300" controls><source src="../../../pics/week12/failedSimulation.mp4" type="video/mp4" /></video>
+</center>
+
+However, I now knew that I needed to use a 2D toolpath instead of a 3D adaptive clear to cut out the heart shape that I originally wanted. My toolpath looked good as it actually cut in the correct spot this time.
+
+<center>
+<img src="../../../pics/week12/heartMoldFusion.jpg" width="500"/>
+</center>
+
+
 
 ## Resin
 
