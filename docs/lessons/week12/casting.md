@@ -26,6 +26,34 @@ I then poured the Mold Star onto each of my molds.
 <img src="../../../pics/week12/allFilled.jpg" width="350"/>
 </center>
 
-After the Mold Star solidified, I took them out from the molds. Here are the casts.
+After the Mold Star solidified, I took them out from the molds. 
 
-IMAGE
+Here is the cast of the parakeet from the Prusa mold.
+
+<center>
+<img src="../../../pics/week12/prusaParakeet.jpg" width="350"/>
+</center>
+
+Because the wax I used for milling had imperfections, the heart cast had some bubbles along the edges.
+
+<center>
+<img src="../../../pics/week12/heartBubbles.jpg" width="350"/>
+</center>
+
+I used an exacto-knife to manually cut away the bubbles. Here is what the final heart mold looks like.
+
+<center>
+<img src="../../../pics/week12/heart.jpg" width="350"/>
+</center>
+
+My first cast on the resin mold didn't end up working because I mixed the Part A and Part B solutions inproperly. The cast ended up having bubbles in it and wasn't very solidified, even after settling overnight.
+
+<center>
+<img src="../../../pics/week12/failedResin.jpg" width="350"/>
+</center>
+
+I then re-cast the resin mold with a properly mixed solution. Here is the final parakeet from the resin mold.
+
+<center>
+<img src="../../../pics/week12/resinParakeet.jpg" width="350"/>
+</center>
