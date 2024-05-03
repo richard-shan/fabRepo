@@ -88,6 +88,8 @@ nav:
       - Group Project: lessons/week13/groupProject.md
       - Reflection: lessons/week13/reflection.md
       - File Downloads: lessons/week13/week13Downloads.md
+    - "Week 14: Interface and Application Programming":
+      - Web GUI: lessons/week14/interfacing.md
 
 theme: material
 highlightjs: true

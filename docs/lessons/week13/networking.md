@@ -259,7 +259,7 @@ When the query returns the image, it is saved in the same directory as the pytho
 LastWriteTime         Length 				Name
 ----                  -------------         ------ ----
 4/29/2024   8:59 AM                			Text-Recognition-ESP32-CAM
-4/29/2024   5:09 PM            933 			<b>ocrTest.py</b>
+4/29/2024   5:09 PM            933 			<b>getImage.py</b>
 4/29/2024   5:11 PM          72213 			<b><u>received_image.jpg</u></b>
 </code></pre>
 
