@@ -12,7 +12,7 @@ WebSocket connections are initiated through HTTP protocol, using an upgrade requ
 
 WebSocket, uses IP addresses to facilitate the initial connection before upgrading to the WebSocket protocol. Once the WebSocket connection is established, the IP addresses are used to maintain the connection over which data frames can be reliably transmitted back and forth.
 
-Once the WebSocket connection is established, data is transmitted in framed messages, where each frame consists of an opcode to indicate the type of data being transmitted (e.g., text, binary, continuation frame, or control frames like close, ping, or pong). This structure allows the WebSocket protocol to be extremely versatile and efficient in handling different types of data seamlessly. The frames are small and allow for very efficient data transmission.
+Once the WebSocket connection is established, data is transmitted in framed messages through backend data transmission ports, where each frame consists of an opcode to indicate the type of data being transmitted (e.g., text, binary, continuation frame, or control frames like close, ping, or pong). This structure allows the WebSocket protocol to be extremely versatile and efficient in handling different types of data seamlessly. The frames are small and allow for very efficient data transmission.
 
 ## ESP32CAM Board Programming
 
@@ -252,6 +252,12 @@ b'\x82\x7f\x00\x00\x00\x00\x00\x01\x1a\x15\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x
   </code></pre>
   </p>
 </details>
+
+The data snippet includes the sequence \xff\xd8\xff\xe0 at the beginning , which is the standard JPEG file signature indicating the start of a JPEG image file.
+
+Throughout the snippet, there are numerous byte sequences starting with \xff, followed by another byte. These are JPEG markers, which define the start of different segments within the JPEG file. For example, \xff\xc4 is a marker for defining the Huffman table.
+
+The bytes following the \xff\xc4 marker describe a Huffman table, which is used for the compression of the image data in JPEG files. The Huffman table is essential for decoding the JPEG image as it provides the codes used to compress the image data efficiently.
 
 When the query returns the image, it is saved in the same directory as the python executable is located. The binary data is then decoded locally on the recipient device and turned back into an image. The image is then saved.
 
