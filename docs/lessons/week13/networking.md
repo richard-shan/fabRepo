@@ -253,7 +253,7 @@ b'\x82\x7f\x00\x00\x00\x00\x00\x01\x1a\x15\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x
   </p>
 </details>
 
-When the query returns the image, it is saved in the same directory as the python executable is located.
+When the query returns the image, it is saved in the same directory as the python executable is located. The binary data is then decoded locally on the recipient device and turned back into an image. The image is then saved.
 
 <pre><code class="language-none">
 LastWriteTime         Length 				Name
