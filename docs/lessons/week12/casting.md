@@ -46,7 +46,7 @@ I used an exacto-knife to manually cut away the bubbles. Here is what the final 
 <img src="../../../pics/week12/heart.jpg" width="350"/>
 </center>
 
-My first cast on the resin mold didn't end up working because I mixed the Part A and Part B solutions inproperly. The cast ended up having bubbles in it and wasn't very solidified, even after settling overnight.
+My first cast on the resin mold didn't end up working because I mixed the Part A and Part B solutions improperly. The cast ended up having bubbles in it and wasn't very solidified, even after settling overnight.
 
 <center>
 <img src="../../../pics/week12/failedResin.jpg" width="350"/>
