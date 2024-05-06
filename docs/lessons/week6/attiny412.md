@@ -4,7 +4,8 @@ After I finished work with my SAMD11C board, I swapped my SAMD11C chip board wit
 
 I then modified Arduino IDE's example Blink code to use pin 4 as the output pin.
 
-<pre><code class="language-cpp">int LED = 4;
+```cpp
+int LED = 4;
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
@@ -17,7 +18,8 @@ void loop() {
   delay(1000);                       // wait for a second
   digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);                       // wait for a second
-}</code></pre>
+}
+```
 
 Here is a video of the board's LED blinking.
 

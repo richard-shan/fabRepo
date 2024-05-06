@@ -18,7 +18,8 @@ Once the WebSocket connection is established, data is transmitted in framed mess
 
 The following program is uploaded onto the ESP32 CAM Board through Arduino IDE. This program requires a lot of libraries and dependencies, which I individually downloaded from Github. The entire project folder including the code and libraries can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/week13Downloads/">**this week's file downloads**</a>. This program is based off of the CameraWebServer example program from ESP32.
 
-<pre><code class="language-cpp">#include "esp_camera.h"
+```cpp
+#include "esp_camera.h"
 #include "WiFi.h"
 #include "WebSocketsServer.h"
 
@@ -143,7 +144,8 @@ void onWebSocketEvent(uint8_t client_num, WStype_t type, uint8_t *payload, size_
 void setupLedFlash(int pin) {
   pinMode(pin, OUTPUT);
   digitalWrite(pin, LOW);
-}</code></pre>
+}
+```
 
 This program connects the ESP32CAM to a local WiFi network. It then sets up and initializes the camera, and sets up the local IP connection. It then continuously waits for a web socket connection. When a connection is created, it prints the IP address of the connecting device. If the device sends an input of "capture", the camera will take a picture and send it via the network web socket connection to the connecting Raspberry Pi.
 
@@ -151,7 +153,8 @@ This program connects the ESP32CAM to a local WiFi network. It then sets up and 
 
 This python program is ran on a computer, Raspberry Pi, or other similar device with storage and WiFi capabilities. This program acts as the trigger for the ESP32CAM to capture an image. Something interesting I noticed is that when running the standard CameraWebServer, there is a lot of lag and downtime with the camera. However, when querying for a single capture, there is low latency.
 
-<pre><code class="language-python">import websocket
+```py
+import websocket
 import time
 
 def on_message(ws, message):
@@ -184,8 +187,7 @@ if __name__ == "__main__":
                                 on_close=on_close)
     ws.on_open = on_open
     ws.run_forever()
-</code></pre>
-    
+```    
 This program initiates a WebSocket connection from the Raspberry Pi to the ESP32CAM board, which is served on the local IP of 10.12.28.193 in my case. It then sends the "capture" message to the ESP which triggers the image capture. Upon receiving the image data back from the ESP32, it will save the file in the relative local root directory.
 
 ## Aggregate

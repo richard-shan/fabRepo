@@ -19,7 +19,8 @@ To create a web-based locally hosted GUI to access the ESP32CAM, I need to do a 
 
 First, the ESP32CAM connects to a WiFi network.
 
-<pre><code class="language-cpp">const char* ssid = "REDACTED";
+```cpp
+const char* ssid = "REDACTED";
 const char* password = "REDACTED";
 
   WiFi.begin(ssid, password);
@@ -31,7 +32,7 @@ const char* password = "REDACTED";
 
   Serial.println("");
   Serial.println("WiFi connected");
-</code></pre>
+```
 
 This code connects the chip to the specified network and logs its success.
 
@@ -39,16 +40,18 @@ This code connects the chip to the specified network and logs its success.
 
 The IP address assignment is handled automatically by the DHCP server on the network once the WiFi connection is established. This job is done by the server and without any action on the ESP32CAM's part, meaning that there is no code for IP assignment. However, the assigned IP address is then logged with:
 
-<pre><code class="language-cpp">
+```cpp
 Serial.print("Camera Ready! Use 'http://");
 Serial.print(WiFi.localIP());
 Serial.println("' to connect");
-</code></pre>
+```
 
 ## Choose Port
 
 This code from app_httpd.cpp initializes the HTTP server configuration and starts the server on the default port.
 
-<pre><code class="language-cpp">httpd_config_t config = HTTPD_DEFAULT_CONFIG();</code></pre>
+```cpp
+httpd_config_t config = HTTPD_DEFAULT_CONFIG();
+```
 
 

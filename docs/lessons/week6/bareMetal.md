@@ -4,7 +4,8 @@ Our local instructor, Mr Dubick, required each student to program either one of 
 
 During the many hours of my previous attempt at sending code <i> through </i> the RP2040, I had corresponded with <a href="https://fabacademy.org/2020/labs/leon/students/adrian-torres/">**Adrian Torres**</a>. During our conversation, he directed me to a sample piece of code on the Fab Academy website that I could use to test the board.
 
-<pre><code class="language-cpp">// hello.D11C.blink.ino
+```cpp
+// hello.D11C.blink.ino
 //
 // SAMD11C LED blink hello-world
 //
@@ -30,15 +31,15 @@ void loop() {
    REG_PORT_OUT0 &= ~LED; // turn off LED
    delay(100); // delay
    }
-</code></pre>
-
+```
 However, I didn't really understand the code. After doing some research online, I realized that although the code worked, it still operated at a decently high level in its usage of the delay() function. I decided to try to code at an even lower level. I would find out that this sample code used a massive amount of memory when compared to lower level programs that do the same function.
 
 <pre><code class="language-none">Sketch uses <span style="color:red"><b>9760 bytes (79%)</b></span> of program storage space. Maximum is 12288 bytes.</code></pre>
 
 As I usually program in high level C-based programming languages, I had to do some research online before writing my own low level program (thanks Stack Overflow!). I came up with the following program, which I sent to many of my fellow students.
 
-<pre><code class="language-cpp">#define LED_PIN 5 // Sets the LED pin number to 5
+```cpp
+#define LED_PIN 5 // Sets the LED pin number to 5
 
 // Define base addresses and offsets as constants
 #define PORT_BASE 0x41004400UL
@@ -75,7 +76,8 @@ void delay() {
     for (volatile unsigned long i = 0; i < 2000000; i++) {
         // Does nothing but still functions as a delay
     }
-}</code></pre>
+}
+```
 
 Most of the code is explained in the comments, but I was especially interested in how to set the time of the delay. 2,000,000 was a suggested value to use for a 8MHz clock to delay a second. 8MHz means that the clock is running at 8 million cycles per second. Unfortunately, 2000000 is a rough measurement and each chip is a little bit different from any other chip. In the future, I would manually calibrate the chip's individual clock.
 
@@ -83,7 +85,8 @@ Most of the code is explained in the comments, but I was especially interested i
 
 After some more time optimizing, I managed to reduce the memory usage of the program by 12 bytes. This is the final program that I would end up using.
 
-<pre><code class="language-cpp">// Define the base memory address
+```cpp
+// Define the base memory address
 #define PORT_BASE 0x41004400
 
 // Define access to the Data Direction Set Register (DIRSET)
@@ -114,6 +117,7 @@ int main() {
   while (1) {
     loop();
   }
-}</code></pre>
+}
+```
 
 All 3 of these programs blink the Hello SAMD11C Board's LED which is located on Pin 5. This is done through toggling the power coming out of Pin 5. In addition to taking up less memory, programs 2 and 3 also upload to the chip faster than program 1. The main memory-saving difference between program 1 and program 3 is that program 1 uses the delay() function, while program 3 creates my own low-level way to wait for an amount of time.

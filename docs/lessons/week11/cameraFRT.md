@@ -28,7 +28,8 @@ After this, I selected the board under ```Tools -> Board```.
 
 After I connected to the board, I loaded the following program which would create a locally hosted web server that allows me to control the camera. The project template including all libraries and sub-classes can be found after installing and selecting the ESP32 Camera Board under ```File -> Examples -> ESP32 -> Camera -> CameraWebServer```.
 
-<pre><code class="language-cpp">#include "esp_camera.h"
+```cpp
+#include "esp_camera.h"
 #include <WiFi.h>
  
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM
@@ -140,7 +141,8 @@ void setup() {
 void loop() {
   // Do nothing. Everything is done in another task by the web server
   delay(10000);
-}</code></pre>
+}
+```
 
 While the entire project contains other library and control files, this program acts as the Command pattern. All files can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week11/week11Downloads/">**this week's file download**</a>.
 
@@ -1560,7 +1562,8 @@ The logic for recognizing faces comes in a library and I was very hesitant to mo
 
 The relevant section of the code that I modified is shown below:
 
-<pre><code class="language-cpp">static void draw_face_boxes(fb_data_t *fb, std::list<dl::detect::result_t> *results, int face_id)
+```cpp
+static void draw_face_boxes(fb_data_t *fb, std::list<dl::detect::result_t> *results, int face_id)
 {
     int x, y, w, h;
     uint32_t color = FACE_COLOR_YELLOW;
@@ -1605,10 +1608,12 @@ The relevant section of the code that I modified is shown below:
 #endif
     }
 }</code></pre>
+```
 
 I'm not exactly sure what this function does, but I do exactly what I need to edit. Because this function is called whenever a face is detected, I can simply add some of my own logic to print out a statement whenever a face is detected and then send power out on the ESP32 board's pin 2 to light up an LED.
 
-<pre><code class="language-cpp">static void draw_face_boxes(fb_data_t *fb, std::list<dl::detect::result_t> *results, int face_id)
+```cpp
+static void draw_face_boxes(fb_data_t *fb, std::list<dl::detect::result_t> *results, int face_id)
 {
 
     Serial.println("FACE DETECTED");
@@ -1659,14 +1664,17 @@ I'm not exactly sure what this function does, but I do exactly what I need to ed
         }
 #endif
     }
-}</code></pre>
+}
+```
 
 The following added code writes to the Serial monitor and powers on the LED connected to pin 2. 
-<pre><code class="language-cpp">Serial.println("FACE DETECTED");
+```cpp
+Serial.println("FACE DETECTED");
 
 digitalWrite(2, HIGH);  // turn the LED on (HIGH is the voltage level)
 delay(2500);                      // wait for a second
 digitalWrite(2, LOW);   // turn the LED off by making the voltage LOW</code></pre>
+```
 
 ## Hardware
 

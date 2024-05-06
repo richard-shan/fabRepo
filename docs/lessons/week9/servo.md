@@ -12,7 +12,8 @@ In this setup, I have connected the VCC and GND output pins of the Quentorres bo
 
 After doing some research on how servos worked, I came up with this code. This is a servo sweep program.
 
-<pre><code class="language-cpp">#include &ltServo.h&gt
+```cpp
+#include <Servo.h>
 
 Servo servo;
 
@@ -31,7 +32,8 @@ void loop() {
     servo.write(pos);              // tell servo to go to position in variable 'pos'
     delay(15);                       // waits 15ms for the servo to reach the position
   }
-}</code></pre>
+}
+```
 
 Here is a video of the servo working through the breadboard.
 
@@ -73,7 +75,8 @@ I then connected the board to the RP2040 board via the adapter I made <a href="h
 
 I then slightly modified the original breadboard program to use ATTiny412 pin 5, or Arduino pin 3.
 
-<pre><code class="language-cpp">#include &ltServo.h&gt
+```cpp
+#include <Servo.h>
 
 Servo servo;
 
@@ -92,7 +95,8 @@ void loop() {
     servo.write(pos);              // tell servo to go to position in variable 'pos'
     delay(15);                       // waits 15ms for the servo to reach the position
   }
-}</code></pre>
+}
+```
 
 Here is the servo turning, this time with no breadboard.
 

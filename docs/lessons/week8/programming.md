@@ -4,7 +4,7 @@ To test my board, I decided to write a simple blink program to blink the program
 
 ## Setup
 
-I first downloaded the <a href="https://github.com/SpenceKonde/megaTinyCore/tree/master/">**megaTinyCore library**</a> from Github and installed its boards via Arduino IDE's Boards Manager.
+I first downloaded the <a href="https://github.com/SpenceKonde/megaTinyCore/tree/master/">**megaTinyCore library**</a> from GitHub and installed its boards via Arduino IDE's Boards Manager.
 
 After I installed megaTinyCore, I configured my Arduino IDE settings to the following specifications in preparation for programming the ATTiny412.
 
@@ -37,7 +37,8 @@ After I installed megaTinyCore, I configured my Arduino IDE settings to the foll
 
 Since my programmable LED was coming out of pin 4 on the ATTiny412 chip, I originally wrote this program.
 
-<pre><code class="language-cpp">void setup() {
+```cpp
+void setup() {
   pinMode(4, OUTPUT);
 }
 
@@ -46,7 +47,8 @@ void loop() {
   delay(200);
   digitalWrite(4, LOW);
   delay(200);
-}</code></pre>
+}
+```
 
 The code uploaded successfully but the programmable LED still wasn't turning on. However, I realized that the pinout of the ATTiny did not correspond to the pinout when being programmed in the Arduino IDE. I used this image that I found online and realized that in order to program the pin 4 LED, I needed to change the digitalWrite pin to 2. I believe that if I were to write a more low-level program, it would work with specifying pin 4.
 
@@ -56,7 +58,8 @@ The code uploaded successfully but the programmable LED still wasn't turning on.
 
 After I changed the pin from 4 to 2, my code looked like this.
 
-<pre><code class="language-cpp">void setup() {
+```cpp
+void setup() {
   pinMode(2, OUTPUT);
 }
 
@@ -66,8 +69,7 @@ void loop() {
   digitalWrite(2, LOW);
   delay(200);
 }
-</code></pre>
-
+```
 I then uploaded the code to the chip.
 
 <pre><code class="language-none">Sketch uses 446 bytes (10%) of program storage space. Maximum is 4096 bytes.

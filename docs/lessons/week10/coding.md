@@ -53,7 +53,8 @@ I initially tried both an ESP32 and ESP8266 chip, but abandoned them due to issu
 
 My next (and more promising) chip was the Raspberry Pi Pico. I found a Pico with a built-in WiFi chip, which allowed me to connect to WiFi to query OpenAI. Using the Pico's TX/RX pins, I was also able to confirm serial communication with this chip. Additionally, using a Pi-family chip allowed me to easily integrate Python/MicroPython, which made querying OpenAI and Whisper APIs exponentially easier. The following code connects the Pico to WiFi, queries OpenAI, and sends the response to an Arduino having been connected through TX/RX pins.
 
-<pre><code class="language-python">import network
+```py
+import network
 import urequests
 import ujson
 import machine
@@ -100,7 +101,8 @@ def arduinoify(response):
     uart1.write(response)
 
 if __name__ == '__main__':
-    main()</code></pre>
+    main()
+```
 
 However, the Pico had a critical flaw in that I couldn't easily integrate any USB-based input device - namely, in this case, a USB microphone or USB keyboard. After doing some research online, I discovered that in order to use a keyboard, I either needed to switch from using MicroPython to CircuitPython (which still only may or may not work) or to buy an entirely new keyboard with PS/2 compatibility, neither of which were realistic solutions.
 
@@ -127,7 +129,8 @@ Now that I have decided on a chip and have a more clear idea of the entire syste
 
 As I had little prior experience in both Linux and working with microphone input devices, I developed the following handy program that allowed me to view all connected audio devices along with some of their specs.
 
-<pre><code class="language-python">import pyaudio
+```py
+import pyaudio
 
 audio = pyaudio.PyAudio()
 
@@ -145,7 +148,8 @@ print(f"Found {num_devices} device(s)\n")
 for i in range(0, num_devices):
     print_device_info(i)
 
-audio.terminate()</code></pre>
+audio.terminate()
+```
 
 As a demonstration, when ran on my computer, the above code yields the following output:
 
@@ -179,7 +183,8 @@ When running the diagnostic script on the Raspberry Pi, I learn that the USB mic
 
 Now that the device specifications are cleared up, the actual coding can begin. The following script records 10 seconds of audio and saves it to "output.wav".
 
-<pre><code class="language-python">import pyaudio
+```py
+import pyaudio
 import wave
 
 # Audio recording parameters
@@ -227,18 +232,21 @@ def record_audio():
             wf.setframerate(RATE)
             wf.writeframes(b''.join(frames))
     except Exception as e:
-        print(f"Error saving WAV file: {e}")</code></pre>
+        print(f"Error saving WAV file: {e}")
+```
 
 ### Audio to Text
 
-Converting audio to text is surprisingly easy, although the process can take upwards of 20 seconds for a short clip.
+Converting audio to text is surprisingly easy, although the API call process itself can take upwards of 20 seconds for a short clip.
 
-<pre><code class="language-python">import whisper
+```py
+import whisper
 
 def transcribe_audio(file_path):
     model = whisper.load_model("base")
     result = model.transcribe(file_path)
-    return result["text"]</code></pre>
+    return result["text"]
+```
 
 Side note: the code's implementation is set up so that every time the recording occurs, it overwrites the previous recording in the output.wav file. This means that there is no wasted storage on old audio clips, however, this could easily be tweaked if you are trying to implement this with saving.
 
@@ -246,7 +254,8 @@ Side note: the code's implementation is set up so that every time the recording 
 
 Now that we have extracted text from the short microphone audio clip, we can send that text to OpenAI's API to generate a response. The following function queries GPT3.5 with a parsed text prompt and returns the output of the query. This process is surprisingly fast.
 
-<pre><code class="language-python">from openai import OpenAI
+```py
+from openai import OpenAI
 
 def call_openai_api(prompt):
     client = OpenAI(api_key='REDACTED') 
@@ -258,17 +267,17 @@ def call_openai_api(prompt):
         ]
     )
     return completion.choices[0].message.content
-</code></pre>
-
+```
 ### Serial Connection
 
 This code snippet, in isolation, initializes a new serial connection. Since the Pi is wired straight to the Arduino's USB port, writing to the serial here is equivalent to typing something into the Arduino IDE's Serial Monitor. Obviously, the code is not used in isolation in the actual program.
 
-<pre><code class="language-python">from serial import Serial
+```py
+from serial import Serial
 
 ser = Serial('/dev/ttyUSB0', 115200, timeout = 1)
 ser.write(("Whatever you want to write").encode())
-</code></pre>
+```
 
 The ```lsusb``` builtin command on linux displays all connected USB devices. When unplugging the Arduino and rerunning ```lsusb```, I can see that the ttyUSB0 device has disappeared. Therefore, the Arduino is the tty0USB device.
 
@@ -278,7 +287,8 @@ The ```.encode()``` function is important because it turns the string into bytes
 
 To move the magnet based on each character in the text string, I first need to find physical positions of each character and map them to that character. This process took about 20 minutes to do, as it was just some manual labor.
 
-<pre><code class="language-python">alphabet_dict = {chr(65 + i): (0, 0) for i in range(26)}
+```py
+alphabet_dict = {chr(65 + i): (0, 0) for i in range(26)}
 
 alphabet_dict['A'] = (1, 20)
 alphabet_dict['B'] = (5, 25)
@@ -318,16 +328,18 @@ alphabet_dict['9'] = (48, 5)
 alphabet_dict['0'] = (53, 5)
 alphabet_dict['.'] = (24, 0)
 alphabet_dict[','] = (40, 0)
-alphabet_dict[' '] = (33, 13)</code></pre>
+alphabet_dict[' '] = (33, 13)
+```
 
 The dictionary maps the physical coordinate values of each letter on the actual engraved ouija board to the character in the text string. Now to actually move the magnet to the right location:
 
-<pre><code class="language-python">def move(letter):
+```py
+def move(letter):
     time.sleep(4)
     x, y = alphabet_dict[letter.upper()]
     ser.write(("g1x" + str(x) + "y" + str(y) + "f2000" + "\n").encode());
-    time.sleep(4)</code></pre>
-
+    time.sleep(4)
+```
 The command format for moving the gantries is shown in the ser.write command. For example, writing ```g1x40y25f500\n``` would move the magnet to (40, 25) at a frequency (speed) of 500.
 
 The newline character is important in actually sending the command across. Without it, this is analogous to typing something into the Arduino IDE's Serial Monitor and not clicking the enter button.
@@ -336,14 +348,16 @@ With the move function defined, a simple for each loop that iterates through the
 
 The delays are important so that the gantries actually have time to move. These values can be further optimized - increasing or decreasing them depending on how much time you want the magnet to stay on each letter for and how much leeway you want to give the machine.
 
-<pre><code class="language-python">for char in response:
-    move(char)</code></pre>
-
+```py
+for char in response:
+    move(char)
+```
 ## Aggregation
 
 To tie up all the individual parts:
 
-<pre><code class="language-python">import pyaudio
+```py
+import pyaudio
 import wave
 import time
 import whisper
@@ -480,6 +494,7 @@ def main():
         ser.write(("g1x0y0f500\n").encode());
    
 if __name__ == '__main__':
-    main()</code></pre>
+    main()
+```
 
 The only discrepancy between this code and the sum of each individual task is the ```g1x0y0f500``` command at the end, which brings the machine back to (0, 0). An interesting phenomenon occurs - that when the program ends, the machine will set its current point as (0, 0). As such, after the program finishes, it is hard coded to return to the true home point so it is ready for the next query.
