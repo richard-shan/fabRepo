@@ -1,5 +1,7 @@
 # Programming
 
+My full documentation for this project can be found <a href="https://fabacademy.org/2024/labs/charlotte/assignments/week10b/">**here**</a>. This page specifically details <i>all</i> of the software and programming used in our machine, which I was responsible for creating.
+
 I was responsible for the entirety of our group's programming and software development, along with working with (and deciding upon) the Raspberry Pi. I also for selected, set up, and configured the microphone, keyboard, mouse, and touchscreen. I was also responsible for all of our software debugging and assisted in debugging the motors.
 
 ## Planning
