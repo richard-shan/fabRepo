@@ -90,6 +90,9 @@ nav:
       - File Downloads: lessons/week13/week13Downloads.md
     - "Week 14: Interface and Application Programming":
       - Web GUI: lessons/week14/interfacing.md
+      - Group Project: lessons/week14/groupProject.md
+      - Reflection: lessons/week14/reflection.md
+      - File Downloads: lessons/week14/week14Downloads.md
 
 theme: material
 markdown_extensions:

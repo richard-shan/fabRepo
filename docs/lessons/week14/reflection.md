@@ -1,0 +1,3 @@
+# Week 14 Reflection
+
+I really enjoyed interfacing this week. I've always been interested in how local wireless networks function, and I got to learn about a lot of the intricacies of ports, servers, IPs, and the like which enabled me to have a deep understanding about how my graphical interface's HTML was served onto a local address. Additionally, Most of my previous programming experience was in languages like Java and C++, as opposed to more frontend-oriented languages such as HTML. This week allowed me to explore HTML to build graphical user interfaces. 
