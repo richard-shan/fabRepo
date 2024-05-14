@@ -273,7 +273,169 @@ The ESP32CAM is pointed towards a paper with the words "Hello World!". In the ri
 <video width="550" height="300" controls><source src="../../../pics/week15/pi.mp4" type="video/mp4" /></video>
 </center>
 
-## Raspberry Pi Pico (Failed)
+## Raspberry Pi Pico-W
+
+OCR works completely fine on a Raspberry Pi, but I wanted to try to perform it in a Pico. This is a lot more difficult as the Pico is far more low-level and is not an actual computer, unlike the Pi. Additionally, the Pico has very limited memory space and thus cannot even store an image. Finally, the Pico runs MicroPython which, while similar to Python, has a few key differences.
+
+I first adapted the code on the Pi to MicroPython and tried it out.
+
+```py
+import network
+import urequests
+import ujson
+import machine
+import time
+
+ssid = "REDACTED"
+password = "REDACTED"
+
+url = 'http://10.12.28.193/capture'
+
+def connect_to_wifi():
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+
+    while not wlan.isconnected():
+        pass
+    print('Connected to Wi-Fi')
+
+def main():
+    connect_to_wifi()
+    response = urequests.get(url)
+    image = response.content
+    status = response.status_code
+    print("done")
+    print(status)
+    
+if __name__ == '__main__':
+    main()
+    img_resp = urllib.request.urlopen(url)
+    imgnp = np.array(bytearray(img_resp.read()), dtype=np.uint8)
+    frame = cv2.imdecode(imgnp, -1)
+
+    text = pytesseract.image_to_string(frame, config='--psm 6')
+
+    print("Extracted Text:", text)
+    time.sleep(1)
+```
+
+Unfortunately, this immediately led to a bunch of errors, along with generally not working. Namely, tesseract and openCV don't support MicroPython, and the Pico's memory is so small that it cannot handle storing an image. I decided to first work on the memory problem, then figure out a method to perform OCR.
+
+Since the Pico can't handle processing the large image, I first created a custom handler on the ESP32CAM that would function similarly to the capture handler, but it would return a greyscale image that was only 20 by 20 pixels.
+
+```cpp
+static esp_err_t tiny_handler(httpd_req_t *req)
+{
+    camera_fb_t *fb = esp_camera_fb_get();
+    if (!fb) {
+        log_e("Camera capture failed");
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+
+    const int resize_width = 20;
+    const int resize_height = 20;
+
+    // Allocate memory for the small grayscale image
+    uint8_t *small_img = (uint8_t *)malloc(resize_width * resize_height);
+    if (!small_img) {
+        log_e("Failed to allocate memory for small image");
+        esp_camera_fb_return(fb);
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+
+    // Convert to grayscale and resize using simple nearest neighbor
+    for (int y = 0; y < resize_height; ++y) {
+        for (int x = 0; x < resize_width; ++x) {
+            int orig_x = x * fb->width / resize_width;
+            int orig_y = y * fb->height / resize_height;
+            uint8_t *p = fb->buf + (orig_y * fb->width + orig_x) * 2; // Assuming the format is RGB565
+
+            // Extract RGB components
+            uint16_t color = (*p << 8) | *(p + 1);
+            uint8_t r = (color >> 8) & 0xF8;
+            uint8_t g = (color >> 3) & 0xFC;
+            uint8_t b = (color << 3) & 0xF8;
+
+            // Convert RGB to grayscale
+            small_img[y * resize_width + x] = (r * 30 + g * 59 + b * 11) / 100; // Weights from the luminance calculation
+        }
+    }
+
+    esp_camera_fb_return(fb);
+
+    // Convert the grayscale image to JPEG
+    uint8_t *jpeg_buf = NULL;
+    size_t jpeg_len = 0;
+    bool converted = fmt2jpg(small_img, resize_width * resize_height, resize_width, resize_height, PIXFORMAT_GRAYSCALE, 90, &jpeg_buf, &jpeg_len);
+    free(small_img);
+
+    if (!converted) {
+        log_e("JPEG conversion failed");
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+
+    httpd_resp_set_type(req, "image/jpeg");
+    httpd_resp_set_hdr(req, "Content-Disposition", "inline; filename=small_capture.jpg");
+    httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
+
+    esp_err_t res = httpd_resp_send(req, (const char *)jpeg_buf, jpeg_len);
+    free(jpeg_buf); // Free JPEG buffer after sending
+
+    return res;
+}
+```
+
+The above handler allows the accessing of a smaller-sized black and white compressed image, which decreases the net size of the image. I modified the Pico code to now access the black and white image.
+
+```py
+import network
+import urequests
+import ujson
+import machine
+import time
+
+ssid = "REDACTED"
+password = "REDACTED"
+
+url = 'http://10.12.28.193/tiny'
+
+
+def connect_to_wifi():
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+
+    while not wlan.isconnected():
+        pass
+    print('Connected to Wi-Fi')
+
+def main():
+    connect_to_wifi()
+    response = urequests.get(url)
+    image = response.content
+    status = response.status_code
+    print("done")
+    print(status)
+
+if __name__ == '__main__':
+    main()
+    img_resp = urllib.request.urlopen(url)
+    imgnp = np.array(bytearray(img_resp.read()), dtype=np.uint8)
+    frame = cv2.imdecode(imgnp, -1)
+
+    text = pytesseract.image_to_string(frame, config='--psm 6')
+
+    print("Extracted Text:", text)
+    time.sleep(1)
+```
+
+Along with the library issues, the Pico still can't store the image despite its massively reduced size. In further testing, I even changed the ESP32 handler's pixel compression values to return a 5x5 pixel image, 2x2 pixel image, and even a 1x1 pixel image, and all of these attempts still resulted in the Pico failing to process and store the image.
+
+I next decided to send the data over to the Pico in chunks of 1024 bytes each, and incrementally write data.
 
 ## GPT-4o
 
