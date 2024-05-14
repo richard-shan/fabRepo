@@ -93,6 +93,8 @@ nav:
       - Group Project: lessons/week14/groupProject.md
       - Reflection: lessons/week14/reflection.md
       - File Downloads: lessons/week14/week14Downloads.md
+    - "Week 15: Wildcard Week":
+      - Computer Vision: lessons/week15/computerVision.md
 
 theme: material
 markdown_extensions:
