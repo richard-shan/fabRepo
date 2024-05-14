@@ -6,7 +6,7 @@ For wildcard week, I wanted to continue working towards my final project. Specif
 
 During <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/networking/">**Networking Week**</a>, I had already setup infrastructure to wirelessly transmit a command to capture an image from a Raspberry Pi to the ESP32CAM, along with sending the image data back over the network and saving it. I had created a WebSocket server to accept commands and then send the image data over HTTP back to the Raspberry Pi.
 
-This week, however, I realized that I could fetch the image without needing a WebSocket handler by connecting to the ESP32CAM's capture image handler directly. The capture handler sets up a port that allows a direct download to what is currently on the camera feed.
+This week, however, I realized that I could fetch the image without needing a WebSocket handler by connecting to the ESP32CAM's capture image handler directly. The capture handler from the default CameraWebServer example project sets up a port that allows a direct download to what is currently on the camera feed.
 
 ```cpp
 static esp_err_t capture_handler(httpd_req_t *req)
@@ -435,7 +435,95 @@ if __name__ == '__main__':
 
 Along with the library issues, the Pico still can't store the image despite its massively reduced size. In further testing, I even changed the ESP32 handler's pixel compression values to return a 5x5 pixel image, 2x2 pixel image, and even a 1x1 pixel image, and all of these attempts still resulted in the Pico failing to process and store the image.
 
-I next decided to send the data over to the Pico in chunks of 1024 bytes each, and incrementally write data.
+I next decided to send the data over to the Pico in chunks of 1024 bytes each, and incrementally write data. 
+
+```py
+import network
+import urequests
+import ujson
+import machine
+import time
+
+ssid = "REDACTED"
+password = "REDACTED"
+
+url = 'http://10.12.28.193/tiny'
+
+def connect_to_wifi():
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+
+    while not wlan.isconnected():
+        pass
+    print('Connected to Wi-Fi')
+
+def stream_image(url, chunk_size=1024):
+    connect_to_wifi()
+    
+    response = urequests.get(url, stream=True)
+    status = response.status_code
+    print(f"HTTP Status Code: {status}")
+    
+    if status == 200:
+        image = bytearray()
+        for chunk in response.iter_content(chunk_size):
+            image.extend(chunk)
+        print("Image streamed successfully")
+        return image
+    else:
+        print("Failed to retrieve the image")
+        return None
+
+connect_to_wifi()
+print(stream_image())
+```
+
+Unfortunately, this still didn't work. I thus concluded that the issue was inherent to the Pico itself and supposed that it physically couldn't store all of this data.
+
+After doing some research on how to solve this problem, I realized that I could use a microSD card to store information. After doing some research, I found that I could use SPI to directly write to the SD card via Pico pins, and I don't need any additional hardware.
+
+I first found a microSD to SD adapter and soldered on some male to male wire headers to each respective pin.
+
+<center>
+<img src="../../../pics/week15/solderedSD.jpg" width="500"/>
+</center>
+
+I then wrote a program to the Pico that would test connecting and writing to the SD card.
+
+```py
+import os
+import machine
+import sdcard
+import uos
+
+# Setup SPI bus
+spi = machine.SPI(0, baudrate=4000000, polarity=0, phase=0, sck=machine.Pin(18), mosi=machine.Pin(19), miso=machine.Pin(16))
+
+# Setup SD card
+sd = sdcard.SDCard(spi, machine.Pin(5))  # CS pin
+vfs = os.VfsFat(sd)
+uos.mount(vfs, '/sd')
+
+# Test writing to a file
+with open('/sd/test.txt', 'w') as f:
+    f.write('Hello, SD card!')
+
+# Test reading from a file
+with open('/sd/test.txt', 'r') as f:
+    print(f.read())
+
+# List files in the root of the SD card
+print('Files on SD card:', os.listdir('/sd'))
+```
+
+After I ran the program, I disconnected the SD card from the Pico and checked its contents on my computer. The program ran successfully and I had a test.txt file with the hello message inside!
+
+Now that I knew the SD card methodology worked, I created a PCB to adapt from microSD to SPI pinout with a spare SD card holder that I found in the lab.
+
+<center>
+<img src="../../../pics/week15/pcbSD.jpg" width="500"/>
+</center>
 
 ## GPT-4o
 
