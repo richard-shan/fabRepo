@@ -107,31 +107,31 @@ I decided to first model my design in Fusion360, as I had prior experience worki
 I first started off with a rectangular prism to act as the main body of the design.
 
 <center>
-<img src="../../../pics/week2/rectangularPrism.jpg" alt="Rectangular Prism Creation" width="700"/>
+<img src="../../pics/week2/rectangularPrism.jpg" alt="Rectangular Prism Creation" width="700"/>
 </center>
 
 Next, I filleted the box to round out the edges.
 
 <center>
-<img src="../../../pics/week2/fillet.jpg" alt="Fillet Creation" width="700"/>
+<img src="../../pics/week2/fillet.jpg" alt="Fillet Creation" width="700"/>
 </center>
 
 I then created a sketch on the top of the box, where I created six circles. These 6 circles represent the holes where I will put metal pins into that can pop up and down depending on what needs to be represented.
 
 <center>
-<img src="../../../pics/week2/holeSketch.jpg" alt="Sketching the circles" width="700"/>
+<img src="../../pics/week2/holeSketch.jpg" alt="Sketching the circles" width="700"/>
 </center>
 
 I extruded the circles downward as holes. This creates the actual space where the pins will be placed.
 
 <center>
-<img src="../../../pics/week2/holeExtrude.jpg" alt="Extruding the holes" width="500"/>
+<img src="../../pics/week2/holeExtrude.jpg" alt="Extruding the holes" width="500"/>
 </center>
 
 Finally, I used the pattern feature to repeat the sketch and extrusion across the top of the box. This created a total of 5 evenly spaced sets of 6 pins. With each set of 6 pins representing a single braille character, one iteration of pin setups can represent five letters.
 
 <center>
-<img src="../../../pics/week2/pattern.jpg" alt="Patterning the holes" width="700"/>
+<img src="../../pics/week2/pattern.jpg" alt="Patterning the holes" width="700"/>
 </center>
 
 ## PCB Production
@@ -543,11 +543,11 @@ In my case, since I want the model to scan an image to find the line of text for
 Here is a photo of my Raspberry Pi setup.
 
 <center>
-<img src="../../../pics/week15/setup.jpg" width="500"/>
+<img src="../../pics/week15/setup.jpg" width="500"/>
 </center>
 
 The ESP32CAM is pointed towards a paper with the words "Hello World!". In the right side of the picture, the Raspberry Pi which is running the code is visible along with the display. Upon running the program on the Pi's terminal, the ESP32CAM takes a picture and transmits it to the Pi, which then uses tesseract to perform OCR on it and prints out the extracted text.
 
 <center>
-<video width="550" height="300" controls><source src="../../../pics/week15/pi.mp4" type="video/mp4" /></video>
+<video width="550" height="300" controls><source src="../../pics/week15/pi.mp4" type="video/mp4" /></video>
 </center>
