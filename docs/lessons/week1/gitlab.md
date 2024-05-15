@@ -183,6 +183,52 @@ I decided not to use the Fab Student Template for setting up the week folders as
 
 <br>
 
+## Configuring YML File
+
+To setup the navigation menu and overall configuration of my site, I have to edit the mkdocs.yml file stored under the root directory of the site. This is what the file looks like:
+
+```yml
+site_name: Richard Shan - Fab Academy Documentation
+nav:
+  - Home: index.md
+  - About: about.md
+  - Final Project: lessons/final.md
+  - "Documentation":
+    - "Pre-Fab":
+      - Pen Turning: lessons/prefab/pen.md
+      - LED Glasses: lessons/prefab/glasses.md
+      - TinyArcade: lessons/prefab/arcade.md
+      - 3 Leaf Gyroscope Spinner: lessons/prefab/spinner.md
+      - Cardboard Storage Box: lessons/prefab/box.md
+      - RP2040: lessons/prefab/rp2040.md
+    - "Week 1: Principles and Practices, Project Management":
+      - GitLab & MKDocs: lessons/week1/gitlab.md
+      - Final Project Brainstorming: lessons/week1/finalBrainstorming.md
+      - Reflection: lessons/week1/reflection.md
+
+[...]
+
+theme: material
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+```
+
+The site_name definition is what web browsers will recognize the site as. This means that search engines like Google will index my site as "Richard Shan - Fab Academy Documentation" and the name of the site in the web browser will also be "Richard Shan - Fab Academy Documentation".
+
+The Home, About, and Final Project links are defined under the navigation menu and link to their respective pages. On the left-hand side browser, those three buttons can be found at the top of the weeks list and each direct to a markdown file displayed in the browser.
+
+I next define the Documentation dropdown tab. Under it, each of my weeks are visible where individual pages of documentation can be accessed. I link the documentation by creating a page name that will be displayed on the site to the relative path of the actual .md file.
+
+I then choose a theme for my webpage. I originally used readthedocs theme, but I chose to switch to Material since it was easier on the eyes. The material theme shapes parts of the actual webpage - items such as the blue bar at the top and the design of the left-hand week selector.
+
+I then configured my extensions. These are add-ons to mkdocs that provide additional features and functionality. The plugs I added so far allow me to create code blocks that have custom colors and highlighting on the keywords for the selected language. This was an important feature for me because readthedocs theme had built-in code highlighting, which I didn't want to lose out on when switching to Material. 
+
 ## Git Push File Size Limit
 
 I had documented my PreFab work via MkDocs, and I now wanted to add it to my Fab site. However, I wasn't aware of the file size limit when documenting for PreFab and thus had many large files. I went through and used online video/image compressors to compress the files into a smaller size. Even after compressing and when only trying to push a few megabytes of data, I would sometimes still run into the following error:

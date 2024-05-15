@@ -7,3 +7,4 @@ My full documentation for this project can be found <a href="https://fabacademy.
 
 ## Individual Contribution
 
+I was responsible for configuring the ESP32CAM, researching the transistor, designing and milling the board, writing the communication program, and documenting our work.
