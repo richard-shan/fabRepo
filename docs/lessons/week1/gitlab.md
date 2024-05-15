@@ -2,6 +2,10 @@
 
 ## Git and Python
 
+Git is a version control system designed to track changes in code. Git supports branching, merging, and committing changes and working on the same project with different people from multiple machines. GitLab builds upon Git to add a web interface for repository management, automated pipelines, and tools for collaboration and project tracking.
+
+For documentation purposes, my GitLab repository will hold all of my documentation pages, file downloads, and images/videos. The FabCloud GitLab is a custom instance of GitLab that Fab Academy uses, and is custom built to facilitate integration with hosting documentation sites.
+
 Due to prior coding experience, I already had both <a href="https://git-scm.com/downloads">**Git**</a> and <a href="https://www.python.org/downloads/">**Python**</a> installed on my computer. I had installed <a href="https://www.mkdocs.org/">**MkDocs**</a> a few months prior for documenting some of my coding projects.
 
 However, when I was helping some of my friends, I noticed a few common errors:
@@ -20,6 +24,10 @@ However, when I was helping some of my friends, I noticed a few common errors:
     - If the repository doesn't exist or you haven't created it yet, run ```git clone git-repo-url```.
 
 ## SSH Key Setup
+
+An SSH key consists of a private key, which is kept secret and secure by the user, and a public key, which can be shared with others. The keys are used in <b>S</b>ecure <b>SH</b>ell protocol to authenticate a connection between my local computer and the remote Git repository.
+
+When Git pushes changes to a remote repository, it needs to be authenticated to ensure that only someone who is supposed to be allowed to push is able to push. An SSH key pair functions as an alternative to entering my Git username and password every time I need to push.
 
 To generate my SSH key, I followed the following steps. I used Windows Powershell as my terminal of choice, though others such as CMD and Git Bash would have achieved the same function.
 
@@ -183,6 +191,8 @@ I decided not to use the Fab Student Template for setting up the week folders as
 
 <br>
 
+For my documentation, I decided to go with an HTML-heavy approach. As such, all of my videos and images are in HTML code as opposed to using markdown. I chose to use HTML not only because I had prior experience with it, but also because HTML offers far more features compared to markdown such as built-in centering functions. In order to take advantage of those features and ensure seamless interoperability, I decided to go with a full out HTML approach so that HTML tags and markdown syntax wouldn't interfere with each other.
+
 ## Configuring YML File
 
 To setup the navigation menu and overall configuration of my site, I have to edit the mkdocs.yml file stored under the root directory of the site. This is what the file looks like:
@@ -264,6 +274,12 @@ Compressing objects: 100% (29/29), done.
 Writing objects: 100% (29/29), 9.65 MiB | 1.68 MiB/s, done. [...]
 PS C:\fab\richard-shan>
 </code></pre>
+
+The git add --all command tells git to start keeping track of all files in the directory. This means that any changes to existing files or creating new files will all be tracked by git.
+
+The git commit -m "message" command creates a save state of the repository at the time of committing. The message allows for a quick description of what changes were made in this commit version.
+
+The git push command pushes the repository from the local device to the Git repo in the cloud. This updates the actual documentation webpage which is not hosted locally on my computer.
 
 ## References
 
