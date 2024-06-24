@@ -103,6 +103,8 @@ I then mirrored the tab across the centerline of the connector.
 
 <br>
 
+For this week, I forgot to factor in the kerf of the machine into the design. Luckily, the kerf of the laser cutter was small enough that it didn't noticeably affect the end result at all. However, in future designs, I will make sure to account for the kerf. This means that I will adjust my parameters for specific values that are vulnerable to being affected by kerf, such as the materialThickness (because the kerf means that the end result cut could have less tolerance for the actual cardboard than previous planned), and the connectorLength and connectorWidth values (to correct for kerf and ensure that the connector pieces are the dimensions that I actually intended to design them to be).
+
 ## Assembly
 
 I first exported the Fusion360 file as a DXF and opened it in CorelDraw. In CorelDraw, I duplicated my designs until I had 8 hexagons, 6 squares, and 24 connectors and sent it to Epilog Engraver. Unfortunately, I miscalculated and was 12 connectors short, so I had to cut another 12 connectors afterwards.
@@ -114,7 +116,8 @@ I first exported the Fusion360 file as a DXF and opened it in CorelDraw. In Core
     </tr>
 </table>
 
-I then sent the design to the laser cutter and cut the cardboard.
+I then sent the design to the laser cutter and cut the cardboard. I used our lab's default configuration for cutting cardboard. I selected cardboard as my cutting material and loaded the default settings of 100% power, 40% speed, and 10% frequency.
+
 <center>
 <video muted width="500" height="300" controls><source src="../../../pics/week3/cuttingTimeLapse.mp4" type="video/mp4" /></video>
 </center>
