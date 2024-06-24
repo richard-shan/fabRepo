@@ -97,6 +97,8 @@ nav:
       - Computer Vision: lessons/week15/computerVision.md
       - Reflection: lessons/week15/reflection.md
       - File Downloads: lessons/week15/week15Downloads.md
+    - "Week 16: Applications and Implications":
+      - Applications and Implications: lessons/week16/applications.md
 
 theme: material
 markdown_extensions:
