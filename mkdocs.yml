@@ -99,6 +99,8 @@ nav:
       - File Downloads: lessons/week15/week15Downloads.md
     - "Week 16: Applications and Implications":
       - Applications and Implications: lessons/week16/applications.md
+    - "Week 18: Invention, Intellectual Property and Income":
+      - Invention, Intellectual Property and Income: lessons/week18/ip.md
 
 theme: material
 markdown_extensions:

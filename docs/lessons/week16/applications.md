@@ -1,4 +1,4 @@
-# Final Project
+# Applications and Implications
 
 ## Overview
 
