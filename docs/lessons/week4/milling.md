@@ -27,7 +27,7 @@ As part of this week's assignment, I was challenged to create a custom circuit b
 
 ## Bantam Setup
 
-Before milling the board, the settings had to be configured in Bantam. For this board specifically, the Material Offset Z was 0.01mm and the GCODE was 88mm by 30mm by 8mm. 
+Before milling the board, the settings had to be configured in Bantam Tools Software. For this board specifically, the Material Offset Z was 0.01mm and the total job dimensions were 88mm by 30mm by 8mm. 
 
 <center>
 <img src="../../../pics/week4/settingUpBantam.jpg" alt="Bantam config" width="500"/>
@@ -38,6 +38,8 @@ As we were preparing the 1/16" bit, <a href="https://fabacademy.org/2023/labs/ch
 <center>
 <img src="../../../pics/week4/depthChange.jpg" alt="Custom tool selected" width="350"/>
 </center>
+
+To attach the copper to the bed and ensure that it would not move during the milling process, I adhered some double sided Nitto tape to the board, which firmly stuck it in place on the bed.
 
 Because we used three different bit sizes for this job (1/16", 1/32", 1/64"), Bantam Software automatically segmented the job into separate sub-jobs for each drill bit thickness. As such, during the milling process the machine would pause after finishing one bit's job and prompt the user to change the bit.
 
