@@ -175,7 +175,7 @@ Next, I extruded a small hole as a slot for the wires on the external battery pa
 Finally, I added fillets. Here is the final box design.
 
 <center>
-<img src="../../pics/final/braillebox/bbbatterywireslot.jpg" width="500"/>
+<img src="../../pics/final/braillebox/bbfillets.jpg" width="500"/>
 </center>
 
 ## PCB Production
