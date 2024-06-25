@@ -1,13 +1,19 @@
 # Final Project
 
-## Brainstorming
+## Overview
 
-My idea was to design a text to braille converter, which a blind person could use by moving the device over a page of text to convert it into braille. The braille translation of the english text would then be represented via a series of up/down pins which the user could use to interpret the information. The device was to be a rectangular box that would use an internal camera to interpret and OCR text, which could then be translated into braille and displayed via a series of servo motors pushing up metal rods on the top of the box. The pins would be in groups of six, each group representing a single braille character.
+I want to create a 3x2 solenoid array that can display braille characters by pushing solenoids up and down to create dots. This solenoid array will be connected to a Raspberry Pi, which in turn will be connected to an ESP32CAM. The camera will take a picture of a page of text, then perform OCR (optical character recognition) to extract a string of text from the image. That string of text will be converted to braille, which will be displayed on the solenoid array by flashing each character for 1 second at a time. This device will essentially allow for live-time conversion of any text into braille, which I hope will increase accessibility to books and the like.
+
+## Brainstorming Process
+
+### Initial Thoughts
+
+My idea was to design a text to braille converter, which a blind person could use by moving the device over a page of text to convert it into braille. The braille translation of the English text would then be represented via a series of up/down pins which the user could use to interpret the information. The device was to be a rectangular box that would use an internal camera to interpret and OCR text, which could then be translated into braille and displayed via a series of servo motors pushing up metal rods on the top of the box. The pins would be in groups of six, each group representing a single braille character.
 
 However, I talked to <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Stuart Christhilf**</a> who had thought of a similar mechanism for his initial final project. He originally planned to create a dynamic clock to display the time using blocks of wood that acould be pushed out or pulled back via servos. However, when building his project, he realized that fitting so many servos into such a small space was completely unfeasible and warned me from doing the same. My initial design is shown in the following image:
 
 <center>
-<img src="../../pics/week1/initialDesign.jpg" alt="Initial design" width="450"/>
+<img src="../../../pics/week1/initialDesign.jpg" alt="Initial design" width="450"/>
 </center>
 <br>
 
@@ -16,91 +22,36 @@ I then decided to use electromagnets for my pins, instead of a servo. The pins t
 I also decided to move the camera out of the box. That would allow for more simple wiring and internal organization of the box, and allow the operator to more easily use the device. Moving the camera out means that the user would only need to move a small camera container across the page of text, instead of dragging the entire device. Here is my modified design:
 
 <center>
-<img src="../../pics/week1/modifiedDesign.jpg" alt="Modified design" width="700"/>
+<img src="../../../pics/week1/modifiedDesign.jpg" alt="Modified design" width="700"/>
 </center>
 <br>
 
-I then mapped out relevant weeks of Fab Academy:
-
- - Week 2: CAD - Designing the 3D printed structure
- - Week 4: Embedded Programming - Programming microcontrollers
- - Week 5: 3D Printing - Printing custom components
- - Week 6: Electronics - PCB design
- - Week 7: CNC - Creating a magnet, board making, internal wiring organization
- - Week 8: Electronics Production - Hooking up microcontrollers with magnets
- - Week 9: Output Devices - Board work
- - Week 11: Input Devices - Camera OCR work and hooking up to microcontroller
- - Week 12: Molding - Alternate option to mold the box
- - Week 13: Networking - Use a online libary/package for braille conversion
- - Week 14: Interfacing - Use Processing to flesh out the internal connections
- - Week 15: Wildcard - Electromagnets experimentation
-
-## Midterm Review
-
 ### Significant Changes
 
-Although a large part of my project remains the same, I've learned a lot over the past 10 weeks and have changed some aspects of my project. Namely, I've decided to use a Raspberry Pi as a central controller and connect it to 5 separate ATTiny412 chips, which will each be responsible for controlling 6 electromagnets to represent 1 braille character. Each ATTiny412 and 6 electromagnet setup will be on its own PCB, and receive data from the controlling Raspberry Pi. Additionally, I decided to create an elevated case for the ESP32 camera so that the image would have a better angle and thus an easier time being processed for OCR, and so that more light could come into the camera lens from the unobstructed sides. Lastly, I decided I wanted to wirelessly transmit data from the ESP32 camera to the Raspberry Pi for processing. I worked with both serial communication and WiFi connectivity in previous weeks so I hope to sum it all together and wirelessly transmit data between these two controllers.
-
-### System Diagram
+Although a large part of my project remains the same, I've changed some aspects of my project. Namely, I've decided to use a Raspberry Pi as a central controller and connect it to 5 separate ATTiny412 chips, which will each be responsible for controlling 6 electromagnets to represent 1 braille character. Each ATTiny412 and 6 electromagnet setup will be on its own PCB, and receive data from the controlling Raspberry Pi. Additionally, I decided to create an elevated case for the ESP32 camera so that the image would have a better angle and thus an easier time being processed for OCR, and so that more light could come into the camera lens from the unobstructed sides. Lastly, I decided I wanted to wirelessly transmit data from the ESP32 camera to the Raspberry Pi for processing. I worked with both serial communication and WiFi connectivity in previous weeks so I hope to sum it all together and wirelessly transmit data between these two controllers.
 
 Here is an updated system diagram which maps out all the parts of my project.
 
 <center>
-<img src="../../pics/final/midterm/systemDiagram.jpg" width="700"/>
+<img src="../../../pics/final/midterm/systemDiagram.jpg" width="700"/>
 </center>
 
-### Tasks
+### Feasibility
 
-I made a list of the tasks I need to complete in the upcoming weeks for my final project.
+However, after doing research, I realized that having 30 solenoids would be unfeasible. Instead, I decided to scale my project down to just having 6 solenoids, as this would still accomplish the mission of displaying braille for a reader. I would then flash each braille character for 1 second on the 6 solenoid array. This change allows me to worry less about power budget and ensures that I have a ready final project on my presentation date.
 
- - ☐ design and print a PCB for each set of electromagnets
- - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
- - ☐ develop Bluetooth communication between ESP32 and RPi
- - ☐ figure out how electromagnets work
- - ☐ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
- - ☐ assemble the project
- - ☑ design a custom case
- - ☑ integrate with WiFi
- - ☑ test serial communication
- - ☑ find Python OCR library (pytesseract)
- - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
-
-### Bill of Materials
+## Bill of Materials
 
 <div style="text-align: center"> 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlIJdCFYQU6-XJm1FrXhk5twaGxpRf5jiNvo1Z9Wf0MkVefTB23N4_w5QmfgFJcqXeWUzttINugkhU/pubhtml?widget=true&amp;chrome=false&amp;headers=false" frameborder="0" width="250%" height="300" scrolling="no"></iframe>
 </div>
 
 
-### Schedule for Completion
+## Creation
 
-I created a Gantt chart to map out when I could finish tasks for my final.
+### Braille Box CAD
 
-<center>
-<img src="../../pics/final/midterm/gantt.jpg" width="700"/>
-</center>
-
-As is shown in the chart, most of my remaining work can be during a week that corresponds with the task at hand. In the cases that don't, I plan to spend extra time completing those tasks during less intensive weeks.
-
-## May 2024 Progress Check
-
- - ☐ design and print a PCB for each set of electromagnets <b>(waiting for actual solenoids to arrive)</b>
- - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
- - ☑ develop Bluetooth communication between ESP32 and RPi
- - ☐ figure out how electromagnets work
- - ☐ text to braille conversion
- - ☑ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
- - ☐ assemble the project
- - ☑ design a custom case
- - ☑ integrate with WiFi
- - ☑ test serial communication
- - ☑ find Python OCR library (pytesseract)
- - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
-
-Once my parts arrive, I need to assemble them onto a board and debug any potential issues that <i>definitely</i> will arise. I then need to assemble the system together and test out displaying multiple braille characters using multiple microcontrollers. In the meantime, I will be working on converting text into a 3x2 array representing braille dots.
-
-
-## Outer Box CAD
+#### Initial Design
 
 I decided to first model my design in Fusion360, as I had prior experience working with Fusion and was pretty comfortable using it. When I started out with Autodesk Fusion, Kevin Kennedy's <a href="https://www.youtube.com/playlist?list=PLrZ2zKOtC_-C4rWfapgngoe9o2-ng8ZBr">**Fusion tutorials**</a> were a massive help.
 
@@ -132,6 +83,99 @@ Finally, I used the pattern feature to repeat the sketch and extrusion across th
 
 <center>
 <img src="../../pics/week2/pattern.jpg" alt="Patterning the holes" width="700"/>
+</center>
+
+#### Improved Design
+
+As I had made my initial design early on in Fab Academy, it did not reflect the changes I had made to my final project, most notably scaling down the amount of solenoids from 5 arrays of 3x2 to one 3x2 array. Additionally, when I made the original design, I didn't think much about how I would power the solenoid array and thus didn't include any spots for batteries. I also wanted to make the holes for the solenoids on a separate press-fit cover on top of the main box. Finally, the original design doesn't include any internal parts to hold the solenoids in place.
+
+For my new design, I want to make the following key changes:
+
+ - 3x2 solenoid array
+ - Internal beams to support solenoids
+ - Battery pack holders
+ - Press-fit cover
+
+Additionally, I want the box to look as nice as possible and ideally have all wiring contained within it.
+
+I first started out by creating the shell of the box. I hollowed out the innards because I want my electronics to be inside. I will end up adhering my PCB to the side of the box and having my MOSFET breakouts on the bottom of the hollowed inside.
+
+<center>
+<img src="../../pics/final/braillebox/bbshell.jpg" width="700"/>
+</center>
+
+I then started working on the top cover. I started out with creating a sketch where all my holes would be, and a offset on the edges to match the shell. I then extruded the sketch to create the cover with holes that the solenoids will fill.
+
+<center>
+    <table>
+        <tr>
+            <td><img src="../../pics/final/braillebox/bbholes1.jpg" width="500"/></td>
+            <td><img src="../../pics/final/braillebox/bbholes2.jpg" width="700"/></td>
+        </tr>
+    </table>
+</center>
+
+Based on my previous sketch offset for the edges of the shell box, I created quarter-circles and extruded them to form the press-fit lid.
+
+<center>
+    <table>
+        <tr>
+            <td><img src="../../pics/final/braillebox/bbpressfit1.jpg" width="350"/></td>
+            <td><img src="../../pics/final/braillebox/bbpressfit2.jpg" width="700"/></td>
+        </tr>
+    </table>
+</center>
+
+Next, I designed the beams that hold the solenoids in place. I started by creating a sketch on the bottom of the shell box and extruded that to my desired height. I then created a sketch on the extruded rectangular prism to remove the bottom part of it and form it into a beam-like shape.
+
+<center>
+    <table>
+        <tr height="150%">
+            <td><img src="../../pics/final/braillebox/bbbeams1.jpg" width="500"/></td>
+            <td><img src="../../pics/final/braillebox/bbbeams2.jpg" width="700"/></td>
+            <td><img src="../../pics/final/braillebox/bbbeams3.jpg" width="700"/></td>
+        </tr>
+    </table>
+</center>
+
+I then started work on the battery holders. I created the bottom of the battery holder then extruded out the sides.
+
+<center>
+    <table>
+        <tr>
+            <td><img src="../../pics/final/braillebox/bbbatterybottom.jpg" width="600"/></td>
+            <td><img src="../../pics/final/braillebox/bbbatteryshelled.jpg" width="500"/></td>
+        </tr>
+    </table>
+</center>
+
+Next, I created the dividers to firmly hold each battery pack in place. Each divided section has the same length and width dimensions as the actual battery pack that I will use, plus a little for tolerance.
+
+<center>
+    <table>
+        <tr>
+            <td><img src="../../pics/final/braillebox/bbbatterydividersketch.jpg" width="500"/></td>
+            <td><img src="../../pics/final/braillebox/bbbatterydivided.jpg" width="500"/></td>
+        </tr>
+    </table>
+</center>
+
+I then added a small hole on the side for the power, ground, and TX/RX cables for the ATTiny1614.
+
+<center>
+<img src="../../pics/final/braillebox/bbwirehole.jpg" width="500"/>
+</center>
+
+Next, I extruded a small hole as a slot for the wires on the external battery packs to route into the main shell box, where it will be connected to the MOSFETs controlling the solenoids.
+
+<center>
+<img src="../../pics/final/braillebox/bbbatterywireslot.jpg" width="500"/>
+</center>
+
+Finally, I added fillets. Here is the final box design.
+
+<center>
+<img src="../../pics/final/braillebox/bbfillets.jpg" width="500"/>
 </center>
 
 ## PCB Production
@@ -551,3 +595,63 @@ The ESP32CAM is pointed towards a paper with the words "Hello World!". In the ri
 <center>
 <video width="550" height="300" controls><source src="../../pics/week15/pi.mp4" type="video/mp4" /></video>
 </center>
+
+
+
+## Midterm Review
+
+### Significant Changes
+
+Although a large part of my project remains the same, I've learned a lot over the past 10 weeks and have changed some aspects of my project. Namely, I've decided to use a Raspberry Pi as a central controller and connect it to 5 separate ATTiny412 chips, which will each be responsible for controlling 6 electromagnets to represent 1 braille character. Each ATTiny412 and 6 electromagnet setup will be on its own PCB, and receive data from the controlling Raspberry Pi. Additionally, I decided to create an elevated case for the ESP32 camera so that the image would have a better angle and thus an easier time being processed for OCR, and so that more light could come into the camera lens from the unobstructed sides. Lastly, I decided I wanted to wirelessly transmit data from the ESP32 camera to the Raspberry Pi for processing. I worked with both serial communication and WiFi connectivity in previous weeks so I hope to sum it all together and wirelessly transmit data between these two controllers.
+
+### System Diagram
+
+Here is an updated system diagram which maps out all the parts of my project.
+
+<center>
+<img src="../../pics/final/midterm/systemDiagram.jpg" width="700"/>
+</center>
+
+### Tasks
+
+I made a list of the tasks I need to complete in the upcoming weeks for my final project.
+
+ - ☐ design and print a PCB for each set of electromagnets
+ - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
+ - ☐ develop Bluetooth communication between ESP32 and RPi
+ - ☐ figure out how electromagnets work
+ - ☐ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
+ - ☐ assemble the project
+ - ☑ design a custom case
+ - ☑ integrate with WiFi
+ - ☑ test serial communication
+ - ☑ find Python OCR library (pytesseract)
+ - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
+
+### Schedule for Completion
+
+I created a Gantt chart to map out when I could finish tasks for my final.
+
+<center>
+<img src="../../pics/final/midterm/gantt.jpg" width="700"/>
+</center>
+
+As is shown in the chart, most of my remaining work can be during a week that corresponds with the task at hand. In the cases that don't, I plan to spend extra time completing those tasks during less intensive weeks.
+
+## May 2024 Progress Check
+
+ - ☐ design and print a PCB for each set of electromagnets <b>(waiting for actual solenoids to arrive)</b>
+ - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
+ - ☑ develop Bluetooth communication between ESP32 and RPi
+ - ☐ figure out how electromagnets work
+ - ☐ text to braille conversion
+ - ☑ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
+ - ☐ assemble the project
+ - ☑ design a custom case
+ - ☑ integrate with WiFi
+ - ☑ test serial communication
+ - ☑ find Python OCR library (pytesseract)
+ - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
+
+Once my parts arrive, I need to assemble them onto a board and debug any potential issues that <i>definitely</i> will arise. I then need to assemble the system together and test out displaying multiple braille characters using multiple microcontrollers. In the meantime, I will be working on converting text into a 3x2 array representing braille dots.
+
