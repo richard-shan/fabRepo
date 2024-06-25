@@ -33,7 +33,7 @@ Although a large part of my project remains the same, I've changed some aspects 
 Here is an updated system diagram which maps out all the parts of my project.
 
 <center>
-<img src="../../../pics/final/midterm/systemDiagram.jpg" width="700"/>
+<img src="../pics/final/midterm/systemDiagram.jpg" width="700"/>
 </center>
 
 ### Feasibility
@@ -101,7 +101,7 @@ Additionally, I want the box to look as nice as possible and ideally have all wi
 I first started out by creating the shell of the box. I hollowed out the innards because I want my electronics to be inside. I will end up adhering my PCB to the side of the box and having my MOSFET breakouts on the bottom of the hollowed inside.
 
 <center>
-<img src="../../pics/final/braillebox/bbshell.jpg" width="700"/>
+<img src="../pics/final/braillebox/bbshell.jpg" width="700"/>
 </center>
 
 I then started working on the top cover. I started out with creating a sketch where all my holes would be, and a offset on the edges to match the shell. I then extruded the sketch to create the cover with holes that the solenoids will fill.
@@ -109,8 +109,8 @@ I then started working on the top cover. I started out with creating a sketch wh
 <center>
     <table>
         <tr>
-            <td><img src="../../pics/final/braillebox/bbholes1.jpg" width="500"/></td>
-            <td><img src="../../pics/final/braillebox/bbholes2.jpg" width="700"/></td>
+            <td><img src="../pics/final/braillebox/bbholes1.jpg" width="500"/></td>
+            <td><img src="../pics/final/braillebox/bbholes2.jpg" width="700"/></td>
         </tr>
     </table>
 </center>
@@ -120,8 +120,8 @@ Based on my previous sketch offset for the edges of the shell box, I created qua
 <center>
     <table>
         <tr>
-            <td><img src="../../pics/final/braillebox/bbpressfit1.jpg" width="350"/></td>
-            <td><img src="../../pics/final/braillebox/bbpressfit2.jpg" width="700"/></td>
+            <td><img src="../pics/final/braillebox/bbpressfit1.jpg" width="350"/></td>
+            <td><img src="../pics/final/braillebox/bbpressfit2.jpg" width="700"/></td>
         </tr>
     </table>
 </center>
@@ -131,9 +131,9 @@ Next, I designed the beams that hold the solenoids in place. I started by creati
 <center>
     <table>
         <tr height="150%">
-            <td><img src="../../pics/final/braillebox/bbbeams1.jpg" width="500"/></td>
-            <td><img src="../../pics/final/braillebox/bbbeams2.jpg" width="700"/></td>
-            <td><img src="../../pics/final/braillebox/bbbeams3.jpg" width="700"/></td>
+            <td><img src="../pics/final/braillebox/bbbeams1.jpg" width="500"/></td>
+            <td><img src="../pics/final/braillebox/bbbeams2.jpg" width="700"/></td>
+            <td><img src="../pics/final/braillebox/bbbeams3.jpg" width="700"/></td>
         </tr>
     </table>
 </center>
@@ -143,8 +143,8 @@ I then started work on the battery holders. I created the bottom of the battery 
 <center>
     <table>
         <tr>
-            <td><img src="../../pics/final/braillebox/bbbatterybottom.jpg" width="600"/></td>
-            <td><img src="../../pics/final/braillebox/bbbatteryshelled.jpg" width="500"/></td>
+            <td><img src="../pics/final/braillebox/bbbatterybottom.jpg" width="600"/></td>
+            <td><img src="../pics/final/braillebox/bbbatteryshelled.jpg" width="500"/></td>
         </tr>
     </table>
 </center>
@@ -154,8 +154,8 @@ Next, I created the dividers to firmly hold each battery pack in place. Each div
 <center>
     <table>
         <tr>
-            <td><img src="../../pics/final/braillebox/bbbatterydividersketch.jpg" width="500"/></td>
-            <td><img src="../../pics/final/braillebox/bbbatterydivided.jpg" width="500"/></td>
+            <td><img src="../pics/final/braillebox/bbbatterydividersketch.jpg" width="500"/></td>
+            <td><img src="../pics/final/braillebox/bbbatterydivided.jpg" width="500"/></td>
         </tr>
     </table>
 </center>
@@ -163,19 +163,19 @@ Next, I created the dividers to firmly hold each battery pack in place. Each div
 I then added a small hole on the side for the power, ground, and TX/RX cables for the ATTiny1614.
 
 <center>
-<img src="../../pics/final/braillebox/bbwirehole.jpg" width="500"/>
+<img src="../pics/final/braillebox/bbwirehole.jpg" width="500"/>
 </center>
 
 Next, I extruded a small hole as a slot for the wires on the external battery packs to route into the main shell box, where it will be connected to the MOSFETs controlling the solenoids.
 
 <center>
-<img src="../../pics/final/braillebox/bbbatterywireslot.jpg" width="500"/>
+<img src="../pics/final/braillebox/bbbatterywireslot.jpg" width="500"/>
 </center>
 
 Finally, I added fillets. Here is the final box design.
 
 <center>
-<img src="../../pics/final/braillebox/bbfillets.jpg" width="500"/>
+<img src="../pics/final/braillebox/bbfillets.jpg" width="500"/>
 </center>
 
 ## PCB Production
@@ -609,7 +609,7 @@ Although a large part of my project remains the same, I've learned a lot over th
 Here is an updated system diagram which maps out all the parts of my project.
 
 <center>
-<img src="../../pics/final/midterm/systemDiagram.jpg" width="700"/>
+<img src="../pics/final/midterm/systemDiagram.jpg" width="700"/>
 </center>
 
 ### Tasks
@@ -633,7 +633,7 @@ I made a list of the tasks I need to complete in the upcoming weeks for my final
 I created a Gantt chart to map out when I could finish tasks for my final.
 
 <center>
-<img src="../../pics/final/midterm/gantt.jpg" width="700"/>
+<img src="../pics/final/midterm/gantt.jpg" width="700"/>
 </center>
 
 As is shown in the chart, most of my remaining work can be during a week that corresponds with the task at hand. In the cases that don't, I plan to spend extra time completing those tasks during less intensive weeks.
