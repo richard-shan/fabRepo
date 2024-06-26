@@ -178,11 +178,66 @@ Finally, I added fillets. Here is the final box design.
 <img src="../../pics/final/braillebox/bbfillets.jpg" width="500"/>
 </center>
 
-## PCB Production
+### Raspberry Pi Box CAD
+
+I first started off with a shelled box.
+
+<center>
+<img src="../../pics/final/rpibox/rpbshelledbox.jpg" width="500"/>
+</center>
+
+I then added a lid, with a hole the same size as my 5 inch touchscreen where I would attach the screen.
+
+<center>
+<img src="../../pics/final/rpibox/rpblid.jpg" width="500"/>
+</center>
+
+Next, I added screw holes on the lid. These screw holes allowed me to secure the screen to the 3D printed lid. Unfortunately, my screw holes actually ended up being a little small so I had to enlarge them after the print with the help of a soldering iron.
+
+<center>
+<img src="../../pics/final/rpibox/rpblidscrewholes.jpg" width="500"/>
+</center>
+
+I added legs to the lid to allow it to press-fit into the base.
+
+<center>
+<img src="../../pics/final/rpibox/rpblegs.jpg" width="500"/>
+</center>
+
+Then, I added holes for wires on the front and side of the Pi case.
+
+<center>
+    <table>
+        <tr>
+            <td><img src="../../pics/final/rpibox/rpbwirehole.jpg" width="500"/></td>
+            <td><img src="../../pics/final/rpibox/rpbwirehole2.jpg" width="500"/></td>
+        </tr>
+    </table>
+</center>
+
+Finally, I added fillets all around.
+
+<center>
+<img src="../../pics/final/rpibox/rpbfillets.jpg" width="500"/>
+</center>
+
+After printing that initial iteration, the screen fit and there was enough space inside to fit the Raspberry Pi. However, some of my cables didn't fit as they had long "necks" that had to remain straight. As such, I would have to significantly bend the HDMI and USB cords for the Raspberry Pi.
+
+<center>
+<img src="../../pics/final/rpibox/rpbusbneck.jpg" width="500"/>
+</center>
+
+As such, I adjusted the length of the box to give space for the USB cable necks. I also slightly decreased the height of the holes for the USB cables as they were larger than necessary and somewhat an eyesore.
+
+<center>
+<img src="../../pics/final/rpibox/rpbsizeAdjustments.jpg" width="500"/>
+</center>
+
+### PCB Production
 
 to be documented
 
-## ESP32CAM Wireless Transmission
+### ESP32CAM Wireless Transmission
 
 WebSocket connections are initiated through HTTP protocol, using an upgrade request from HTTP to WebSocket. This begins with a client sending a standard HTTP request that includes an "Upgrade: websocket" header and a "Connection: Upgrade" header to the server. The server then responds with an HTTP 101 status code, indicating that the protocol will change, thus establishing the WebSocket connection.
 
