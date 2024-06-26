@@ -233,9 +233,71 @@ As such, I adjusted the length of the box to give space for the USB cable necks.
 <img src="../../pics/final/rpibox/rpbsizeAdjustments.jpg" width="500"/>
 </center>
 
-### PCB Production
+### Electronics
 
-to be documented
+Electronics were by far the worst part of this project, at least for me. The main issue was that I didn't understand transistors very well, and I ran into a bunch of problems with them. The two main problems I ran into were transistors not being able to handle the power and transistors having inconsistent pinouts and being backwards or jumbled around.
+
+In this section, I'll go through a few of the boards that didn't work then show my final board.
+
+This was my initial board design. I tested this board by plugging a solenoid into the top pin, and the resulting lack of transistor is visible. The transistor heated up after around 5 seconds and fell off the board, without powering the solenoid.
+
+<center>
+<img src="../../pics/final/pcb/sight1.jpg" width="500"/>
+</center>
+
+This is my second iteration. I added what I thought were pull down resistors hidden under the left-hand side white female pin headers (they did not, in fact, function as pull down resistors) and a power indicator LED. Unfortunately, I forgot the capacitor, but that would not have affected this board's outcome of failure. When creating this board, I also ran into major issues with the ATTiny1614, which stuck me for a couple hours. Apparently, some of the ATTiny1614 chips in our lab just didn't work, so I needed to get the ATTiny1614s out of a specific drawer because those chips had a small dot indentation on one side. Only the chips with the dot indentation seemed to work well, in my experience. Upon testing, the transistor got really hot and I unplugged it before it melted off.
+
+<center>
+<img src="../../pics/final/pcb/sight2.jpg" width="500"/>
+</center>
+
+In an attempt to simplify the amount of things that could cause the issue, I scaled down to one transistor, which in turn melted off.
+
+<center>
+<img src="../../pics/final/pcb/oneTransistorTestButItBlewUpOffTheBoard.jpg" width="500"/>
+</center>
+
+I tweaked the design with one transistor, and it melted again.
+
+<center>
+<img src="../../pics/final/pcb/transistorBlewUp2.jpg" width="500"/>
+</center>
+
+At this point, I created a ATTiny1614 board for testing and debugging.
+
+<center>
+<img src="../../pics/final/pcb/attiny.jpg" width="500"/>
+</center>
+
+I created another board with a pull down and headers to plug into external transistors. The hope was that this would allow me to test transistors without melting pads and traces.
+
+<center>
+<img src="../../pics/final/pcb/externTransistor.jpg" width="500"/>
+</center>
+
+At this point, I was fairly certain the transistor had a problem with handling power. I switched to the <a href="https://fabacademy.org/2024/labs/charlotte/assignments/week13a/#npn-transistor-board">**Eugepae!**</a> board which had a different transistor. I had made this board during the Networking week group project, and it had previously handled 5V, so I was pretty confused when it failed to power my 5V solenoids. Unfortunately, this board also failed, in retrospect likely because the solenoids pulled too many amps.
+
+<center>
+<img src="../../pics/final/pcb/eugepae.jpg" width="500"/>
+</center>
+
+I then decided to switch to a through hole MOSFET. This board also failed, which I'm pretty confused about but will explain in the next paragraph.
+
+<center>
+<img src="../../pics/final/pcb/mosfet.jpg" width="500"/>
+</center>
+
+After all these boards failed, I found MOSFET drive modules in the Lab. These modules have six key inputs: VIN+, VIN-, VOUT+, VOUT-, TRIG, and GND. I ended up connecting the VIN+ and VIN- to the positive and ground terminals on the power input device (battery packs), the VOUT+ and VOUT- to the positive and ground of the load output device (solenoid), the TRIG pin to a GPIO on my ATTiny1614 board that would toggle the solenoid on and off, and the GND to ground. The architecture of the drive module (which worked) was really similar to some of my MOSFET attempts, so I am still a little unsure why this board worked when my own didn't. The only major discrepancy that I noticed was that this board had 2 transistors.
+
+<center>
+<img src="../../pics/final/pcb/mosfetModule.jpg" width="500"/>
+</center>
+
+Now that I decided to use the MOSFET breakout boards to toggle the solenoids, the MOSFETs are external to the main board and I am able to create a ATTiny1614 control board without transistors on it. My final board has headers for its power, ground, and data; a power indicator LED; a capacitor; pins for TX/RX serial communication with the Raspberry Pi, which will send text to be displayed as braille; 6 headers each corresponding to a GPIO pin on the ATTiny1614 which in turn, corresponds to controlling a single solenoid in the 3x2 array; and 6 headers for GND that will each connect to 1 MOSFET.
+
+<center>
+<img src="../../pics/final/pcb/final.jpg" width="500"/>
+</center>
 
 ### ESP32CAM Wireless Transmission
 
@@ -378,9 +440,7 @@ void setupLedFlash(int pin) {
 
 This program connects the ESP32CAM to a local WiFi network. It then sets up and initializes the camera, and sets up the local IP connection. It then continuously waits for a web socket connection. When a connection is created, it prints the IP address of the connecting device. If the device sends an input of "capture", the camera will take a picture and send it via the network web socket connection to the connecting Raspberry Pi.
 
-## Camera Feed OCR
-
-//todo: swap pytesseract model out for gpt-4o
+### Camera Feed OCR
 
 During <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/networking/">**Networking Week**</a>, I had already setup infrastructure to wirelessly transmit a command to capture an image from a Raspberry Pi to the ESP32CAM, along with sending the image data back over the network and saving it. I had created a WebSocket server to accept commands and then send the image data over HTTP back to the Raspberry Pi.
 
@@ -651,62 +711,143 @@ The ESP32CAM is pointed towards a paper with the words "Hello World!". In the ri
 <video width="550" height="300" controls><source src="../../pics/week15/pi.mp4" type="video/mp4" /></video>
 </center>
 
+### Text to Braille Mapping
 
+The Raspberry Pi sends a byte-encoded text string to the ATTiny1614. From there, the ATTiny1614 is responsible for interpreting and converting the received text into braille dot arrays, which it then shows on the 3x2 array.
 
-## Midterm Review
+The following program first sets up the configuration of solenodis and corresponding GPIOs, then creates the arrays of 0s and 1s (solenoid up or down) that forms a single braille character. It then maps each letter to its corresponding letter braille array.
 
-### Significant Changes
+Upon the script's setup, each relevant pin is configured to be OUTPUT, and a serial connection with the Raspberry Pi is initialized. 
 
-Although a large part of my project remains the same, I've learned a lot over the past 10 weeks and have changed some aspects of my project. Namely, I've decided to use a Raspberry Pi as a central controller and connect it to 5 separate ATTiny412 chips, which will each be responsible for controlling 6 electromagnets to represent 1 braille character. Each ATTiny412 and 6 electromagnet setup will be on its own PCB, and receive data from the controlling Raspberry Pi. Additionally, I decided to create an elevated case for the ESP32 camera so that the image would have a better angle and thus an easier time being processed for OCR, and so that more light could come into the camera lens from the unobstructed sides. Lastly, I decided I wanted to wirelessly transmit data from the ESP32 camera to the Raspberry Pi for processing. I worked with both serial communication and WiFi connectivity in previous weeks so I hope to sum it all together and wirelessly transmit data between these two controllers.
+The script then continuously waits for an incoming string sent through Serial. Upon receiving the text, it is converted into an array of characters. The parse_input_string() method then does the heavy lifting and fetches the correct braille dot arrays. The method then iterates through each letter and represents that character's corresponding braille for one second on the physical solenoid array.
 
-### System Diagram
+The activate_solenoids() and deactivate_solenoids() methods were used for debugging purposes, turning all solenoids on or off, respectively.
 
-Here is an updated system diagram which maps out all the parts of my project.
+```cpp
+/*
+  Solenoid arrangement:
+  0 1
+  2 3
+  4 5
+*/
 
-<center>
-<img src="../../pics/final/midterm/systemDiagram.jpg" width="700"/>
-</center>
+int sols[6] = {0, 1, 2, 3, 9, 8}; // Define the pins connected to the solenoids
 
-### Tasks
+// Define the Braille arrays
+int a[6] = {0, 1, 1, 1, 1, 1};
+int b[6] = {0, 1, 0, 1, 1, 1};
+int c[6] = {0, 0, 1, 1, 1, 1};
+int d[6] = {0, 0, 1, 0, 1, 1};
+int e[6] = {0, 1, 1, 0, 1, 1};
+int f[6] = {0, 0, 0, 1, 1, 1};
+int g[6] = {0, 0, 0, 0, 1, 1};
+int h[6] = {0, 1, 0, 0, 1, 1};
+int i[6] = {1, 0, 0, 1, 1, 1};
+int j[6] = {1, 0, 0, 0, 1, 1};
+int k[6] = {0, 1, 1, 1, 0, 1};
+int l[6] = {0, 1, 0, 1, 0, 1};
+int m[6] = {0, 0, 1, 1, 0, 1};
+int n[6] = {0, 0, 1, 0, 0, 1};
+int o[6] = {0, 1, 1, 0, 0, 1};
+int p[6] = {0, 0, 0, 1, 0, 1};
+int q[6] = {0, 0, 0, 0, 0, 1};
+int r[6] = {0, 1, 0, 0, 0, 1};
+int s[6] = {1, 0, 0, 1, 0, 1};
+int t[6] = {1, 0, 0, 0, 0, 1};
+int u[6] = {0, 1, 1, 1, 0, 0};
+int v[6] = {0, 1, 0, 1, 0, 0};
+int w[6] = {1, 0, 0, 0, 1, 0};
+int x[6] = {0, 0, 1, 1, 0, 0};
+int y[6] = {0, 0, 1, 0, 0, 0};
+int z[6] = {0, 1, 1, 0, 0, 0};
 
-I made a list of the tasks I need to complete in the upcoming weeks for my final project.
+int space[6] = {1, 1, 1, 1, 1, 1};
 
- - ☐ design and print a PCB for each set of electromagnets
- - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
- - ☐ develop Bluetooth communication between ESP32 and RPi
- - ☐ figure out how electromagnets work
- - ☐ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
- - ☐ assemble the project
- - ☑ design a custom case
- - ☑ integrate with WiFi
- - ☑ test serial communication
- - ☑ find Python OCR library (pytesseract)
- - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
+int number_sign[6] = {1, 0, 1, 0, 0, 0};
+int num_1[6] = {0, 1, 1, 1, 1, 1}; // Same as a
+int num_2[6] = {0, 1, 0, 1, 1, 1}; // Same as b
+int num_3[6] = {0, 0, 1, 1, 1, 1}; // Same as c
+int num_4[6] = {0, 0, 1, 0, 1, 1}; // Same as d
+int num_5[6] = {0, 1, 1, 0, 1, 1}; // Same as e
+int num_6[6] = {0, 0, 0, 1, 1, 1}; // Same as f
+int num_7[6] = {0, 0, 0, 0, 1, 1}; // Same as g
+int num_8[6] = {0, 1, 0, 0, 1, 1}; // Same as h
+int num_9[6] = {1, 0, 0, 1, 1, 1}; // Same as i
+int num_0[6] = {1, 0, 0, 0, 1, 1}; // Same as j
 
-### Schedule for Completion
+// Define a structure to map characters to their Braille arrays
+typedef struct {
+    char character;
+    int *braille_array;
+} BrailleMap;
 
-I created a Gantt chart to map out when I could finish tasks for my final.
+// Create the mapping
+BrailleMap braille_dictionary[] = {
+    {'a', a}, {'b', b}, {'c', c}, {'d', d}, {'e', e},
+    {'f', f}, {'g', g}, {'h', h}, {'i', i}, {'j', j},
+    {'k', k}, {'l', l}, {'m', m}, {'n', n}, {'o', o},
+    {'p', p}, {'q', q}, {'r', r}, {'s', s}, {'t', t},
+    {'u', u}, {'v', v}, {'w', w}, {'x', x}, {'y', y}, {'z', z}, {' ', space},
+    {'#', number_sign},
+    {'1', num_1}, {'2', num_2}, {'3', num_3}, {'4', num_4}, {'5', num_5},
+    {'6', num_6}, {'7', num_7}, {'8', num_8}, {'9', num_9}, {'0', num_0}
+};
 
-<center>
-<img src="../../pics/final/midterm/gantt.jpg" width="700"/>
-</center>
+void setup() {
+    // Initialize the solenoid pins as output
+    for (int i = 0; i < 6; i++) {
+        pinMode(sols[i], OUTPUT);
+    }
+  //  PORTMUX.CTRLB = 0x01;
+   Serial.begin(9600);
 
-As is shown in the chart, most of my remaining work can be during a week that corresponds with the task at hand. In the cases that don't, I plan to spend extra time completing those tasks during less intensive weeks.
+   while(!Serial){
 
-## May 2024 Progress Check
+   }
+}
 
- - ☐ design and print a PCB for each set of electromagnets <b>(waiting for actual solenoids to arrive)</b>
- - ☐ test simultaneously controlling 6 different microcontrollers with RPi through different data output pins
- - ☑ develop Bluetooth communication between ESP32 and RPi
- - ☐ figure out how electromagnets work
- - ☐ text to braille conversion
- - ☑ research processing capabilities of ESP32 and decide whether to process images on the ESP32 or on the RPi
- - ☐ assemble the project
- - ☑ design a custom case
- - ☑ integrate with WiFi
- - ☑ test serial communication
- - ☑ find Python OCR library (pytesseract)
- - ☑ find Python library to convert text to braille (https://github.com/AaditT/braille - possibly used for OCR too?)
+void activate_solenoids(int *braille_array) {
+    for (int i = 0; i < 6; i++) {
+        digitalWrite(sols[i], braille_array[i]);
+    }
+}
 
-Once my parts arrive, I need to assemble them onto a board and debug any potential issues that <i>definitely</i> will arise. I then need to assemble the system together and test out displaying multiple braille characters using multiple microcontrollers. In the meantime, I will be working on converting text into a 3x2 array representing braille dots.
+// Function to parse the input string and activate solenoids
+void parse_input_string(const char *input) {
+    int len = sizeof(braille_dictionary) / sizeof(BrailleMap);
+    for (int i = 0; i < strlen(input); i++) {
+        for (int j = 0; j < len; j++) {
+            if (braille_dictionary[j].character == input[i]) {
+                activate_solenoids(braille_dictionary[j].braille_array);
+                delay(1000); // Wait for a second before next character
+                break;
+            }
+        }
+    }
+    deactivate_solenoids();
+}
 
+void deactivate_solenoids() {
+    for (int i = 0; i < 6; i++) {
+        digitalWrite(sols[i], LOW);
+    }
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    // Read the incoming string
+    
+    String input = Serial.readString();
+
+    // Convert the String to a C-style string (char array)
+    char inputArray[input.length() + 1];
+    input.toCharArray(inputArray, input.length() + 1);
+
+    // Call the parse_input_string function with the received string
+    parse_input_string(inputArray);
+
+    // Optional: Add a delay to avoid flooding the input
+    delay(5000); // Wait for 5 seconds before repeating
+  }
+}
+```
