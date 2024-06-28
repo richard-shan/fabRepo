@@ -1,6 +1,6 @@
 # Project Development
 
-<b> Full documentation of the ideation, creation, and exposition of my final project can be found on my <a href="https://fabacademy.org/2023/labs/charlotte/students/stuart-christhilf/">**Final Project Page**</a>. </b>
+<b> Full documentation of the ideation, creation, and exposition of my final project can be found on my <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/final/">**Final Project Page**</a>. </b>
 
 ### Completed Tasks
 
