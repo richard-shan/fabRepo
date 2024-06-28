@@ -1081,13 +1081,13 @@ Lastly, I secured everything in place and put the cover on. This involved using 
 ### Poster
 
 <center>
-<img src="../../../presentation.png" width="600"/>
+<img src="../../presentation.png" width="600"/>
 </center>
 
 ### Video
 
 <center>
-<video muted width="750" height="300" controls><source src="../../../presentation.mp4" type="video/mp4" /></video>
+<video muted width="750" height="300" controls><source src="../../presentation.mp4" type="video/mp4" /></video>
 </center>
 
 ## File Downloads
