@@ -1087,7 +1087,7 @@ Lastly, I secured everything in place and put the cover on. This involved using 
 ### Video
 
 <center>
-<video muted width="750" height="300" controls><source src="../../presentation.mp4" type="video/mp4" /></video>
+<video muted width="100%" controls><source src="../../presentation.mp4" type="video/mp4" /></video>
 </center>
 
 ## File Downloads
