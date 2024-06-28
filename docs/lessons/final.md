@@ -47,7 +47,7 @@ However, after doing research, I realized that having 30 solenoids would be unfe
 </div>
 
 
-## Creation
+## Components
 
 ### Braille Box CAD
 
@@ -648,7 +648,9 @@ I then entered the virtual environment by activating it.
 source bin/activate
 ```
 
-The bin/activate is a relative path and would activate the venv as long as I am in the "ocr" folder. However, the venv could also be activated by supplying the absolute path of "~/home/richard/Desktop/icr/bin/activate".
+The bin/activate is a relative path and would activate the venv as long as I am in the "ocr" folder. However, the venv could also be activated by supplying the absolute path of "~/home/richard/Desktop/ocr/bin/activate".
+
+#### PyTesseract
 
 After activating the virtual environment, I can install all of my library dependencies.
 
@@ -710,6 +712,208 @@ The ESP32CAM is pointed towards a paper with the words "Hello World!". In the ri
 <center>
 <video width="550" height="300" controls><source src="../../pics/week15/pi.mp4" type="video/mp4" /></video>
 </center>
+
+#### GPT4o
+
+At this point, I wanted to try to use as little computational power as possible, and thus decided to switch to processing my image in base64. Although switching to base64 ultimately failed to scale down the computing enough to run on a microcontroller, it still led me in an interesting direction: that I could use GPT4o's new multimodal capabilities as an OCR engine to extract text from the base64 image. GPT4o in general is much more accurate in OCR than pytesseract, hence the switch.
+
+To do this, I first created a new handler on the ESP32CAM that would have it return a base64 string of a capture of the camera feed when that handler is called.
+
+```cpp
+static esp_err_t jpg_base64_handler(httpd_req_t *req) {
+    camera_fb_t *fb = esp_camera_fb_get();
+    if (!fb) {
+        Serial.println("Camera capture failed");
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+
+    // Encode the frame in base64
+    String base64Image = base64::encode(fb->buf, fb->len);
+
+    // Send the base64 encoded image
+    httpd_resp_set_type(req, "text/plain");
+    esp_err_t res = httpd_resp_send(req, base64Image.c_str(), base64Image.length());
+
+    // Return the frame buffer
+    esp_camera_fb_return(fb);
+
+    return res;
+}
+
+[...]
+
+httpd_uri_t base64_uri = {
+        .uri = "/base64",
+        .method = HTTP_GET,
+        .handler = jpg_base64_handler,
+        .user_ctx = NULL
+
+[...]
+
+httpd_register_uri_handler(camera_httpd, &base64_uri);
+```
+
+A base64 string containing the data of a single frame captured by the ESP32CAM looks something like this:
+
+```
+
+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 
+```
+
+With some modifications to <a href="https://platform.openai.com/docs/guides/vision">**OpenAI's sample code**</a> and the help of GPT-4o itself, I created the following script that would grab the base64 data from the custom handler and parse it into the model. The prompt for the model is "You are a image to text OCR engine. Output the text you see in this image, and nothing else."
+
+```py
+import requests
+
+# OpenAI API Key
+api_key = "REDACTED"
+
+# Function to get the base64 encoded image from ESP32CAM
+def get_base64_image(url):
+    response = requests.get(url)
+    return response.text
+
+# URL to the ESP32CAM base64 image endpoint
+esp32cam_url = "http://10.12.28.193/base64"
+
+# Getting the base64 string
+base64_image = get_base64_image(esp32cam_url)
+
+headers = {
+  "Content-Type": "application/json",
+  "Authorization": f"Bearer {api_key}"
+}
+
+payload = {
+  "model": "gpt-4o",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "You are a image to text OCR engine. Output the text you see in this image, and nothing else."
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": f"data:image/jpeg;base64,{base64_image}"
+          }
+        }
+      ]
+    }
+  ],
+  "max_tokens": 300
+}
+
+response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+
+print(response.json())
+```
+
+With the same setup as the Raspberry Pi, where the ESP32CAM is pointed towards a paper with the words "Hello World!", I ran the script on my computer to test it out.
+
+Upon running, the following is printed out:
+
+<center>
+<img src="../../../pics/week15/4oJson.jpg" width="750"/>
+</center>
+
+
+As is seen in the output, the prompt worked and the 4o model detected "Hello World!" as the text extract and stored it in 'content'. To just output the content, which is the actual result I want, I can modify the code a little.
+
+```py
+response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+
+content_string = response.json()['choices'][0]['message']['content']
+print(content_string)
+```
+
+Here is the code just printing out the extracted OCR text.
+
+<center>
+<img src="../../../pics/week15/4oExtracted.jpg" width="750"/>
+</center>
+
+This was essentially the bare-bones version of my final project Pi code. After integrating the serial communication functionality, and changing the wording of the prompt, I had the final code for the Raspberry Pi ready:
+
+```py
+from serial import Serial
+import time
+import requests
+
+# OpenAI API Key
+api_key = "REDACTED"
+
+# Configure the serial port
+ser = Serial('/dev/serial0', 9600, timeout = 1)
+
+# Function to get the base64 encoded image from ESP32CAM
+def get_base64_image(url):
+    response = requests.get(url)
+    print("Camera connected")
+    return response.text
+
+# URL to the ESP32CAM base64 image endpoint
+esp32cam_url = "http://10.12.23.1/base64"
+
+# Getting the base64 string
+base64_image = get_base64_image(esp32cam_url)
+
+# Function to send a message
+def send_message(message):
+    ser.write(message.encode())  # Convert the message to bytes and send
+    time.sleep(1)                # Wait for a second
+
+# Example message used for testing purposes
+# testMessage = "Hello world"
+
+def ocr():
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+
+    # Define the information sent to GPT4o
+    payload = {
+        "model": "gpt-4o",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "You are a image to text OCR engine. Output the text you see in this image, and nothing else. Only use lowercase letters and no punctuation."
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}"
+                        }
+                    }
+                ]
+            }
+        ],
+        "max_tokens": 300
+    }
+
+    # Query the engine
+    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+
+    # Extract its response
+    return response.json()['choices'][0]['message']['content']
+
+try:
+    message = ocr()
+    send_message(message)
+    print(f"Message sent: {message}")
+except Exception as e:
+    print(f"Error: {e}")
+finally:
+    ser.close()  # Close the serial port
+```
+
 
 ### Text to Braille Mapping
 
@@ -851,3 +1055,41 @@ void loop() {
   }
 }
 ```
+
+### Assembly
+
+I first outlined the general setup of my final project. I secured each MOSFET to a corresponding battery pack and solenoid, and color-coded each MOSFET's trigger and GND wires. I organized them in such a way that toggling solenoid 1, 2, 3, 4, 5, then 6 would control each solenoid in a line.
+
+<center>
+<img src="../../pics/final/assembly/internal.jpg" width="600"/>
+</center>
+
+I then connected the color coded wire sets to the controller PCB, and tested turning all the solenoids on in the right order.
+
+<center>
+<video muted width="550" height="300" controls><source src="../../pics/final/assembly/solenoidsWorking.mp4" type="video/mp4" /></video>
+</center>
+
+Lastly, I secured everything in place and put the cover on. This involved using Nitto tape to attach the PCB to the side wall, and using hot glue to secure the MOSFETs to the bottom and the solenoids to their respective places. I then ran another test to ensure everything still worked.
+
+<center>
+<video muted width="550" height="300" controls><source src="../../pics/final/assembly/solenoidsWorkingAttached.mp4" type="video/mp4" /></video>
+</center>
+
+## Final Product
+
+### Poster
+
+<center>
+<img src="../../../presentation.png" width="600"/>
+</center>
+
+### Video
+
+<center>
+<video muted width="750" height="300" controls><source src="../../../presentation.mp4" type="video/mp4" /></video>
+</center>
+
+## File Downloads
+
+My files can be downloaded [**here**](../../files/final/final.zip).
