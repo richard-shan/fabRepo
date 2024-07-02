@@ -25,6 +25,7 @@ Now that my file is ready, it's time to cut the board. After setting the board o
 8. Go to Cuts Menu and select CN, 10 - Start of Day (This will warm up the spindle and take about 15 minutes).
     - Machine will home Z axis with a proximity switch
     - Machine will then home X and Y axes with proximity switch
+      - The Shopbot's "home" or default position is located at the bottom right corner.
     - Machine will Grab tool #1 
     - Machine will then go to the center of board (48, 24, 6.928)
     - A window will ask you to turn on spindle
@@ -54,6 +55,12 @@ The brad gun uses pressurized air and essentially nails the board to the bed to 
 2. Use the Zero-Z-Axis (Zz) command to zero the Z-axis for a new temporary origin above the material.
 3. Run your file with no offset and it will run as an aircut.
 4. Once the routine is complete, run the C3 command to rehome the machine and reset the Z-zero height to the machine bed.  
+
+## Homing and Zeroing
+
+The Shopbot's home is located at the bottom right corner of the bed. To rehome the machine via its builtin proximity switches, use the C3 macro within the Shopbot software.
+
+Zeroing is useful if you want to manually set a home point. This can be done through the Zero or z macro, where Zx, Zy, and Zz will set the home point of the respective axis to the current position of the spindle (zero).
 
 ## Cutting
 
