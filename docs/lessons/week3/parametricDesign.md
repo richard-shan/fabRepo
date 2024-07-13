@@ -31,6 +31,10 @@ This week, we were challenged to laser cut a series of objects that could be use
     </tr>
 </table>
 
+<center>
+<img src="../../../pics/week3/parameters.jpg" alt="Params" width="750"/>
+</center>
+
 #### Hexagon
 To start designing the hexagonal component, I created a polygon with six sides using the circumscribed polygon tool.
 
