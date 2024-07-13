@@ -16,7 +16,7 @@ Once the WebSocket connection is established, data is transmitted in framed mess
 
 ## ESP32CAM Board Programming
 
-The following program is uploaded onto the ESP32 CAM Board through Arduino IDE. This program requires a lot of libraries and dependencies, which I individually downloaded from Github. The entire project folder including the code and libraries can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/week13Downloads/">**this week's file downloads**</a>. This program is based off of the CameraWebServer example program from ESP32.
+The following program is uploaded onto the ESP32 CAM Board through Arduino IDE. This program requires a lot of libraries and dependencies, which I individually downloaded from Github. For some reason, my Arduino IDE library loader wasn't working properly, so I searched online for any missing libraries and downloaded their .h files, and moved them to my project working directory. The entire project folder including the code and libraries can be downloaded under <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week13/week13Downloads/">**this week's file downloads**</a>. This program is based off of the CameraWebServer example program from ESP32.
 
 ```cpp
 #include "esp_camera.h"
