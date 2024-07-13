@@ -1,6 +1,6 @@
 # PCB Milling
 
-As part of this week's assignment, I was challenged to create a custom circuit board. I used the lab's Bantam Desktop CNC Machine and Bantam Tools Desktop Milling Machine Software for milling and setup respectively. The PCB design that I milled can be downloaded under this week's files.
+As part of this week's assignment, I was challenged to create a custom circuit board. I used the lab's Bantam Desktop CNC Machine and Bantam Tools Desktop Milling Machine Software for milling and setup respectively. The PCB design that I milled can be downloaded under this week's files. I am milling the Quentorres board, which can be found under this week's file downloads as the FabLab.2024.XIAO.RP2040 v5.brd board
 
 ## Workflow
 
