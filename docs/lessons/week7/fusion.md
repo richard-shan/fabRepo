@@ -8,6 +8,12 @@ I first created the 3D design of my shelf in Fusion.
 <img src="../../../pics/week7/fusionShelf.jpg" alt="Shelf design in Fusion" width="350"/>
 </center>
 
+Each shelf board is 0.45 inches think, reflecting the thickness of the actual wood board. Because I plan to cut each shelf out on the same flat piece of wood, I can create a parameter called "woodThickness" and apply it to each shelf board. Additionally, because I wasn't exactly sure of the dimensions of my project during my initial design process, I created a variety of parameters that I can use to specify the shelf's total height, the offset of each shelf board, the size of each shelf board, the joint clearances, among others.
+
+<center>
+<img src="../../../pics/week7/parameters.jpg" alt="Shelf design parameters in Fusion" width="650"/>
+</center>
+
 I then used Fusion's ```Modify -> Arrange``` tool to arrange all of my components onto the flat XY plane. 
 
 <center>

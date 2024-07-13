@@ -2,6 +2,15 @@
 
 Now that my file is ready, it's time to cut the board. After setting the board on the Shopbot's bed, I had to setup the software and machine.
 
+## Safety Procedures
+
+The CNC machine is one of, if not the single, most dangerous machine I will use during Fab Academy. It spins at a very high RPM speed and can easily harm a person if they are standing too close or if it catches someone's clothes or hair. Additionally, the damages the machine can cause are not self-contained and can be over the entire room. At the Charlotte Latin Fab Lab, we have a few safety procedures in place to prevent accidents:
+
+ - All users of the machine must always have a partner in the room with them
+ - You must roll up sleeves and tie up hair
+ - Everyone must wear safety goggles in the CNC workshop room
+ - There is a yellow warning boundary taped on the floor delineating danger zones while the Shopbot is running
+
 ## Turning on the Machine
 
 1. Turn on the computer.
