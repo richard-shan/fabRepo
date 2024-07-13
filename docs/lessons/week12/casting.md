@@ -57,3 +57,7 @@ I then re-cast the resin mold with a properly mixed solution. Here is the final 
 <center>
 <img src="../../../pics/week12/resinParakeet.jpg" width="350"/>
 </center>
+
+## Draft Angles
+
+Although I didn't think of doing this during my molding week projects, my global evaluator, <a href="https://git-scm.com/downloads">**Iván Milara**</a>, told me about using draft angles, or creating walls at specific angles, to help the casting process. Specifically, using draft angles allows for using different kind of milling bits, along with providing a host of benefits during the de-molding process, including minimizing stuck walls and reducing warps/scratches/tears. The optimal draft angle depends on several factors including the material of the cast part, the complexity of the design, and the type of molding process used. However, a general guideline is to have a draft angle between 1° to 3° for most materials and processes.
