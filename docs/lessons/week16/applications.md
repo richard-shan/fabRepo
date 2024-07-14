@@ -4,6 +4,10 @@
 
 I want to create a 3x2 solenoid array that can display braille characters by pushing solenoids up and down to create dots. This solenoid array will be connected to a Raspberry Pi, which in turn will be connected to an ESP32CAM. The camera will take a picture of a page of text, then perform OCR (optical character recognition) to extract a string of text from the image. That string of text will be converted to braille, which will be displayed on the solenoid array by flashing each character for 1 second at a time. This device will essentially allow for live-time conversion of any text into braille, which I hope will increase accessibility to books and the like.
 
+## Previous Work
+
+After doing some research online, I found <a href="https://arduino.stackexchange.com/questions/29454/need-help-with-2x3-matrix-for-braille">**this**</a> Stack Exchange thread whose poster seemed to have a similar idea in mind. The most significant piece of previous work seems to be <a href="https://solve.mit.edu/challenges/solv-ed-youth-innovation-challenge/solutions/56885">**this**</a> MIT Solve project, which plans to eventually go to market and thus did not open-source their project code or creation.
+
 ## Brainstorming Process
 
 ### Initial Thoughts
