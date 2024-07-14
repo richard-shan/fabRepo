@@ -2215,6 +2215,136 @@ const uint8_t index_ov2640_html_gz[] = { /* hex code here */ };
 
 It is important to redefine the length of the hex code variable. The length can be found in a text editor like Notepad++ or in CyberChef itself. When converting to hex, CyberChef will tell you the length which the length variable is set as.
 
+## HTML Key Features
+
+There are a couple of key components that build the GUI.
+
+ - Stream Container
+
+```html
+<div id="stream-container">
+    <img id="stream" src="" alt="Camera Stream">
+    <div>
+        <button id="get-still">Take Picture</button>
+        <button id="toggle-menu">Camera Options</button>
+    </div>
+    <div id="menu">
+        <!-- Menu contents for camera options -->
+    </div>
+</div>
+```
+
+This div acts as a container for the camera stream image and the buttons for user interaction.
+
+The ```<img id="stream" src="" alt="Camera Stream">``` tag is where the camera stream image will be displayed. Initially, the src attribute is empty.
+
+ - Image Style
+
+```html
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+```
+
+The img tag is styled to be responsive and fit within the container.
+
+ - Button to take a picture
+
+```<button id="get-still">Take Picture</button>```
+
+ - Button to toggle activation of the camera options menu
+
+```<button id="toggle-menu">Camera Options</button>```
+
+ - Camera Options Menu
+
+```html
+<div id="menu">
+        <div class="input-group">
+            <label for="framesize">Resolution</label>
+            <select id="framesize">
+                <option value="5">QVGA (320x240)</option>
+                <option value="4">240x240</option>
+                <option value="3">HQVGA (240x176)</option>
+                <option value="2">QCIF (176x144)</option>
+                <option value="1">QQVGA (160x120)</option>
+                <option value="0">96x96</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="quality">Quality</label>
+            <input type="range" id="quality" min="4" max="63" value="10">
+            <span class="value-label" id="quality-value">10</span>
+        </div>
+        <div class="input-group">
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="-2" max="2" value="0">
+            <span class="value-label" id="brightness-value">0</span>
+        </div>
+        <div class="input-group">
+            <label for="contrast">Contrast</label>
+            <input type="range" id="contrast" min="-2" max="2" value="0">
+            <span class="value-label" id="contrast-value">0</span>
+        </div>
+        <div class="input-group">
+            <label for="saturation">Saturation</label>
+            <input type="range" id="saturation" min="-2" max="2" value="0">
+            <span class="value-label" id="saturation-value">0</span>
+        </div>
+    </div
+```
+
+The menu div acts as a container for all the input groups related to camera settings. Each setting (resolution, quality, brightness, contrast, saturation) is individually wrapped in a div with the class input-group.
+
+## JavaScript
+
+ - Updating Sliders Listener
+
+```js
+function updateSliderValue(sliderId, labelId) {
+    var slider = document.getElementById(sliderId);
+    var label = document.getElementById(labelId);
+    label.textContent = slider.value;  // Initializes the label with the slider's current value
+    slider.oninput = function() {
+        label.textContent = this.value;  // Updates the label as the slider is adjusted
+    };
+}
+
+updateSliderValue('quality', 'quality-value');
+updateSliderValue('brightness', 'brightness-value');
+updateSliderValue('contrast', 'contrast-value');
+updateSliderValue('saturation', 'saturation-value');
+```
+
+The updateSliderValue function links each slider with its corresponding value label. It sets the initial value of the label to match the slider’s current value and updates the label whenever the slider is adjusted.
+
+ - Take Picture Listener
+
+```js
+document.getElementById('get-still').onclick = function () {
+    var streamImg = document.getElementById('stream');
+    streamImg.src = 'http://10.12.28.193/capture?' + new Date().getTime();
+};
+```
+When the Take Picture button is clicked, it triggers an action to capture an image from the ESP32CAM's image server grab URL and display it in the img element.
+
+ - Camera Options Listener
+
+```js
+document.getElementById('toggle-menu').onclick = function () {
+    var menu = document.getElementById('menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
+};
+```
+
+When the "Camera Options" button is clicked, it toggles the visibility of the camera options menu.
+
 ## Final Product
 
 Upon launching the server on startup, this is what the interface looks like.
