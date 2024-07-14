@@ -817,7 +817,7 @@ With the same setup as the Raspberry Pi, where the ESP32CAM is pointed towards a
 Upon running, the following is printed out:
 
 <center>
-<img src="../../../pics/week15/4oJson.jpg" width="750"/>
+<img src="../../pics/week15/4oJson.jpg" width="750"/>
 </center>
 
 
@@ -833,7 +833,7 @@ print(content_string)
 Here is the code just printing out the extracted OCR text.
 
 <center>
-<img src="../../../pics/week15/4oExtracted.jpg" width="750"/>
+<img src="../../pics/week15/4oExtracted.jpg" width="750"/>
 </center>
 
 This was essentially the bare-bones version of my final project Pi code. After integrating the serial communication functionality, and changing the wording of the prompt, I had the final code for the Raspberry Pi ready:
