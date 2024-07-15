@@ -2,7 +2,7 @@
 
 ## Prusa
 
-I first created my 3D mold design in Fusion.
+I first created my 3D mold design in Fusion. To create the mold, I used a download I found on the internet for the actual parakeet shape. From there, I extruded each section in Fusion to create the depth. I then converted it as a hole body and extruded it into a rectangular box, and added an outer box layer that would contain the mold pour.
 
 <center>
 <img src="../../../pics/week12/fusionDesign.jpg" width="750"/>
@@ -42,6 +42,12 @@ To create the toolpath, I exited Fusion's "Design" mode and swapped to "Manufact
 
 <center>
 <img src="../../../pics/week12/heartMoldFusion.jpg" width="500"/>
+</center>
+
+The OtherMill tool library that I used is accessible under this week's file downloads as "Othermill Tool Library 0.3.json". It automatically generated the configuration for the pocket cut.
+
+<center>
+<img src="../../../pics/week12/config.jpg" width="200"/>
 </center>
 
 I then milled the file. The imperfections across the top of the wax are bubbles that arose when the wax was melted for reuse. The bubbles were not created by the milling process nor will they have any effect on the casting.
