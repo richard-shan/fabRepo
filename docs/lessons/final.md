@@ -1070,11 +1070,52 @@ I then connected the color coded wire sets to the controller PCB, and tested tur
 <video muted width="550" height="300" controls><source src="../../pics/final/assembly/solenoidsWorking.mp4" type="video/mp4" /></video>
 </center>
 
-Lastly, I secured everything in place and put the cover on. This involved using Nitto tape to attach the PCB to the side wall, and using hot glue to secure the MOSFETs to the bottom and the solenoids to their respective places. I then ran another test to ensure everything still worked.
+Lastly, I secured everything in place and put the cover on. This involved using Nitto tape to attach the PCB to the side wall, and using hot glue to secure the MOSFETs to the bottom and the solenoids to their respective places. The PCB on the side wall is circled in red in the image below, as it is somewhat difficult to see. Each MOSFET drive module is connected to the controller PCB through a set of respective color coded wire pairs. The top-left solenoid corresponds with both white wires, the top-right solenoid with dark blue, the mid-left solenoid with green, the mid-right solenoid with orange, the bottom-left solenoid with blue, and the bottom right solenoid with yellow. The color coded scheme makes it easier for me to detach individual wires for debugging and knowing which solenoid a specific wire corresponds to.
+
+<center>
+<img src="../../pics/final/assembly/integration.jpg" width="400"/>
+</center>
+
+I then ran another test to ensure everything still worked.
 
 <center>
 <video muted width="550" height="300" controls><source src="../../pics/final/assembly/solenoidsWorkingAttached.mp4" type="video/mp4" /></video>
 </center>
+
+The assembly of the Raspberry Pi case is relatively simple. As the 3D print already has holes built in for USB wires, and a hole built in for the screen, all I really need to do is secure the Pi to the bottom and the screen to the top, then connect the wires. I used 4 M3 screws in the screw-holes that I designed to secure the Raspberry Pi screen to the top of the case. I then used hot glue to secure the Pi in place on the bottom of the case. The following image shows the case's top on the left, with the screwed-in screen connected to the Pi via the microHDMI port for data and the power cable. The Pi itself is shown on the right, with its power cable coming out of the left side box hole, and the ESP32CAM cable coming out of the bottom hole. The wires on the right side case hole are used for connecting the Pi's TX/RX, VCC, and GND with the BrailleBox's ATTiny1614 PCB.
+
+<center>
+<img src="../../pics/final/assembly/piCaseIntegrated.jpg" width="400"/>
+</center>
+
+Here is the Pi case when closed.
+
+<center>
+<img src="../../pics/final/assembly/piCase.jpg" width="400"/>
+</center>
+
+### Evaluation
+
+As per my project goals defined in <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week16/applications/#evaluation">**Week 16**</a>, my project is considered successful if it can:
+
+ - ☑ Accurately extract text from a live image feed
+ - ☑ Map the text to braille
+ - ☑ Display the braille on the solenoid array
+
+### Implications
+
+There is existing technologies on the market that can convert text to braille in real time, but those are often expensive and not readily available to the public. My hope with this project is to create a product that can be cheaply produced and reach a wide audience. 
+
+### Lessons Learned
+
+ - Some parts of a project will take longer while others will take shorter than expected.
+ - Double the planned allocation of time due to errors and debugging
+ - Working with lower-level hardware and software is more rewarding and often produces a more solid product
+ - There are many types of transistors, which can be a pain to sort through
+
+### Previous Work
+
+I cover previous digital fabrication work done in areas similar to my final project in Week 16 <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week16/applications/#previous-work">**here**</a>
 
 ## Final Product
 
