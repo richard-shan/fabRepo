@@ -2376,3 +2376,5 @@ Clicking the "Camera Options" button opens a popup menu that allows the user to 
 <center>
 <img src="../../../pics/week14/camOptions.jpg" width="500"/>
 </center>
+
+Unfortunately, during this week, I didn't have time to actually implement the camera options config changing. I had some issues adapting the CameraWebServer config for camera settings to change when the options were changed in the GUI. This is something I hope to continue working on as I further develop my project.
