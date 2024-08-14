@@ -14,7 +14,7 @@
 
 ## Dissemination
 
-I believe that my final project has the potential to significantly impact the accessibility of printed materials for visually impaired individuals. After Fab Academy, I plan to work with the American Foundation for the Blind (AFB) along with local groups to continue the development of my project and test the BrailleBox in real-world settings. For example, the AFB runs the Journal of Visual Impairment & Blindness (JVIB) research journal, which I may be interested in publishing in after iterating on the final product more and running some field tests. These partnerships will help refine the device based on feedback and promote its adoption. I will also attempt to shave off as much cost as possible from the device's production. Although I am not yet sure if I want to take this device to market, this will hopefully allow large-scale usage and/or production of the Box. As of now, the entire project is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+I believe that my final project has the potential to significantly impact the accessibility of printed materials for visually impaired individuals. After Fab Academy, I will also attempt to shave off as much cost as possible from the device's production. Although I am not yet sure if I want to take this device to market, this will hopefully allow large-scale usage and/or production of the Box. As of now, the entire project is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
 
 ## Future Development
 

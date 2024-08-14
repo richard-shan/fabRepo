@@ -1,8 +1,12 @@
 # About Me
 
-Hi! I'm Richard Shan, a Fab Academy 2024 student at Charlotte Latin School, at Charlotte, NC. I have a pet parakeet and fish!
+Hi! I'm Richard Shan, a Fab Academy 2024 student at Charlotte Latin School, at Charlotte, NC. I currently am a member of the class of 2026 at the North Carolina School of Science and Mathematics in Durham, NC, where I am studying computer science and researching generative AI.
 
-In my free time, I enjoy playing ultimate frisbee! I'm actively involved in the local community, helping in hosting tournaments and attending leagues and events every weekend. I currently captain my school and U17 club team, and play for a nationally ranked U20 team.
+I have significant experience both in academia and industry. I've worked as a generative AI researcher and developer at multiple corporate firms, and have worked on many research projects and academic publications. I am very experienced in NLP, LLM fine tuning, developing RAG systems, building evaluation models, SLMs, building ML models, feature engineering, synthetic data generation and cleaning, and working with vector databases. I have worked with frameworks such as PyTorch, Tensorflow, Langchain, LlamaIndex, and the like. I am familiar working with tokenization, vector stores, and integration with APIs such as OpenAI, Pinecone, and Huggingface. Recently, I've been working a lot with RAGAS and ARES. To a lesser degree, I work on frontend development.
+
+I have learned a lot about digital fabrication during Fab Academy, and have applied my CS skills in the engineering space. This is exemplified in my machine week project, where I handled the software development. Through building an advanced program and combining it with hardware components, we produced an impressive product. Additionally, my later weeks and final project are also pretty heavily software-oriented. I had a lot of fun exploring the intersection between programming and engineering, and how they work together to implement a solution.
+
+In my free time, I enjoy playing ultimate frisbee and debating. I am an active member of my local Ultimate community, helping in hosting tournaments and attending leagues and events on weekends. I also play for my city's premier nationally-ranked high school men's ultimate team, and I have captained Charlotte's U17 men's ultimate team. I also captain my school's ultimate team on the field along with managing its logistics. I am also an avid debater, being consistently ranked in the top 50 high school public forum debate teams nationwide. I have championed multiple tournaments and have reached the top 10 debaters in most large national tournaments. 
 
 
 ### Student Agreement
