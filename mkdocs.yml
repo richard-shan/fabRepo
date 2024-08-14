@@ -1,7 +1,7 @@
 site_name: Richard Shan - Fab Academy Documentation
 nav:
   - Home: index.md
-  - About: about.md
+  - About Richard Shan: about.md
   - Final Project: lessons/final.md
   - "Documentation":
     - "Pre-Fab":
