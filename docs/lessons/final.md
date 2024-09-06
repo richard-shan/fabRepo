@@ -1,5 +1,7 @@
 # Final Project
 
+**WARNING: The project video and slide are out of date and provide incorrect information about licensing. The current EULA is [here](../../../license.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
+
 ## Overview
 
 I want to create a 3x2 solenoid array that can display braille characters by pushing solenoids up and down to create dots. This solenoid array will be connected to a Raspberry Pi, which in turn will be connected to an ESP32CAM. The camera will take a picture of a page of text, then perform OCR (optical character recognition) to extract a string of text from the image. That string of text will be converted to braille, which will be displayed on the solenoid array by flashing each character for 1 second at a time. This device will essentially allow for live-time conversion of any text into braille, which I hope will increase accessibility to books and the like.
