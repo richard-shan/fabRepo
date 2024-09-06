@@ -1,6 +1,6 @@
 # Invention, Intellectual Property and Income
 
-**WARNING: The project video and slide are out of date and provide incorrect information about licensing. The current EULA is [here](../../../license.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
+**WARNING: The project video and slide (poster) are out of date and provide incorrect information about licensing. The current EULA is [here](../../LICENSE.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
 
 ## Project Video
 

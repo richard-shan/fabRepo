@@ -1,6 +1,6 @@
 # Final Project
 
-**WARNING: The project video and slide are out of date and provide incorrect information about licensing. The current EULA is [here](../../../license.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
+**WARNING: The project video and slide (poster) are out of date and provide incorrect information about licensing. The current EULA is [here](../../LICENSE.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
 
 ## Overview
 
@@ -1120,6 +1120,8 @@ There is existing technologies on the market that can convert text to braille in
 I cover previous digital fabrication work done in areas similar to my final project in Week 16 <a href="https://fabacademy.org/2024/labs/charlotte/students/richard-shan/lessons/week16/applications/#previous-work">**here**</a>
 
 ## Final Product
+
+**WARNING: The project video and slide (poster) are out of date and provide incorrect information about licensing. The current EULA is [here](../../LICENSE.txt). By installing, accessing, or using the Product, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions.**
 
 ### Poster
 
