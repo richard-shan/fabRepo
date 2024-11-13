@@ -1,6 +1,10 @@
 # About Me
 
-Hi! I'm Richard Shan, a Fab Academy 2024 student at Charlotte Latin School, at Charlotte, NC. I currently am a member of the class of 2026 at the North Carolina School of Science and Mathematics in Durham, NC, where I am studying computer science and researching generative AI.
+<center>
+<img src="../pics/portrait.jpg" alt="Richard Shan portrait" width="500"/>
+</center>
+
+Hi! I'm Richard Shan, a Fab Academy 2024 alumnus. I currently am a member of the class of 2026 at the North Carolina School of Science and Mathematics in Durham, NC, where I am studying computer science and researching generative AI.
 
 I have significant experience both in academia and industry. I've worked as a generative AI researcher and developer at multiple corporate firms, and have worked on many research projects and academic publications. I am very experienced in NLP, LLM fine tuning, developing RAG systems, building evaluation models, SLMs, building ML models, feature engineering, synthetic data generation and cleaning, and working with vector databases. I have worked with frameworks such as PyTorch, Tensorflow, Langchain, LlamaIndex, and the like. I am familiar working with tokenization, vector stores, and integration with APIs such as OpenAI, Pinecone, and Huggingface. Recently, I've been working a lot with RAGAS and ARES. To a lesser degree, I work on frontend development.
 
@@ -40,5 +44,5 @@ I am a Fab Academy student, responsible for:
  - Following locally applicable health and safety guidance
  - Promoting a respectful environment free of harassment and discrimination
 
-Signed by committing this file in my repository,
-Richard Shan
+Signed by committing this file in my repository, <br>
+<b>Richard Shan</b>
